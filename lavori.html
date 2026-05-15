@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lavori — Filippo Boi</title>
+  <meta name="description" content="Archivio progetti — Filippo Boi, Media Designer.">
+
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+
+  <!-- Cursor -->
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+
+  <!-- ─── Nav ─────────────────────────────────────────────── -->
+  <header class="nav" id="nav">
+    <div class="container">
+      <div class="nav__inner">
+        <a href="index.html" class="nav-logo">Filippo Boi</a>
+        <nav aria-label="Navigazione principale">
+          <ul class="nav-links">
+            <li><a href="lavori.html" class="is-active">Lavori</a></li>
+            <li><a href="index.html#profilo">Profilo</a></li>
+            <li><a href="contatti.html">Contatti</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ─── 1. Header pagina ─────────────────────────────────── -->
+    <section class="page-header">
+      <div class="container">
+        <h1 class="page-header__title reveal">Lavori</h1>
+      </div>
+    </section>
+
+    <!-- ─── 2. Filtro + 3. Griglia ──────────────────────────── -->
+    <section class="section-pad">
+      <div class="container">
+
+        <!-- Filtro -->
+        <div class="filter-bar" role="group" aria-label="Filtra per categoria">
+          <button class="filter-btn is-active" data-filter="tutti">Tutti</button>
+          <button class="filter-btn" data-filter="Identità visiva">Identità visiva</button>
+          <button class="filter-btn" data-filter="Contenuti e formati visivi">Contenuti e formati visivi</button>
+          <button class="filter-btn" data-filter="Sistemi visivi interattivi">Sistemi visivi interattivi</button>
+          <button class="filter-btn" data-filter="Arti visive">Arti visive</button>
+        </div>
+
+        <!-- Griglia -->
+        <div class="archive-grid" id="archive-grid">
+
+          <a href="lavori/disallineamenti-percettivi.html" class="archive-card" data-category="Sistemi visivi interattivi" data-year="2026">
+            <div class="archive-card__thumb archive-card__thumb--portrait"><img src="assets/disallineamenti-percettivi/disallineamenti-percettivi-hero.jpg"
+  alt="Disallineamenti Percettivi"
+  class="project-img" loading="lazy"
+  width="1920" height="1080"></div>
+            <span class="archive-card__category">Sistemi visivi interattivi</span>
+            <h2 class="archive-card__title">Disallineamenti Percettivi</h2>
+            <span class="archive-card__year">2026</span>
+          </a>
+
+          <a href="lavori/barbara-coveri.html" class="archive-card" data-category="Identità visiva" data-year="2026">
+            <div class="archive-card__thumb archive-card__thumb--portrait"><img src="assets/barbara-coveri/barbara-coveri-hero.jpg"
+  alt="Barbara Coveri"
+  class="project-img" loading="lazy"
+  width="1920" height="1080"></div>
+            <span class="archive-card__category">Identità visiva</span>
+            <h2 class="archive-card__title">Barbara Coveri</h2>
+            <span class="archive-card__year">2026</span>
+          </a>
+
+          <a href="lavori/vo-lumi.html" class="archive-card" data-category="Identità visiva" data-year="2025">
+            <div class="archive-card__thumb archive-card__thumb--landscape"><img src="assets/vo-lumi/Vo.Lumi-hero.jpg"
+  alt="Vo.Lumi"
+  class="project-img" loading="lazy"
+  width="1920" height="1080"></div>
+            <span class="archive-card__category">Identità visiva</span>
+            <h2 class="archive-card__title">Vo.Lumi</h2>
+            <span class="archive-card__year">2025</span>
+          </a>
+
+          <a href="lavori/i-santi.html" class="archive-card" data-category="Arti visive" data-year="2025">
+            <div class="archive-card__thumb archive-card__thumb--landscape"></div>
+            <span class="archive-card__category">Arti visive</span>
+            <h2 class="archive-card__title">I Santi</h2>
+            <span class="archive-card__year">2025</span>
+          </a>
+
+          <a href="lavori/poster-generator.html" class="archive-card" data-category="Sistemi visivi interattivi" data-year="2025">
+            <div class="archive-card__thumb archive-card__thumb--landscape"><img src="assets/poster-generator/poster-generator-hero.jpg"
+  alt="Poster Generator"
+  class="project-img" loading="lazy"
+  width="1920" height="1080"></div>
+            <span class="archive-card__category">Sistemi visivi interattivi</span>
+            <h2 class="archive-card__title">Poster Generator</h2>
+            <span class="archive-card__year">2022 · 2025</span>
+          </a>
+
+          <a href="lavori/party-shrd.html" class="archive-card" data-category="Sistemi visivi interattivi" data-year="2024">
+            <div class="archive-card__thumb archive-card__thumb--portrait"><img src="assets/party-shrd/party-shrd-hero.jpg"
+  alt="Party SHRD"
+  class="project-img" loading="lazy"
+  width="1920" height="1080"></div>
+            <span class="archive-card__category">Sistemi visivi interattivi</span>
+            <h2 class="archive-card__title">Party SHRD</h2>
+            <span class="archive-card__year">2024</span>
+          </a>
+
+          <a href="lavori/24-bottles.html" class="archive-card" data-category="Contenuti e formati visivi" data-year="2023">
+            <div class="archive-card__thumb archive-card__thumb--portrait"><img src="assets/24-bottles/24-bottles-hero.jpg"
+  alt="24 Bottles"
+  class="project-img" loading="lazy"
+  width="1920" height="1080"></div>
+            <span class="archive-card__category">Contenuti e formati visivi</span>
+            <h2 class="archive-card__title">24 Bottles</h2>
+            <span class="archive-card__year">2023</span>
+          </a>
+
+          <a href="lavori/matthew-carbotta.html" class="archive-card" data-category="Identità visiva" data-year="2023">
+            <div class="archive-card__thumb archive-card__thumb--landscape"><img src="assets/matthew-carbotta/matthew-carbotta-hero.jpg"
+  alt="Matthew Carbotta"
+  class="project-img" loading="lazy"
+  width="1920" height="1080"></div>
+            <span class="archive-card__category">Identità visiva</span>
+            <h2 class="archive-card__title">Matthew Carbotta</h2>
+            <span class="archive-card__year">2023</span>
+          </a>
+
+          <a href="lavori/riverrun.html" class="archive-card" data-category="Contenuti e formati visivi" data-year="2022">
+            <div class="archive-card__thumb archive-card__thumb--landscape"><img src="assets/riverrun/riverrun-hero.jpg"
+  alt="Riverrun"
+  class="project-img" loading="lazy"
+  width="1920" height="1080"></div>
+            <span class="archive-card__category">Contenuti e formati visivi</span>
+            <h2 class="archive-card__title">Riverrun Hub</h2>
+            <span class="archive-card__year">2022</span>
+          </a>
+
+          <a href="lavori/nebula.html" class="archive-card" data-category="Sistemi visivi interattivi" data-year="2022">
+            <div class="archive-card__thumb archive-card__thumb--portrait"><img src="assets/nebula/nebula-hero.jpg"
+  alt="Nebula"
+  class="project-img" loading="lazy"
+  width="1920" height="1080"></div>
+            <span class="archive-card__category">Sistemi visivi interattivi</span>
+            <h2 class="archive-card__title">Nebula</h2>
+            <span class="archive-card__year">2022</span>
+          </a>
+
+          <a href="lavori/ginza-brand.html" class="archive-card" data-category="Identità visiva" data-year="2022">
+            <div class="archive-card__thumb archive-card__thumb--portrait"><img src="assets/ginza-brand/ginza-hero.jpg"
+  alt="Ginza"
+  class="project-img" loading="lazy"
+  width="1920" height="1080"></div>
+            <span class="archive-card__category">Identità visiva</span>
+            <h2 class="archive-card__title">Ginza</h2>
+            <span class="archive-card__year">2022</span>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ─── Footer ──────────────────────────────────────────── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <span class="footer__wordmark">Filippo Boi</span>
+        <div class="footer__links">
+          <a href="#" class="footer__link">Instagram</a>
+          <a href="#" class="footer__link">LinkedIn</a>
+          <a href="contatti.html" class="footer__email">filippoboi@yahoo.it</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    (function () {
+      const btns  = document.querySelectorAll('.filter-btn');
+      const cards = document.querySelectorAll('.archive-card');
+
+      btns.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          btns.forEach((b) => b.classList.remove('is-active'));
+          btn.classList.add('is-active');
+
+          const category = btn.dataset.filter;
+
+          cards.forEach((card) => {
+            const matches = category === 'tutti' || card.dataset.category === category;
+
+            if (matches) {
+              card.style.display = 'flex';
+              void card.offsetHeight; // force reflow before transition
+              card.style.opacity = '1';
+            } else {
+              card.style.opacity = '0';
+              setTimeout(() => {
+                if (card.style.opacity === '0') card.style.display = 'none';
+              }, 200);
+            }
+          });
+        });
+      });
+    }());
+  </script>
+</body>
+</html>

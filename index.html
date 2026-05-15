@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Filippo Boi</title>
+  <meta name="description" content="Filippo Boi — designer e sviluppatore.">
+
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+
+  <!-- Cursor -->
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+
+  <!-- ─── Nav ─────────────────────────────────────────────── -->
+  <header class="nav" id="nav">
+    <div class="container">
+      <div class="nav__inner">
+        <a href="/" class="nav-logo">Filippo Boi</a>
+        <nav aria-label="Navigazione principale">
+          <ul class="nav-links">
+            <li><a href="lavori.html">Lavori</a></li>
+            <li><a href="#profilo">Profilo</a></li>
+            <li><a href="contatti.html">Contatti</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ─── Hero ───────────────────────────────────────────── -->
+    <section class="hero" id="home">
+      <canvas class="hero__canvas" id="hero-canvas" aria-hidden="true"></canvas>
+
+      <div class="container">
+        <div class="hero__content">
+          <div class="hero__media">
+            <div class="hero__media-placeholder"></div>
+          </div>
+          <h1 class="hero__headline reveal">
+            Ragiono per immagini, progetto strutture visive.
+          </h1>
+          <p class="hero__tagline reveal reveal--delay-1">
+            Filippo Boi — Media Designer
+          </p>
+          <div class="hero__meta reveal reveal--delay-2">
+            <span class="accent-line"></span>
+            <span class="label">BOLOGNA | CAGLIARI</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Progetti selezionati ────────────────────────────── -->
+    <section class="section-pad" id="progetti">
+      <div class="container">
+
+        <div class="section-header reveal">
+          <h2 class="section-header__title">Progetti selezionati</h2>
+          <a href="lavori.html" class="section-header__link">Tutti i lavori</a>
+        </div>
+
+        <div class="cards-grid">
+
+          <a href="lavori/barbara-coveri.html" class="card card--tall reveal">
+            <div class="card__thumb"><img src="assets/barbara-coveri/barbara-coveri-hero.jpg"
+  alt="Barbara Coveri — identità visiva"
+  class="project-img" loading="lazy"
+  width="1920" height="1080"></div>
+            <span class="card__category">Identità visiva</span>
+            <h3 class="card__title">Barbara Coveri</h3>
+          </a>
+
+          <a href="lavori/24-bottles.html" class="card reveal reveal--delay-1">
+            <div class="card__thumb"><img src="assets/24-bottles/24-bottles-hero.jpg"
+  alt="24 Bottles"
+  class="project-img" loading="lazy"
+  width="1920" height="1080"></div>
+            <span class="card__category">Contenuti e formati visivi</span>
+            <h3 class="card__title">24 Bottles</h3>
+          </a>
+
+          <a href="lavori/nebula.html" class="card reveal reveal--delay-2">
+            <div class="card__thumb"><img src="assets/nebula/nebula-hero.jpg"
+  alt="Nebula"
+  class="project-img" loading="lazy"
+  width="1920" height="1080"></div>
+            <span class="card__category">Sistemi visivi interattivi</span>
+            <h3 class="card__title">Nebula</h3>
+          </a>
+
+          <a href="lavori/i-santi.html" class="card reveal reveal--delay-3">
+            <div class="card__thumb"></div>
+            <span class="card__category">Arti visive</span>
+            <h3 class="card__title">I Santi</h3>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Approccio ───────────────────────────────────────── -->
+    <section class="section-pad--lg" id="approccio">
+      <div class="container">
+
+        <div class="section-header reveal">
+          <h2 class="section-header__title">Approccio</h2>
+        </div>
+
+        <div class="quad">
+
+          <div class="approach-item reveal">
+            <span class="approach-item__number">01</span>
+            <span class="approach-item__category">Identità visiva</span>
+            <p class="approach-item__desc">
+              Brand system completi o modulari, dal segno al sistema di comunicazione.
+            </p>
+          </div>
+
+          <div class="approach-item reveal reveal--delay-1">
+            <span class="approach-item__number">02</span>
+            <span class="approach-item__category">Contenuti e formati</span>
+            <p class="approach-item__desc">
+              Grafica digitale e layout per la comunicazione social e istituzionale.
+            </p>
+          </div>
+
+          <div class="approach-item reveal reveal--delay-2">
+            <span class="approach-item__number">03</span>
+            <span class="approach-item__category">Progettazione editoriale</span>
+            <p class="approach-item__desc">
+              Layout per supporti digitali e cartacei, dall'editoria indipendente ai progetti culturali.
+            </p>
+          </div>
+
+          <div class="approach-item reveal reveal--delay-3">
+            <span class="approach-item__number">04</span>
+            <span class="approach-item__category">Sistemi interattivi</span>
+            <p class="approach-item__desc">
+              Installazioni e ambienti generativi che usano il codice come strumento visivo.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Profilo ──────────────────────────────────────────── -->
+    <section class="section-pad" id="profilo">
+      <div class="container">
+
+        <div class="section-header reveal">
+          <h2 class="section-header__title">Profilo</h2>
+        </div>
+
+        <div class="split--40-60">
+
+          <img src="assets/profile/filippo-boi-profile.jpg"
+  alt="Filippo Boi"
+  class="project-img profile__image reveal"
+  loading="lazy"
+  width="800" height="1067">
+
+          <div class="profile__text reveal reveal--delay-1">
+<p class="profile__bio">
+              Progetto sistemi visivi per dare forma, coerenza e direzione alla comunicazione. Il mio interesse per il visivo attraversa graphic design, pittura, installazioni ambientali e fotografia. Questa contaminazione influenza il mio approccio alla progettazione, sia concettuale che formale. Ogni progetto è un sistema visivo, prima che un singolo output.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ─── Footer ──────────────────────────────────────────── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <span class="footer__wordmark">Filippo Boi</span>
+        <div class="footer__links">
+          <a href="#" class="footer__link">Instagram</a>
+          <a href="#" class="footer__link">LinkedIn</a>
+          <a href="contatti.html" class="footer__email">filippoboi@yahoo.it</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
