@@ -213,9 +213,13 @@ section {
 
   .split,
   .split--60-40,
-  .split--40-60,
-  .quad {
+  .split--40-60 {
     grid-template-columns: 1fr;
+  }
+
+  .quad {
+    grid-template-columns: 1fr !important;
+    display: grid !important;
   }
 
   /* override col spans to full on mobile */

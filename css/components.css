@@ -139,6 +139,17 @@
   color: var(--orange);
 }
 
+.nav-lang {
+  color: var(--muted) !important;
+  border-left: 0.5px solid var(--border);
+  padding-left: var(--sp-5);
+  margin-left: var(--sp-3);
+}
+
+.nav-lang:hover {
+  color: var(--orange) !important;
+}
+
 /* ─── Hero headline ───────────────────────────────────────── */
 .hero__content {
   display: flex;

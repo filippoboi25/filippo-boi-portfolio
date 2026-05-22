@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Filippo Boi</title>
+  <meta name="description" content="Filippo Boi — Media Designer.">
+
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+</head>
+<body>
+
+  <!-- Cursor -->
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+
+  <!-- ─── Nav ─────────────────────────────────────────────── -->
+  <header class="nav" id="nav">
+    <div class="container">
+      <div class="nav__inner">
+        <a href="index.html" class="nav-logo">Filippo Boi</a>
+        <nav aria-label="Main navigation">
+          <ul class="nav-links">
+            <li><a href="work.html">Work</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="../index.html" class="nav-lang">IT</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ─── Hero ───────────────────────────────────────────── -->
+    <section class="hero" id="home">
+      <canvas class="hero__canvas" id="hero-canvas" aria-hidden="true"></canvas>
+
+      <div class="container">
+        <div class="hero__content">
+          <div class="hero__media">
+            <canvas id="particle-canvas" class="hero__media-canvas"></canvas>
+          </div>
+          <h1 class="hero__headline reveal">
+            I think in images, I design visual structures.
+          </h1>
+          <p class="hero__tagline reveal reveal--delay-1">
+            Filippo Boi — Media Designer
+          </p>
+          <div class="hero__meta reveal reveal--delay-2">
+            <span class="accent-line"></span>
+            <span class="label">BOLOGNA | CAGLIARI</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Selected works ──────────────────────────────────── -->
+    <section class="section-pad" id="projects">
+      <div class="container">
+
+        <div class="section-header reveal">
+          <h2 class="section-header__title">Selected works</h2>
+          <a href="work.html" class="section-header__link">All works</a>
+        </div>
+
+        <div class="cards-grid">
+
+          <a href="work/barbara-coveri.html" class="card card--tall reveal">
+            <div class="card__thumb"><img src="../assets/barbara-coveri/barbara-coveri-hero.jpg"
+  alt="Barbara Coveri — visual identity"
+  class="project-img" loading="lazy"
+  width="1920" height="1080"></div>
+            <span class="card__category">Visual identity</span>
+            <h3 class="card__title">Barbara Coveri</h3>
+          </a>
+
+          <a href="work/24-bottles.html" class="card reveal reveal--delay-1">
+            <div class="card__thumb"><img src="../assets/24-bottles/24-bottles-hero.jpg"
+  alt="24 Bottles"
+  class="project-img" loading="lazy"
+  width="1920" height="1080"></div>
+            <span class="card__category">Content &amp; visual formats</span>
+            <h3 class="card__title">24 Bottles</h3>
+          </a>
+
+          <a href="work/nebula.html" class="card reveal reveal--delay-2">
+            <div class="card__thumb"><img src="../assets/nebula/nebula-hero.jpg"
+  alt="Nebula"
+  class="project-img" loading="lazy"
+  width="1920" height="1080"></div>
+            <span class="card__category">Interactive visual systems</span>
+            <h3 class="card__title">Nebula</h3>
+          </a>
+
+          <a href="work/disallineamenti-percettivi.html" class="card reveal reveal--delay-3">
+            <div class="card__thumb"><img src="../assets/disallineamenti-percettivi/disallineamenti-percettivi-hero.jpg"
+    alt="Disallineamenti Percettivi"
+    class="project-img" loading="lazy"
+    width="1920" height="1080"></div>
+            <span class="card__category">Interactive visual systems</span>
+            <h3 class="card__title">Disallineamenti Percettivi</h3>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Approach ────────────────────────────────────────── -->
+    <section class="section-pad--lg" id="approach">
+      <div class="container">
+
+        <div class="section-header reveal">
+          <h2 class="section-header__title">Approach</h2>
+        </div>
+
+        <div class="quad">
+
+          <div class="approach-item reveal">
+            <span class="approach-item__number">01</span>
+            <span class="approach-item__category">Systemic</span>
+            <p class="approach-item__desc">
+              Every project is a system before a single output. I build coherent visual languages, not isolated solutions.
+            </p>
+          </div>
+
+          <div class="approach-item reveal reveal--delay-1">
+            <span class="approach-item__number">02</span>
+            <span class="approach-item__category">Relational</span>
+            <p class="approach-item__desc">
+              Design is born from contact with people. I listen, observe and translate into form what emerges from the relationship.
+            </p>
+          </div>
+
+          <div class="approach-item reveal reveal--delay-2">
+            <span class="approach-item__number">03</span>
+            <span class="approach-item__category">Experimental</span>
+            <p class="approach-item__desc">
+              Research precedes and informs execution. The process is not a means — it is part of the result.
+            </p>
+          </div>
+
+          <div class="approach-item reveal reveal--delay-3">
+            <span class="approach-item__number">04</span>
+            <span class="approach-item__category">Narrative</span>
+            <p class="approach-item__desc">
+              Every project tells something before it communicates. Meaning comes before form.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Profile ─────────────────────────────────────────── -->
+    <section class="section-pad" id="about">
+      <div class="container">
+
+        <div class="section-header reveal">
+          <h2 class="section-header__title">Profile</h2>
+        </div>
+
+        <div class="split--40-60">
+
+          <img src="../assets/profile/filippo-boi-profile.jpg"
+  alt="Filippo Boi"
+  class="project-img profile__image reveal"
+  loading="lazy"
+  width="800" height="1067">
+
+          <div class="profile__text reveal reveal--delay-1">
+            <p class="profile__bio">
+              I design visual systems to give form, coherence and direction to communication. My interest in the visual spans graphic design, painting, environmental installations and photography. This contamination influences my approach to design — both conceptual and formal. Every project is a visual system before it is a single output.<br><br>Based in Bologna.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ─── Footer ──────────────────────────────────────────── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <span class="footer__wordmark">Filippo Boi — Media Designer</span>
+        <div class="footer__links">
+          <a href="work.html" class="footer__link">Work</a>
+          <a href="index.html#about" class="footer__link">About</a>
+          <a href="contact.html" class="footer__link">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
