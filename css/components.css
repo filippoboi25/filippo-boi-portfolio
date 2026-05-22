@@ -192,11 +192,11 @@
   margin-bottom: var(--sp-8);
 }
 
-.hero__media-placeholder {
+.hero__media-canvas {
   width: 100%;
   aspect-ratio: 21/6;
-  background: var(--carbon);
-  border: 0.5px solid var(--border);
+  display: block;
+  background: transparent;
 }
 
 /* ─── Section header ──────────────────────────────────────── */
@@ -831,6 +831,51 @@
   .nav-links {
     gap: var(--sp-5);
   }
+
+  /* Hero media */
+  .hero__media {
+    padding-top: var(--sp-16);
+    width: 100%;
+  }
+
+  .hero__media-placeholder,
+  .hero__media img {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+  }
+
+  /* Griglia 3 colonne → 1 colonna */
+  .grid-3,
+  [style*="grid-template-columns: repeat(3"],
+  [style*="grid-template-columns: 1fr 1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Griglia 4 colonne → 2 colonne */
+  .grid-4,
+  [style*="grid-template-columns: repeat(4"],
+  [style*="grid-template-columns: 1fr 1fr 1fr 1fr"] {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  /* Griglia 2 colonne con immagini grandi → 1 colonna */
+  .split,
+  .split--40-60,
+  .split--60-40 {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Quad → 2 colonne */
+  .quad {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  /* Immagini hero e wide → full width */
+  .project-img {
+    width: 100%;
+    height: auto;
+  }
 }
 
 /* ─── Leggibilità testi corpo ─────────────────── */
@@ -852,4 +897,46 @@
   font-size: 0.9375rem;
   color: #f0ece4;
   line-height: var(--leading-loose);
+}
+
+@media (max-width: 768px) {
+
+  /* Tutte le griglie inline con 3 o 4 colonne */
+  [style*="repeat(3"] {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  [style*="repeat(4"] {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  /* Griglie con frazioni esplicite */
+  [style*="1fr 1fr 1fr"] {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  [style*="1fr 1fr 1fr 1fr"] {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  /* Split a due colonne → una colonna */
+  [style*="grid-template-columns: 4fr"],
+  [style*="grid-template-columns: 6fr"],
+  [style*="grid-template-columns: 7fr"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Immagini panoramiche wide */
+  [style*="aspect-ratio: 21/9"],
+  [style*="aspect-ratio: 21 / 9"] {
+    aspect-ratio: 16/9 !important;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Su schermi molto piccoli tutto a 1 colonna
+     tranne le griglie di immagini piccole */
+  [style*="repeat(3"] {
+    grid-template-columns: 1fr !important;
+  }
 }

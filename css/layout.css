@@ -207,7 +207,10 @@ section {
     grid-template-columns: repeat(4, 1fr);
   }
 
-  .cards-grid,
+  .cards-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
   .split,
   .split--60-40,
   .split--40-60,
@@ -228,5 +231,20 @@ section {
   .col-start-8,
   .col-start-9 {
     grid-column-start: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .cards-grid,
+  .archive-grid {
+    grid-template-columns: 1fr 1fr !important;
+    column-gap: var(--gutter);
+  }
+}
+
+@media (max-width: 480px) {
+  .cards-grid,
+  .archive-grid {
+    grid-template-columns: 1fr 1fr !important;
   }
 }

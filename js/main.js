@@ -101,3 +101,122 @@
   });
 
 }());
+
+(function() {
+  const canvas = document.getElementById('particle-canvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+
+  let W, H, particles = [], mouse = { x: -1000, y: -1000 };
+  const COUNT = 280;
+  const ORANGE = '#E35A1B';
+  const PAPER = '#e8e4dc';
+
+  function resize() {
+    W = canvas.width = canvas.offsetWidth * window.devicePixelRatio;
+    H = canvas.height = canvas.offsetHeight * window.devicePixelRatio;
+    ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+  }
+
+  function createParticle() {
+    return {
+      x: Math.random() * (W / window.devicePixelRatio),
+      y: Math.random() * (H / window.devicePixelRatio),
+      vx: (Math.random() - 0.5) * 0.4,
+      vy: (Math.random() - 0.5) * 0.4,
+      r: Math.random() * 1.5 + 0.5,
+      color: Math.random() > 0.92 ? ORANGE : PAPER,
+      alpha: Math.random() * 0.5 + 0.1,
+      pulse: Math.random() * Math.PI * 2,
+      pulseSpeed: Math.random() * 0.02 + 0.005,
+    };
+  }
+
+  function init() {
+    particles = [];
+    for (let i = 0; i < COUNT; i++) {
+      particles.push(createParticle());
+    }
+  }
+
+  function draw() {
+    const w = W / window.devicePixelRatio;
+    const h = H / window.devicePixelRatio;
+    ctx.clearRect(0, 0, w, h);
+
+    // Connessioni tra particelle vicine
+    for (let i = 0; i < particles.length; i++) {
+      for (let j = i + 1; j < particles.length; j++) {
+        const dx = particles[i].x - particles[j].x;
+        const dy = particles[i].y - particles[j].y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < 80) {
+          ctx.beginPath();
+          ctx.moveTo(particles[i].x, particles[i].y);
+          ctx.lineTo(particles[j].x, particles[j].y);
+          ctx.strokeStyle = `rgba(232, 228, 220, ${0.06 * (1 - dist / 80)})`;
+          ctx.lineWidth = 0.5;
+          ctx.stroke();
+        }
+      }
+    }
+
+    particles.forEach(p => {
+      // Repulsione dal mouse
+      const mx = mouse.x;
+      const my = mouse.y;
+      const dx = p.x - mx;
+      const dy = p.y - my;
+      const dist = Math.sqrt(dx * dx + dy * dy);
+      if (dist < 100) {
+        const force = (100 - dist) / 100;
+        p.vx += (dx / dist) * force * 0.3;
+        p.vy += (dy / dist) * force * 0.3;
+      }
+
+      // Attrito
+      p.vx *= 0.98;
+      p.vy *= 0.98;
+
+      p.x += p.vx;
+      p.y += p.vy;
+      p.pulse += p.pulseSpeed;
+
+      // Rimbalzo bordi
+      if (p.x < 0 || p.x > w) p.vx *= -1;
+      if (p.y < 0 || p.y > h) p.vy *= -1;
+      p.x = Math.max(0, Math.min(w, p.x));
+      p.y = Math.max(0, Math.min(h, p.y));
+
+      const alpha = p.alpha * (0.7 + 0.3 * Math.sin(p.pulse));
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = p.color === ORANGE
+        ? `rgba(227, 90, 27, ${alpha})`
+        : `rgba(232, 228, 220, ${alpha})`;
+      ctx.fill();
+    });
+
+    requestAnimationFrame(draw);
+  }
+
+  canvas.addEventListener('mousemove', e => {
+    const rect = canvas.getBoundingClientRect();
+    mouse.x = e.clientX - rect.left;
+    mouse.y = e.clientY - rect.top;
+  });
+
+  canvas.addEventListener('mouseleave', () => {
+    mouse.x = -1000;
+    mouse.y = -1000;
+  });
+
+  window.addEventListener('resize', () => {
+    resize();
+    init();
+  });
+
+  resize();
+  init();
+  draw();
+})();

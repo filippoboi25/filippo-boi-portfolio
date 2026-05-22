@@ -7,7 +7,9 @@
       "Bash(New-Item -ItemType Directory -Force \"C:\\\\Users\\\\filip\\\\Documents\\\\filippo-boi-portfolio\\\\assets\")",
       "Bash(Write-Output \"done\")",
       "Bash(Remove-Item \"C:\\\\Users\\\\filip\\\\Documents\\\\filippo-boi-portfolio\\\\lavori\\\\ristorante-italia.html\")",
-      "Bash(Remove-Item \"C:\\\\Users\\\\filip\\\\Documents\\\\filippo-boi-portfolio\\\\lavori\\\\ginza-menu.html\")"
+      "Bash(Remove-Item \"C:\\\\Users\\\\filip\\\\Documents\\\\filippo-boi-portfolio\\\\lavori\\\\ginza-menu.html\")",
+      "Bash(Get-Content \"C:\\\\Users\\\\filip\\\\Documents\\\\filippo-boi-portfolio\\\\js\\\\main.js\")",
+      "Bash(Select-Object -Last 10)"
     ]
   }
 }
