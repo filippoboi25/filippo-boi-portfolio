@@ -220,3 +220,25 @@
   init();
   draw();
 })();
+
+// Hamburger menu
+(function() {
+  const hamburger = document.querySelector('.nav-hamburger');
+  const overlay = document.querySelector('.nav-mobile-overlay');
+  if (!hamburger || !overlay) return;
+
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('is-open');
+    overlay.classList.toggle('is-open');
+    document.body.style.overflow =
+      overlay.classList.contains('is-open') ? 'hidden' : '';
+  });
+
+  overlay.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('is-open');
+      overlay.classList.remove('is-open');
+      document.body.style.overflow = '';
+    });
+  });
+})();
