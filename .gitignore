@@ -7,3 +7,6 @@
 
 # Laboratorio locale, non versionato
 lab/
+
+# Impostazioni locali di Claude Code (permessi e percorsi della macchina)
+.claude/settings.local.json
