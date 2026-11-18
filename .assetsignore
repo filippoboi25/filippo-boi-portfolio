@@ -2,6 +2,7 @@
 # Sintassi .gitignore; i percorsi con "/" iniziale partono dalla radice del sito.
 /lab/
 /.claude/
+/.wrangler/
 /optimize-images.py
 /wrangler.jsonc
 /.assetsignore

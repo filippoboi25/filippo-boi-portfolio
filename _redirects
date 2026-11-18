@@ -1,0 +1,3 @@
+# Redirect permanenti (Cloudflare Workers static assets)
+/servizi.html  /contatti  301
+/servizi       /contatti  301
