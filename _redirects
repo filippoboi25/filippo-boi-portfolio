@@ -1,3 +1,10 @@
 # Redirect permanenti (Cloudflare Workers static assets)
+# Prima i redirect statici, poi quelli dinamici (con *).
+
+# Pagina Servizi rimossa (fase 1, novembre 2026)
 /servizi.html  /contatti  301
 /servizi       /contatti  301
+/servizi/      /contatti  301
+
+# Vecchia versione inglese in /en/, sostituita dal cambio lingua IT/EN in pagina
+/en/*          /          301
