@@ -88,3 +88,10 @@
   --cursor-dot-size:    8px;
   --cursor-ring-size:  36px;
 }
+
+/* ─── Lavori ──────────────────────────────────────────────── */
+/* Rapporto d'aspetto di tutte le card dei lavori (home e archivio).
+   Per cambiarlo basta modificare questa riga. */
+:root {
+  --work-ratio: 4 / 5;
+}

@@ -4,6 +4,7 @@
 /.claude/
 /.wrangler/
 /optimize-images.py
+/tools/
 /wrangler.jsonc
 /.assetsignore
 /.gitignore

@@ -261,81 +261,126 @@
   color: var(--orange);
 }
 
-/* ─── Project card ────────────────────────────────────────── */
-.card {
-  display: flex;
-  flex-direction: column;
-  gap: var(--sp-4);
+/* ─── Work card — componente unico (home e Tutti i lavori) ───
+   Stessa griglia e stesso rapporto ovunque. Il rapporto è
+   --work-ratio (tokens.css); il punto focale per lavoro è
+   --focus-x / --focus-y, nello style della card.
+
+   Allineamento: ogni card occupa N righe della griglia madre
+   (immagine · categoria · titolo · anno) e le eredita con
+   subgrid. Una categoria o un titolo su due righe allarga
+   quella riga per tutte le card della fila: nulla si sposta.  */
+.work-grid {
+  --work-rows: 4;               /* immagine, categoria, titolo, anno */
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: var(--gutter);
+  row-gap: var(--sp-12);        /* spazio tra una fila di card e la successiva */
+  align-items: start;
 }
 
-.card__thumb {
-  width: 100%;
-  aspect-ratio: 4/3;
-  overflow: hidden;
+.work-grid--preview {
+  --work-rows: 3;               /* in home l'anno non è mostrato */
+}
+
+@media (min-width: 1024px) {
+  .work-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.work-card {
+  display: grid;
+  grid-row: span var(--work-rows);
+  grid-template-rows: subgrid;
+  row-gap: var(--sp-3);         /* spazio interno alla card */
+  align-content: start;
+}
+
+/* Senza subgrid: colonna semplice, con categoria e titolo
+   che riservano sempre due righe. */
+@supports not (grid-template-rows: subgrid) {
+  .work-card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-3);
+  }
+
+  .work-card__category { min-height: calc(2em * var(--leading-base)); }
+  .work-card__title    { min-height: calc(2em * var(--leading-snug)); }
+}
+
+.work-card__media {
   position: relative;
+  aspect-ratio: var(--work-ratio);
+  overflow: hidden;
   background-color: var(--carbon);
   border: var(--border-width) solid var(--border);
+  border-radius: var(--radius);
+  transition: border-color var(--dur-base) var(--ease-out);
 }
 
-.card__thumb::after {
+.work-card__media img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: var(--focus-x, 50%) var(--focus-y, 50%);
+  display: block;
+}
+
+.work-card__media::after {
   content: '';
   position: absolute;
   inset: 0;
   background-color: var(--orange);
   opacity: 0;
   transition: opacity var(--dur-base) var(--ease-out);
+  pointer-events: none;
 }
 
-.card:hover .card__thumb {
+.work-card:hover .work-card__media {
   border-color: var(--muted);
 }
 
-.card:hover .card__thumb::after {
+.work-card:hover .work-card__media::after {
   opacity: 0.04;
 }
 
-.card__category {
+.work-card__category {
+  align-self: start;
+  margin-top: var(--sp-1);
   font-family: var(--font-ui);
   font-weight: var(--weight-light);
   font-size: var(--text-xs);
+  line-height: var(--leading-base);
   letter-spacing: var(--tracking-wider);
   text-transform: uppercase;
-  color: var(--paper);
-  opacity: 0.6;
+  color: var(--stone);
 }
 
-.card__title {
+.work-card__title {
+  align-self: start;
   font-family: var(--font-display);
   font-weight: var(--weight-light);
   font-size: var(--text-xl);
   letter-spacing: var(--tracking-tight);
-  color: var(--paper);
   line-height: var(--leading-snug);
-  transition: color var(--dur-fast) var(--ease-out);
-}
-
-.card:hover .card__title {
   color: var(--paper);
 }
 
-/* tall card variant — first card in the grid */
-.card--tall .card__thumb {
-  aspect-ratio: 3/4;
+.work-card__year {
+  align-self: start;
+  font-family: var(--font-ui);
+  font-weight: var(--weight-light);
+  font-size: var(--text-xs);
+  color: var(--stone);
 }
 
-.card--tall .card__thumb img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-}
-
-@media (max-width: 768px) {
-  .card--tall .card__thumb {
-    aspect-ratio: 4/3;
+@media (max-width: 640px) {
+  .work-card__title {
+    font-size: var(--text-lg);
   }
 }
 
@@ -760,7 +805,7 @@
   font-size: var(--text-xs);
   letter-spacing: var(--tracking-wider);
   text-transform: uppercase;
-  color: var(--muted);
+  color: var(--stone);
   transition: color var(--dur-fast) var(--ease-out);
 }
 
@@ -778,7 +823,7 @@
 }
 
 .filter-btn:hover {
-  color: var(--stone);
+  color: var(--paper);
 }
 
 .filter-btn.is-active {
@@ -787,79 +832,6 @@
 
 .filter-btn.is-active::after {
   transform: scaleX(1);
-}
-
-/* ─── Archive grid ────────────────────────────────────────── */
-.archive-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--gutter);
-  align-items: start;
-}
-
-.archive-card {
-  display: flex;
-  flex-direction: column;
-  gap: var(--sp-3);
-  opacity: 1;
-  transition: opacity 200ms ease;
-}
-
-.archive-card__thumb {
-  width: 100%;
-  background-color: var(--carbon);
-  border: var(--border-width) solid var(--border);
-  border-radius: var(--radius);
-  overflow: hidden;
-  position: relative;
-  transition: border-color var(--dur-base) var(--ease-out);
-}
-
-.archive-card__thumb img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  display: block;
-}
-
-.archive-card__thumb--landscape { aspect-ratio: 4 / 3; }
-.archive-card__thumb--portrait  { aspect-ratio: 3 / 4; }
-
-.archive-card:hover .archive-card__thumb {
-  border-color: var(--muted);
-}
-
-.archive-card__category {
-  font-family: var(--font-ui);
-  font-weight: var(--weight-light);
-  font-size: var(--text-xs);
-  letter-spacing: var(--tracking-wider);
-  text-transform: uppercase;
-  color: var(--stone);
-}
-
-.archive-card__title {
-  font-family: var(--font-display);
-  font-weight: var(--weight-light);
-  font-size: var(--text-lg);
-  letter-spacing: var(--tracking-tight);
-  line-height: var(--leading-snug);
-  color: var(--paper);
-  transition: color var(--dur-fast) var(--ease-out);
-}
-
-.archive-card:hover .archive-card__title {
-  color: var(--stone);
-}
-
-.archive-card__year {
-  font-family: var(--font-ui);
-  font-weight: var(--weight-light);
-  font-size: var(--text-xs);
-  color: var(--muted);
 }
 
 /* ─── Responsive ──────────────────────────────────────────── */
@@ -1119,29 +1091,6 @@
   }
 }
 
-/* ─── Card images — object-fit cover ─────────────────── */
-.card__thumb img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  display: block;
-}
-
-@media (max-width: 768px) {
-  .card__thumb,
-  .cards-grid a img,
-  .cards-grid article img {
-    aspect-ratio: 4/3;
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-  }
-}
-
 @media (max-width: 768px) {
 
   /* Griglia generica con classe grid */
@@ -1161,11 +1110,6 @@
   .section-pad .quad,
   .section-pad--lg .quad {
     grid-template-columns: 1fr !important;
-  }
-
-  /* Mantieni 2 colonne solo per cards-grid */
-  .cards-grid {
-    grid-template-columns: 1fr 1fr !important;
   }
 
   /* Tutte le griglie inline nelle sezioni progetto */

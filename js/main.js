@@ -28,7 +28,7 @@ function watchReducedMotion(onChange) {
 
   // single handler — reflects current state on every mouseover
   function onMouseOver(e) {
-    const over = !!e.target.closest('a, button, .card');
+    const over = !!e.target.closest('a, button, .work-card');
     dot.classList.toggle('is-hovering', over);
     ring.classList.toggle('is-hovering', over);
   }

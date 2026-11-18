@@ -2,6 +2,8 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8">
+  <!-- Prima del primo paint: gli stati nascosti delle animazioni valgono solo con JS attivo -->
+  <script>document.documentElement.classList.add('js');</script>
   <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Filippo Boi</title>
@@ -81,42 +83,30 @@
           <a href="lavori.html" class="section-header__link" data-i18n="home.projects.cta">Tutti i lavori</a>
         </div>
 
-        <div class="cards-grid">
+        <div class="work-grid work-grid--preview">
 
-          <a href="lavori/suahoy.html" class="card card--tall reveal">
-            <div class="card__thumb"><img src="assets/suahoy/suahoy-hero.jpg"
-  alt="Suahoy"
-  class="project-img" loading="lazy"
-  width="1672" height="941"></div>
-            <span class="card__category" data-i18n="cat.content">Contenuti e formati visivi</span>
-            <h3 class="card__title">Suahoy</h3>
+          <a href="lavori/suahoy.html" class="work-card reveal" data-category="Contenuti e formati visivi" data-date="2026-11" style="--focus-x: 35%; --focus-y: 50%;">
+            <div class="work-card__media"><img src="assets/suahoy/suahoy-hero.jpg" alt="Suahoy" width="1672" height="941" loading="lazy" decoding="async"></div>
+            <span class="work-card__category" data-i18n="cat.content">Contenuti e formati visivi</span>
+            <h3 class="work-card__title">Suahoy</h3>
           </a>
 
-          <a href="lavori/frequenza.html" class="card reveal reveal--delay-1">
-            <div class="card__thumb"><img src="assets/frequenza/frequenza-hero.jpg"
-  alt="FREQUENZA"
-  class="project-img" loading="lazy"
-  width="1920" height="1080"></div>
-            <span class="card__category" data-i18n="cat.interactive">Sistemi visivi interattivi</span>
-            <h3 class="card__title">Frequenza</h3>
+          <a href="lavori/frequenza.html" class="work-card reveal reveal--delay-1" data-category="Sistemi visivi interattivi" data-date="2026-06" style="--focus-x: 50%; --focus-y: 50%;">
+            <div class="work-card__media"><img src="assets/frequenza/frequenza-hero.jpg" alt="FREQUENZA" width="1920" height="1080" loading="lazy" decoding="async"></div>
+            <span class="work-card__category" data-i18n="cat.interactive">Sistemi visivi interattivi</span>
+            <h3 class="work-card__title">Frequenza</h3>
           </a>
 
-          <a href="lavori/disallineamenti-percettivi.html" class="card reveal reveal--delay-2">
-            <div class="card__thumb"><img src="assets/disallineamenti-percettivi/disallineamenti-percettivi-hero.jpg"
-  alt="Disallineamenti Percettivi"
-  class="project-img" loading="lazy"
-  width="1920" height="1080"></div>
-            <span class="card__category" data-i18n="cat.interactive">Sistemi visivi interattivi</span>
-            <h3 class="card__title">Disallineamenti Percettivi</h3>
+          <a href="lavori/barbara-coveri.html" class="work-card reveal reveal--delay-2" data-category="Identità visiva" data-date="2026-04" style="--focus-x: 55%; --focus-y: 50%;">
+            <div class="work-card__media"><img src="assets/barbara-coveri/barbara-coveri-hero.jpg" alt="Barbara Coveri" width="1920" height="1080" loading="lazy" decoding="async"></div>
+            <span class="work-card__category" data-i18n="cat.identity">Identità visiva</span>
+            <h3 class="work-card__title">Barbara Coveri</h3>
           </a>
 
-          <a href="lavori/barbara-coveri.html" class="card reveal reveal--delay-3">
-            <div class="card__thumb"><img src="assets/barbara-coveri/barbara-coveri-hero.jpg"
-  alt="Barbara Coveri"
-  class="project-img" loading="lazy"
-  width="1920" height="1080"></div>
-            <span class="card__category" data-i18n="cat.identity">Identità visiva</span>
-            <h3 class="card__title">Barbara Coveri</h3>
+          <a href="lavori/disallineamenti-percettivi.html" class="work-card reveal reveal--delay-3" data-category="Sistemi visivi interattivi" data-date="2025-11" style="--focus-x: 30%; --focus-y: 50%;">
+            <div class="work-card__media"><img src="assets/disallineamenti-percettivi/disallineamenti-percettivi-hero.jpg" alt="Disallineamenti Percettivi" width="1920" height="1080" loading="lazy" decoding="async"></div>
+            <span class="work-card__category" data-i18n="cat.interactive">Sistemi visivi interattivi</span>
+            <h3 class="work-card__title">Disallineamenti Percettivi</h3>
           </a>
 
         </div>
