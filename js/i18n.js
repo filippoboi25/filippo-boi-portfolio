@@ -22,6 +22,17 @@ const I18n = {
       }
     });
 
+    // Attributi: alt delle immagini e content dei meta
+    document.querySelectorAll('[data-i18n-alt]').forEach(el => {
+      const key = el.getAttribute('data-i18n-alt');
+      if (t[key]) el.alt = t[key];
+    });
+
+    document.querySelectorAll('[data-i18n-content]').forEach(el => {
+      const key = el.getAttribute('data-i18n-content');
+      if (t[key]) el.content = t[key];
+    });
+
     document.documentElement.lang = lang;
     this.updateToggle();
   },
