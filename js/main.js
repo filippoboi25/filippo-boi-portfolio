@@ -322,6 +322,45 @@ function watchReducedMotion(onChange) {
   });
 })();
 
+// ─── Manifesto Approccio (home) ───────────────────────────
+// Ogni blocco riceve .is-in quando la sua parola supera l'80%
+// dell'altezza dello schermo; i blocchi già sopra lo schermo
+// (ricarica a metà pagina) vengono mostrati subito.
+// Con movimento ridotto o senza IntersectionObserver: tutto
+// visibile. In fase 4 si sostituisce togliendo solo questo blocco.
+(function () {
+  const items = document.querySelectorAll('.manifesto__item');
+  if (!items.length) return;
+  let io = null;
+
+  function showAll() {
+    items.forEach((item) => item.classList.add('is-in'));
+  }
+
+  function enable() {
+    if (io) return;
+    if (!('IntersectionObserver' in window)) { showAll(); return; }
+    io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting || entry.boundingClientRect.top < 0) {
+          entry.target.closest('.manifesto__item').classList.add('is-in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '0px 0px -20% 0px' });
+    items.forEach((item) => {
+      if (!item.classList.contains('is-in')) io.observe(item.querySelector('.manifesto__word'));
+    });
+  }
+
+  function disable() {
+    if (io) { io.disconnect(); io = null; }
+    showAll();
+  }
+
+  watchReducedMotion((reduced) => (reduced ? disable() : enable()));
+})();
+
 // Hamburger menu
 (function() {
   const hamburger = document.querySelector('.nav-hamburger');
