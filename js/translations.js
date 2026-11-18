@@ -2,7 +2,6 @@ const translations = {
   it: {
     // NAV
     "nav.lavori": "Lavori",
-    "nav.servizi": "Servizi",
     "nav.profilo": "Profilo",
     "nav.contatti": "Contatti",
     "nav.lang": "EN",
@@ -27,7 +26,6 @@ const translations = {
     "home.approach.04.desc": "Ogni progetto racconta qualcosa prima ancora di comunicare. Il senso viene prima della forma.",
     "home.profile.title": "Profilo",
     "home.profile.intro": "Progetto sistemi visivi per dare forma, coerenza e direzione alla comunicazione. Il mio lavoro nasce dall'ascolto e vive di contesti: ogni cliente, ogni territorio, ogni comunità chiede un linguaggio diverso, e il mio compito è trovarlo insieme a chi ho davanti. Attraverso graphic design, installazioni e pratiche artistiche con la stessa postura — quella di chi progetta con le persone, non solo per loro. Ogni progetto è un sistema visivo, prima che un singolo output.",
-    "home.cta.services": "Scopri cosa posso fare per te",
     "home.cta.contact": "Hai un progetto in mente? Parliamo.",
 
     // CATEGORIE
@@ -223,27 +221,6 @@ const translations = {
     "santi.section.works": "03 — Le opere",
     "santi.section.details": "04 — Dettagli",
 
-    // SERVIZI
-    "services.hero.headline": "Cosa posso fare per te.",
-    "services.hero.sub": "Non un listino — un campo di possibilità. Ogni servizio è un sistema che si adatta al progetto.",
-    "services.01.title": "Identità visiva",
-    "services.01.desc": "Logo design, brand identity, sistemi visivi completi o modulari. Dal segno al sistema: costruisco identità che funzionano su ogni superficie e crescono nel tempo insieme al progetto che rappresentano.",
-    "services.02.title": "Contenuti e formati visivi",
-    "services.02.desc": "Direzione e produzione di contenuti per la comunicazione digitale: piani editoriali, campagne, formati social, visual per e-commerce. Sistemi di contenuto coerenti, non post isolati.",
-    "services.03.title": "Progettazione editoriale",
-    "services.03.desc": "Menu, impaginati, poster, oggetti editoriali. La gabbia tipografica come struttura narrativa: ogni documento è un'esperienza di lettura progettata, non un contenitore di testo.",
-    "services.04.title": "Sistemi interattivi e live visuals",
-    "services.04.desc": "Installazioni generative, ambienti audiovisivi, visual per eventi e performance dal vivo. TouchDesigner, GLSL, codice creativo: la tecnologia come materiale espressivo, non come effetto.",
-    "services.05.title": "Direzione creativa",
-    "services.05.desc": "Supervisione e coordinamento di progetti visivi complessi: dalla strategia al controllo qualità dell'output. Un punto di vista autoriale al servizio degli obiettivi del progetto.",
-    "services.phase.01.title": "Ricerca",
-    "services.phase.01.desc": "Contesto, analisi, studio. Ogni progetto parte da una domanda, non da una soluzione. Prima di disegnare qualsiasi cosa devo capire dove sono.",
-    "services.phase.02.title": "Contaminazione",
-    "services.phase.02.desc": "Ispirazione, schizzi, bozze, idee che si incrociano. La fase in cui tutto è ancora possibile — e deve esserlo.",
-    "services.phase.03.title": "Progettazione",
-    "services.phase.03.desc": "La creatività incanalata nei binari giusti. Esecuzione, condivisione, revisioni, consegna. Il rigore è ciò che rende l'idea reale.",
-    "services.cta": "Hai un progetto in mente? Parliamo.",
-
     // PROGETTI — FREQUENZA
     "frequenza.subtitle": "Le basi militari sarde restituite alla natura — un progetto narrativo speculativo",
     "frequenza.s01.headline": "Un futuro in cui la natura ha già vinto",
@@ -284,7 +261,6 @@ const translations = {
   en: {
     // NAV
     "nav.lavori": "Work",
-    "nav.servizi": "Services",
     "nav.profilo": "About",
     "nav.contatti": "Contact",
     "nav.lang": "IT",
@@ -309,7 +285,6 @@ const translations = {
     "home.approach.04.desc": "Every project tells something before it communicates. Meaning comes before form.",
     "home.profile.title": "Profile",
     "home.profile.intro": "I design visual systems to give form, coherence and direction to communication. My work is born from listening and lives on context: every client, every territory, every community asks for a different language, and my task is to find it together with the person in front of me. I move through graphic design, installations and artistic practices with the same posture — that of someone who designs with people, not just for them. Every project is a visual system before it is a single output.",
-    "home.cta.services": "Discover what I can do for you",
     "home.cta.contact": "Have a project in mind? Let's talk.",
 
     // CATEGORIE
@@ -504,27 +479,6 @@ const translations = {
     "santi.section.process": "02 — The process",
     "santi.section.works": "03 — The works",
     "santi.section.details": "04 — Details",
-
-    // SERVICES
-    "services.hero.headline": "What I can do for you.",
-    "services.hero.sub": "Not a price list — a field of possibilities. Every service is a system that adapts to the project.",
-    "services.01.title": "Visual identity",
-    "services.01.desc": "Logo design, brand identity, complete or modular visual systems. From sign to system: I build identities that work on every surface and grow over time together with the project they represent.",
-    "services.02.title": "Content & visual formats",
-    "services.02.desc": "Direction and production of content for digital communication: editorial plans, campaigns, social formats, e-commerce visuals. Coherent content systems, not isolated posts.",
-    "services.03.title": "Editorial design",
-    "services.03.desc": "Menus, layouts, posters, editorial objects. The typographic grid as narrative structure: every document is a designed reading experience, not a text container.",
-    "services.04.title": "Interactive systems & live visuals",
-    "services.04.desc": "Generative installations, audiovisual environments, visuals for events and live performance. TouchDesigner, GLSL, creative coding: technology as expressive material, not as effect.",
-    "services.05.title": "Creative direction",
-    "services.05.desc": "Supervision and coordination of complex visual projects: from strategy to output quality control. An authorial point of view serving the project's goals.",
-    "services.phase.01.title": "Research",
-    "services.phase.01.desc": "Context, analysis, study. Every project starts from a question, not a solution. Before designing anything I need to understand where I am.",
-    "services.phase.02.title": "Contamination",
-    "services.phase.02.desc": "Inspiration, sketches, drafts, ideas crossing paths. The phase where everything is still possible — and must be.",
-    "services.phase.03.title": "Design",
-    "services.phase.03.desc": "Creativity channeled into the right tracks. Execution, sharing, revisions, delivery. Rigour is what makes the idea real.",
-    "services.cta": "Have a project in mind? Let's talk.",
 
     // PROJECTS — FREQUENZA
     "frequenza.subtitle": "Sardinia's military bases reclaimed by nature — a speculative narrative project",
