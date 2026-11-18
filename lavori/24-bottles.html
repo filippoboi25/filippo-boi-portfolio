@@ -2,6 +2,7 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>24 Bottles — Filippo Boi</title>
   <meta name="description" content="Contenuti e formati visivi per 24 Bottles — piano editoriale e content design.">
@@ -23,10 +24,11 @@
         <a href="../index.html" class="nav-logo">Filippo Boi</a>
         <nav aria-label="Navigazione principale">
           <ul class="nav-links">
-            <li><a href="../lavori.html" class="is-active">Lavori</a></li>
-            <li><a href="../index.html#profilo">Profilo</a></li>
-            <li><a href="../contatti.html">Contatti</a></li>
-            <li><a href="../en/work/24-bottles.html" class="nav-lang">EN</a></li>
+            <li><a href="../lavori.html" class="is-active" data-i18n="nav.lavori">Lavori</a></li>
+            <li><a href="../servizi.html" data-i18n="nav.servizi">Servizi</a></li>
+            <li><a href="../index.html#profilo" data-i18n="nav.profilo">Profilo</a></li>
+            <li><a href="../contatti.html" data-i18n="nav.contatti">Contatti</a></li>
+            <li><button data-i18n-toggle onclick="I18n.toggle()" class="nav-lang">EN</button></li>
           </ul>
         </nav>
       </div>
@@ -39,10 +41,12 @@
   </header>
 
   <div class="nav-mobile-overlay">
-    <a href="../lavori.html">Lavori</a>
-    <a href="../index.html#profilo">Profilo</a>
-    <a href="../contatti.html">Contatti</a>
-    <a href="../en/index.html" class="nav-lang-mobile">EN</a>
+    <button class="nav-mobile-close" aria-label="Chiudi">✕</button>
+    <a href="../lavori.html" data-i18n="nav.lavori">Lavori</a>
+    <a href="../servizi.html" data-i18n="nav.servizi">Servizi</a>
+    <a href="../index.html#profilo" data-i18n="nav.profilo">Profilo</a>
+    <a href="../contatti.html" data-i18n="nav.contatti">Contatti</a>
+    <button data-i18n-toggle onclick="I18n.toggle()" class="nav-lang">EN</button>
   </div>
 
   <main>
@@ -52,20 +56,20 @@
       <div class="container">
         <span class="label reveal">Contenuti e formati visivi</span>
         <h1 class="project-hero__headline reveal">24 Bottles</h1>
-        <p class="project-hero__subtitle reveal">
+        <p class="project-hero__subtitle reveal" data-i18n="bottles24.subtitle">
           Piano editoriale e content design per un brand italiano di prodotti sostenibili
         </p>
         <div class="project-hero__meta reveal">
           <div class="project-hero__meta-item">
-            <span class="project-hero__meta-key">Cliente</span>
+            <span class="project-hero__meta-key" data-i18n="meta.client">Cliente</span>
             <span class="project-hero__meta-value">24 Bottles</span>
           </div>
           <div class="project-hero__meta-item">
-            <span class="project-hero__meta-key">Anno</span>
+            <span class="project-hero__meta-key" data-i18n="meta.year">Anno</span>
             <span class="project-hero__meta-value">2023</span>
           </div>
           <div class="project-hero__meta-item">
-            <span class="project-hero__meta-key">Servizi</span>
+            <span class="project-hero__meta-key" data-i18n="meta.services">Servizi</span>
             <span class="project-hero__meta-value">Comunicazione social · Contenuti sito web</span>
           </div>
         </div>
@@ -85,19 +89,19 @@
     <section class="section-pad">
       <div class="container">
 
-        <span class="label label--ruled reveal">01 — Il brief</span>
+        <span class="label label--ruled reveal" data-i18n="section.brief">01 — Il brief</span>
 
         <div class="split">
           <div class="reveal">
-            <h2 class="cs-section-headline">
+            <h2 class="cs-section-headline" data-i18n="bottles24.s01.headline">
               Un test progettuale diventato progetto vero.
             </h2>
           </div>
           <div class="reveal reveal--delay-1">
-            <p class="cs-body project-body-text">
+            <p class="cs-body project-body-text" data-i18n="bottles24.s01.text1">
               Questo lavoro nasce come prova di selezione per il ruolo di Graphic e Visual Designer in 24 Bottles — azienda bolognese di prodotti legati alla sostenibilità. Sono arrivato alla prova in sede come unico candidato. Il brief richiedeva due campagne distinte: una sul tema della sostenibilità, una sul lancio di ReAct, nuova linea con vernice reattiva alla temperatura del contenuto.
             </p>
-            <p class="cs-body project-body-text">
+            <p class="cs-body project-body-text" data-i18n="bottles24.s01.text2">
               Il progetto non ha generato un'assunzione — ha generato un lavoro di cui sono soddisfatto.
             </p>
           </div>
@@ -110,11 +114,11 @@
     <section class="section-pad section--ruled">
       <div class="container">
 
-        <span class="label label--ruled reveal">02 — La direzione visiva</span>
+        <span class="label label--ruled reveal" data-i18n="section.visual">02 — La direzione visiva</span>
 
         <div class="grid">
           <div class="col-8 reveal">
-            <p class="cs-quote">
+            <p class="cs-quote" data-i18n="bottles24.s02.quote">
               "La borraccia come icona pop. Prima still life alla Andy Warhol, poi supereroe di un fumetto che salva il mondo dalla catastrofe dei rifiuti."
             </p>
           </div>
@@ -126,21 +130,21 @@
   alt="24 Bottles — 01"
   class="project-img" loading="lazy"
   width="1200" height="900"></div>
-            <span class="cs-image-item__label">Naturalistico e pop — colori saturi, contrasti netti, nessuna ambiguità</span>
+            <span class="cs-image-item__label" data-i18n="bottles24.s02.label1">Naturalistico e pop — colori saturi, contrasti netti, nessuna ambiguità</span>
           </div>
           <div class="cs-image-item reveal reveal--delay-1">
             <div class="cs-image cs-image--standard"><img src="../assets/24-bottles/24-bottles-grid-02.jpg"
   alt="24 Bottles — 02"
   class="project-img" loading="lazy"
   width="1200" height="900"></div>
-            <span class="cs-image-item__label">In linea col tono di voce del brand — contemporanea, diretta, leggibile</span>
+            <span class="cs-image-item__label" data-i18n="bottles24.s02.label2">In linea col tono di voce del brand — contemporanea, diretta, leggibile</span>
           </div>
           <div class="cs-image-item reveal reveal--delay-2">
             <div class="cs-image cs-image--standard"><img src="../assets/24-bottles/24-bottles-grid-03.jpg"
   alt="24 Bottles — 03"
   class="project-img" loading="lazy"
   width="1200" height="900"></div>
-            <span class="cs-image-item__label">Pop, ironico, consapevole — la sostenibilità senza la retorica del verde</span>
+            <span class="cs-image-item__label" data-i18n="bottles24.s02.label3">Pop, ironico, consapevole — la sostenibilità senza la retorica del verde</span>
           </div>
         </div>
 
@@ -151,7 +155,7 @@
     <section class="section-pad section--ruled">
       <div class="container">
 
-        <span class="label label--ruled reveal">03 — I formati</span>
+        <span class="label label--ruled reveal" data-i18n="section.formats">03 — I formati</span>
 
         <div class="quad">
           <div class="cs-image-item reveal">
@@ -190,14 +194,14 @@
         <div class="split--60-40">
 
           <div class="reveal">
-            <span class="label" style="display: block; margin-bottom: var(--sp-8);">04 — Una campagna</span>
-            <h2 class="cs-section-headline" style="margin-bottom: var(--sp-8);">
+            <span class="label" style="display: block; margin-bottom: var(--sp-8);" data-i18n="section.campaign">04 — Una campagna</span>
+            <h2 class="cs-section-headline" style="margin-bottom: var(--sp-8);" data-i18n="bottles24.s04.headline">
               ReAct — quando il prodotto è già la comunicazione
             </h2>
-            <p class="cs-body project-body-text">
+            <p class="cs-body project-body-text" data-i18n="bottles24.s04.text1">
               ReAct è una linea di borracce con vernice reattiva alla temperatura del contenuto — il colore cambia in base a ciò che contieni. Il visual di campagna non doveva spiegare la tecnologia: doveva mostrarla.
             </p>
-            <p class="cs-body project-body-text">
+            <p class="cs-body project-body-text" data-i18n="bottles24.s04.text2">
               La sfida era rendere visibile qualcosa che esiste solo nel momento dell'uso — un prodotto che si racconta da solo se lo guardi nel momento giusto.
             </p>
           </div>
@@ -218,7 +222,7 @@
     <section class="section-pad section--ruled">
       <div class="container">
 
-        <span class="label label--ruled reveal">05 — Output</span>
+        <span class="label label--ruled reveal" data-i18n="section.output">05 — Output</span>
 
         <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--gutter); margin-top: var(--sp-8);">
           <div style="background: var(--carbon); border: 0.5px solid var(--border); aspect-ratio: 4/3;"><img src="../assets/24-bottles/24-bottles-output-01.jpg"
@@ -243,11 +247,11 @@
       <div class="container">
         <div class="project-nav__inner">
           <a href="../lavori.html" class="project-nav__item">
-            <span class="label">Precedente</span>
-            <span class="project-nav__title">Torna ai lavori</span>
+            <span class="label" data-i18n="project.prev">Precedente</span>
+            <span class="project-nav__title" data-i18n="project.back">Torna ai lavori</span>
           </a>
           <a href="riverrun.html" class="project-nav__item">
-            <span class="label">Successivo</span>
+            <span class="label" data-i18n="project.next">Successivo</span>
             <span class="project-nav__title">Riverrun</span>
           </a>
         </div>
@@ -260,7 +264,7 @@
   <footer class="footer">
     <div class="container">
       <div class="footer__inner">
-        <span class="footer__wordmark">Filippo Boi</span>
+        <span class="footer__wordmark" data-i18n="footer.wordmark">Filippo Boi</span>
         <div class="footer__links">
           <a href="https://www.instagram.com/filippoboi25/" class="footer__link">Instagram</a>
           <a href="https://www.linkedin.com/in/filippo-boi/" class="footer__link">LinkedIn</a>
@@ -271,5 +275,7 @@
   </footer>
 
   <script src="../js/main.js"></script>
+  <script src="../js/translations.js"></script>
+  <script src="../js/i18n.js"></script>
 </body>
 </html>

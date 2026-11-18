@@ -2,6 +2,7 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ginza — Filippo Boi</title>
   <meta name="description" content="Ginza — logo design e brand identity per ristorante giapponese a Cagliari.">
@@ -23,10 +24,11 @@
         <a href="../index.html" class="nav-logo">Filippo Boi</a>
         <nav aria-label="Navigazione principale">
           <ul class="nav-links">
-            <li><a href="../lavori.html" class="is-active">Lavori</a></li>
-            <li><a href="../index.html#profilo">Profilo</a></li>
-            <li><a href="../contatti.html">Contatti</a></li>
-            <li><a href="../en/work/ginza-brand.html" class="nav-lang">EN</a></li>
+            <li><a href="../lavori.html" class="is-active" data-i18n="nav.lavori">Lavori</a></li>
+            <li><a href="../servizi.html" data-i18n="nav.servizi">Servizi</a></li>
+            <li><a href="../index.html#profilo" data-i18n="nav.profilo">Profilo</a></li>
+            <li><a href="../contatti.html" data-i18n="nav.contatti">Contatti</a></li>
+            <li><button data-i18n-toggle onclick="I18n.toggle()" class="nav-lang">EN</button></li>
           </ul>
         </nav>
       </div>
@@ -39,10 +41,12 @@
   </header>
 
   <div class="nav-mobile-overlay">
-    <a href="../lavori.html">Lavori</a>
-    <a href="../index.html#profilo">Profilo</a>
-    <a href="../contatti.html">Contatti</a>
-    <a href="../en/index.html" class="nav-lang-mobile">EN</a>
+    <button class="nav-mobile-close" aria-label="Chiudi">✕</button>
+    <a href="../lavori.html" data-i18n="nav.lavori">Lavori</a>
+    <a href="../servizi.html" data-i18n="nav.servizi">Servizi</a>
+    <a href="../index.html#profilo" data-i18n="nav.profilo">Profilo</a>
+    <a href="../contatti.html" data-i18n="nav.contatti">Contatti</a>
+    <button data-i18n-toggle onclick="I18n.toggle()" class="nav-lang">EN</button>
   </div>
 
   <main>
@@ -52,28 +56,28 @@
       <div class="container">
         <span class="label reveal">Identità visiva</span>
         <h1 class="project-hero__headline reveal">Ginza</h1>
-        <p class="project-hero__subtitle reveal">
+        <p class="project-hero__subtitle reveal" data-i18n="ginza.subtitle">
           Logo design e brand identity — Ristorante giapponese
         </p>
         <div class="project-hero__meta reveal">
           <div class="project-hero__meta-item">
-            <span class="project-hero__meta-key">Cliente</span>
+            <span class="project-hero__meta-key" data-i18n="meta.client">Cliente</span>
             <span class="project-hero__meta-value">Nuxi s.r.l. per Ginza</span>
           </div>
           <div class="project-hero__meta-item">
-            <span class="project-hero__meta-key">Settore</span>
+            <span class="project-hero__meta-key" data-i18n="meta.sector">Settore</span>
             <span class="project-hero__meta-value">Food &amp; Beverage</span>
           </div>
           <div class="project-hero__meta-item">
-            <span class="project-hero__meta-key">Sede</span>
+            <span class="project-hero__meta-key" data-i18n="meta.location">Sede</span>
             <span class="project-hero__meta-value">Cagliari</span>
           </div>
           <div class="project-hero__meta-item">
-            <span class="project-hero__meta-key">Anno</span>
+            <span class="project-hero__meta-key" data-i18n="meta.year">Anno</span>
             <span class="project-hero__meta-value">2022</span>
           </div>
           <div class="project-hero__meta-item">
-            <span class="project-hero__meta-key">Servizi</span>
+            <span class="project-hero__meta-key" data-i18n="meta.services">Servizi</span>
             <span class="project-hero__meta-value">Logo design · Brand identity · Coordinati social</span>
           </div>
         </div>
@@ -93,19 +97,19 @@
     <section class="section-pad">
       <div class="container">
 
-        <span class="label label--ruled reveal">01 — Il contesto</span>
+        <span class="label label--ruled reveal" data-i18n="section.context">01 — Il contesto</span>
 
         <div class="split">
           <div class="reveal">
-            <h2 class="cs-section-headline">
+            <h2 class="cs-section-headline" data-i18n="ginza.s01.headline">
               Una nuova apertura, un'identità da zero.
             </h2>
           </div>
           <div class="reveal reveal--delay-1">
-            <p class="cs-body project-body-text">
+            <p class="cs-body project-body-text" data-i18n="ginza.s01.text1">
               Il progetto nasce per conto di Nuxi s.r.l., società di consulenza che mi ha affidato la progettazione dell'identità visiva di Ginza, nuova apertura di un ristorante giapponese a Cagliari.
             </p>
-            <p class="cs-body project-body-text">
+            <p class="cs-body project-body-text" data-i18n="ginza.s01.text2">
               L'esigenza era costruire un linguaggio visivo coerente e riconoscibile dall'inizio — dal logo alla presenza social — capace di comunicare l'identità del ristorante in modo essenziale e funzionale.
             </p>
           </div>
@@ -118,11 +122,11 @@
     <section class="section-pad section--ruled">
       <div class="container">
 
-        <span class="label label--ruled reveal">02 — Direzione</span>
+        <span class="label label--ruled reveal" data-i18n="section.direction">02 — La direzione</span>
 
         <div class="grid">
           <div class="col-8 reveal">
-            <p class="cs-quote">
+            <p class="cs-quote" data-i18n="ginza.s02.quote">
               "La pagoda non come ornamento — come struttura. Le lettere del nome diventano le colonne che reggono la copertura. Il logo è già un'architettura."
             </p>
           </div>
@@ -155,21 +159,21 @@
     <section class="section-pad section--ruled">
       <div class="container">
 
-        <span class="label label--ruled reveal">03 — Il segno</span>
+        <span class="label label--ruled reveal" data-i18n="section.sign">03 — Il segno</span>
 
         <div class="split">
 
           <div class="reveal">
-            <p class="cs-body project-body-text">
+            <p class="cs-body project-body-text" data-i18n="ginza.s03.text1">
               Il segno nasce dall'estrapolazione della forma della pagoda — icona della cultura giapponese. Il logotipo in Kenjo diventa le colonne portanti: le lettere di Ginza reggono letteralmente la copertura della pagoda, ricreando la struttura architettonica del piano originale.
             </p>
-            <p class="cs-body project-body-text">
+            <p class="cs-body project-body-text" data-i18n="ginza.s03.text2">
               Non un simbolo sovrapposto al nome — un'unica forma in cui testo e icona sono la stessa cosa.
             </p>
-            <p class="cs-body project-body-text">
+            <p class="cs-body project-body-text" data-i18n="ginza.s03.text3">
               La palette lavora su un gradiente di colori caldi — marroni profondi, rosso, giallo arancione — che richiamano il cuore cromatico della bandiera giapponese. Un gradiente deciso ma mai aggressivo, come i sapori della cucina che rappresenta. Al Kenjo viene affiancato Mukta, famiglia moderna, versatile e umanista, per le declinazioni funzionali del sistema. Il brand si estende nei coordinati social: cornici e watermark per le fotografie, caroselli testuali per la comunicazione digitale — un sistema pronto a presidiare ogni superficie con coerenza e riconoscibilità.
             </p>
-            <p class="cs-body project-body-text">
+            <p class="cs-body project-body-text" data-i18n="ginza.s03.text4">
               Il lavoro per Ginza non si è fermato all'identità. Dalla stessa radice visiva sono stati progettati tre menu distinti — alla carta, all you can eat e bento — ciascuno con una logica d'uso diversa ma perfettamente coerente con il sistema madre. Il menu come oggetto editoriale che orienta l'esperienza prima ancora del cibo.
             </p>
           </div>
@@ -225,12 +229,12 @@
       <div class="container">
         <div class="project-nav__inner">
           <a href="matthew-carbotta.html" class="project-nav__item">
-            <span class="label">Precedente</span>
+            <span class="label" data-i18n="project.prev">Precedente</span>
             <span class="project-nav__title">Matthew Carbotta</span>
           </a>
           <a href="../lavori.html" class="project-nav__item">
-            <span class="label">Successivo</span>
-            <span class="project-nav__title">Torna ai lavori</span>
+            <span class="label" data-i18n="project.next">Successivo</span>
+            <span class="project-nav__title" data-i18n="project.back">Torna ai lavori</span>
           </a>
         </div>
       </div>
@@ -242,7 +246,7 @@
   <footer class="footer">
     <div class="container">
       <div class="footer__inner">
-        <span class="footer__wordmark">Filippo Boi</span>
+        <span class="footer__wordmark" data-i18n="footer.wordmark">Filippo Boi</span>
         <div class="footer__links">
           <a href="https://www.instagram.com/filippoboi25/" class="footer__link">Instagram</a>
           <a href="https://www.linkedin.com/in/filippo-boi/" class="footer__link">LinkedIn</a>
@@ -253,5 +257,7 @@
   </footer>
 
   <script src="../js/main.js"></script>
+  <script src="../js/translations.js"></script>
+  <script src="../js/i18n.js"></script>
 </body>
 </html>

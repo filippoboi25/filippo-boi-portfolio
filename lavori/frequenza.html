@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frequenza — Filippo Boi</title>
+  <meta name="description" content="Frequenza — le basi militari sarde restituite alla natura. Progetto narrativo speculativo, Cagliari, 2026.">
+
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+</head>
+<body>
+
+  <!-- Cursor -->
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+
+  <!-- ─── Nav ─────────────────────────────────────────────── -->
+  <header class="nav" id="nav">
+    <div class="container">
+      <div class="nav__inner">
+        <a href="../index.html" class="nav-logo">Filippo Boi</a>
+        <nav aria-label="Navigazione principale">
+          <ul class="nav-links">
+            <li><a href="../lavori.html" class="is-active" data-i18n="nav.lavori">Lavori</a></li>
+            <li><a href="../servizi.html" data-i18n="nav.servizi">Servizi</a></li>
+            <li><a href="../index.html#profilo" data-i18n="nav.profilo">Profilo</a></li>
+            <li><a href="../contatti.html" data-i18n="nav.contatti">Contatti</a></li>
+            <li><button data-i18n-toggle onclick="I18n.toggle()" class="nav-lang">EN</button></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <button class="nav-hamburger" aria-label="Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+
+  <div class="nav-mobile-overlay">
+    <button class="nav-mobile-close" aria-label="Chiudi">✕</button>
+    <a href="../lavori.html" data-i18n="nav.lavori">Lavori</a>
+    <a href="../servizi.html" data-i18n="nav.servizi">Servizi</a>
+    <a href="../index.html#profilo" data-i18n="nav.profilo">Profilo</a>
+    <a href="../contatti.html" data-i18n="nav.contatti">Contatti</a>
+    <button data-i18n-toggle onclick="I18n.toggle()" class="nav-lang">EN</button>
+  </div>
+
+  <main>
+
+    <!-- ─── 1. Hero del progetto ────────────────────────────── -->
+    <section class="project-hero">
+      <div class="container">
+        <span class="label reveal">Sistemi visivi interattivi</span>
+        <h1 class="project-hero__headline reveal">Frequenza</h1>
+        <p class="project-hero__subtitle reveal" data-i18n="frequenza.subtitle">
+          Le basi militari sarde restituite alla natura — un progetto narrativo speculativo
+        </p>
+        <div class="project-hero__meta reveal">
+          <div class="project-hero__meta-item">
+            <span class="project-hero__meta-key" data-i18n="meta.year">Anno</span>
+            <span class="project-hero__meta-value">2026</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── 2. Immagine hero ─────────────────────────────────── -->
+    <div class="container">
+      <div class="cs-image cs-image--wide reveal"><img src="../assets/frequenza/frequenza-hero.jpg"
+  alt="Frequenza — installazione"
+  class="project-img"
+  loading="eager"
+  width="1920" height="1080"></div>
+    </div>
+
+    <!-- ─── 3. L'idea ───────────────────────────────────────── -->
+    <section class="section-pad">
+      <div class="container">
+
+        <span class="label label--ruled reveal" data-i18n="section.idea">01 — L'idea</span>
+
+        <div class="split">
+          <div class="reveal">
+            <h2 class="cs-section-headline" data-i18n="frequenza.s01.headline">
+              Un futuro in cui la natura ha già vinto
+            </h2>
+          </div>
+          <div class="reveal reveal--delay-1">
+            <p class="cs-body project-body-text" data-i18n="frequenza.s01.text">
+              La Sardegna ospita decine di basi ed ex aree militari — territori sottratti, recintati, dimenticati. FREQUENZA immagina un futuro prossimo in cui quelle stesse aree sono state silenziosamente riconquistate dalla vegetazione: i perimetri si sgretolano, le antenne diventano rami, i segnali lasciano spazio al respiro del suolo. Non un monito né un'utopia, ma un'ipotesi — cosa resta di un territorio quando smette di essere controllato?
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ─── 4. Il sistema ────────────────────────────────────── -->
+    <section class="section-pad section--ruled">
+      <div class="container">
+
+        <span class="label label--ruled reveal" data-i18n="section.system2">02 — Il sistema</span>
+
+        <div class="grid">
+          <div class="col-8 reveal">
+            <p class="cs-quote" data-i18n="frequenza.s02.quote">
+              "Non una mappa del territorio occupato, ma un organismo che lo racconta dall'interno — segnale e radice nello stesso respiro."
+            </p>
+          </div>
+        </div>
+
+        <div class="split" style="margin-top: var(--sp-12);">
+          <div class="reveal">
+            <p class="cs-body project-body-text" data-i18n="frequenza.s02.text">
+              Il sistema è costruito in TouchDesigner e si nutre di dati geografici reali, estratti da OpenStreetMap: i confini delle basi militari sarde diventano la struttura su cui cresce una vegetazione generativa. Pattern botanici, texture organiche e geometrie GLSL si sovrappongono ai perimetri cartografici, trasformando ogni base in un organismo che pulsa e si espande — un paesaggio che restituisce, in tempo reale, l'idea di un territorio riconquistato.
+            </p>
+          </div>
+          <div class="reveal reveal--delay-1">
+            <div class="cs-image cs-image--square"><img src="../assets/frequenza/frequenza-system.jpg"
+  alt="Frequenza — sistema"
+  class="project-img" loading="lazy"
+  width="800" height="800"></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ─── 5. Gallery ───────────────────────────────────────── -->
+    <section class="section-pad section--ruled">
+      <div class="container">
+
+        <span class="label label--ruled reveal" data-i18n="section.gallery">03 — Gallery</span>
+
+        <div class="quad">
+          <div class="cs-image-item reveal">
+            <div class="cs-image cs-image--square"><img src="../assets/frequenza/frequenza-process-01.jpg"
+  alt="Frequenza — processo 01"
+  class="project-img" loading="lazy"
+  width="800" height="800"></div>
+            <span class="cs-image-item__label" data-i18n="frequenza.s03.cap1">Ricerca e raccolta dati</span>
+          </div>
+          <div class="cs-image-item reveal reveal--delay-1">
+            <div class="cs-image cs-image--square"><img src="../assets/frequenza/frequenza-process-02.jpg"
+  alt="Frequenza — processo 02"
+  class="project-img" loading="lazy"
+  width="800" height="800"></div>
+            <span class="cs-image-item__label" data-i18n="frequenza.s03.cap2">Estrazione dati geografici da OpenStreetMap</span>
+          </div>
+          <div class="cs-image-item reveal reveal--delay-2">
+            <div class="cs-image cs-image--square"><img src="../assets/frequenza/frequenza-process-03.jpg"
+  alt="Frequenza — processo 03"
+  class="project-img" loading="lazy"
+  width="800" height="800"></div>
+            <span class="cs-image-item__label" data-i18n="frequenza.s03.cap3">Sviluppo del sistema in TouchDesigner e GLSL</span>
+          </div>
+          <div class="cs-image-item reveal reveal--delay-3">
+            <div class="cs-image cs-image--square"><img src="../assets/frequenza/frequenza-process-04.jpg"
+  alt="Frequenza — processo 04"
+  class="project-img" loading="lazy"
+  width="800" height="800"></div>
+            <span class="cs-image-item__label" data-i18n="frequenza.s03.cap4">Installazione fisica</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ─── 6. L'esperienza ──────────────────────────────────── -->
+    <section class="section-pad section--ruled">
+      <div class="container">
+
+        <span class="label label--ruled reveal" data-i18n="section.experience">04 — L'esperienza</span>
+
+        <div class="cs-image cs-image--panoramic reveal"><img src="../assets/frequenza/frequenza-wide.jpg"
+  alt="Frequenza — esperienza"
+  class="project-img" loading="lazy"
+  width="1920" height="549"></div>
+
+        <div class="split" style="margin-top: var(--sp-12);">
+          <div class="reveal">
+            <p class="cs-body project-body-text" data-i18n="frequenza.s04.left">
+              FREQUENZA prende forma in un'installazione fisica pensata per Cagliari, giugno 2026 — uno spazio in cui il sistema generativo si espande su superfici e proiezioni, restituendo al pubblico l'esperienza di un territorio che si rigenera sotto i suoi occhi.
+            </p>
+          </div>
+          <div class="reveal reveal--delay-1">
+            <p class="cs-body project-body-text" data-i18n="frequenza.s04.right">
+              Il progetto è attualmente in sviluppo. Ogni iterazione affina la relazione tra dato geografico e linguaggio visivo, avvicinando il sistema alla sua forma definitiva — un organismo digitale ancora in crescita, proprio come il paesaggio che racconta.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ─── 7. Dettagli ──────────────────────────────────────── -->
+    <section class="section-pad section--ruled">
+      <div class="container">
+
+        <span class="label label--ruled reveal" data-i18n="section.details">05 — Dettagli</span>
+
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--sp-8);">
+          <div class="cs-image cs-image--portrait reveal"><img src="../assets/frequenza/frequenza-detail-01.jpg"
+  alt="Frequenza — dettaglio 01"
+  class="project-img" loading="lazy"
+  width="800" height="1067"></div>
+          <div class="cs-image cs-image--portrait reveal reveal--delay-1"><img src="../assets/frequenza/frequenza-detail-02.jpg"
+  alt="Frequenza — dettaglio 02"
+  class="project-img" loading="lazy"
+  width="800" height="1067"></div>
+          <div class="cs-image cs-image--portrait reveal reveal--delay-2"><img src="../assets/frequenza/frequenza-detail-03.jpg"
+  alt="Frequenza — dettaglio 03"
+  class="project-img" loading="lazy"
+  width="800" height="1067"></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ─── 8. Navigazione tra progetti ─────────────────────── -->
+    <nav class="project-nav" aria-label="Navigazione tra progetti">
+      <div class="container">
+        <div class="project-nav__inner">
+          <a href="../lavori.html" class="project-nav__item">
+            <span class="label" data-i18n="project.prev">Precedente</span>
+            <span class="project-nav__title" data-i18n="project.back">Torna ai lavori</span>
+          </a>
+          <a href="disallineamenti-percettivi.html" class="project-nav__item">
+            <span class="label" data-i18n="project.next">Successivo</span>
+            <span class="project-nav__title">Disallineamenti Percettivi</span>
+          </a>
+        </div>
+      </div>
+    </nav>
+
+  </main>
+
+  <!-- ─── Footer ──────────────────────────────────────────── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <span class="footer__wordmark" data-i18n="footer.wordmark">Filippo Boi</span>
+        <div class="footer__links">
+          <a href="https://www.instagram.com/filippoboi25/" class="footer__link">Instagram</a>
+          <a href="https://www.linkedin.com/in/filippo-boi/" class="footer__link">LinkedIn</a>
+          <a href="mailto:filippoboi@yahoo.it" class="footer__email">filippoboi@yahoo.it</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/translations.js"></script>
+  <script src="../js/i18n.js"></script>
+</body>
+</html>

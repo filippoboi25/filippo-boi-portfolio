@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Suahoy — Filippo Boi</title>
+  <meta name="description" content="Contenuti e formati visivi per Suahoy — redesign e layout menu per la stampa.">
+
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+</head>
+<body>
+
+  <!-- Cursor -->
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+
+  <!-- ─── Nav ─────────────────────────────────────────────── -->
+  <header class="nav" id="nav">
+    <div class="container">
+      <div class="nav__inner">
+        <a href="../index.html" class="nav-logo">Filippo Boi</a>
+        <nav aria-label="Navigazione principale">
+          <ul class="nav-links">
+            <li><a href="../lavori.html" class="is-active" data-i18n="nav.lavori">Lavori</a></li>
+            <li><a href="../servizi.html" data-i18n="nav.servizi">Servizi</a></li>
+            <li><a href="../index.html#profilo" data-i18n="nav.profilo">Profilo</a></li>
+            <li><a href="../contatti.html" data-i18n="nav.contatti">Contatti</a></li>
+            <li><button data-i18n-toggle onclick="I18n.toggle()" class="nav-lang">EN</button></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <button class="nav-hamburger" aria-label="Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+
+  <div class="nav-mobile-overlay">
+    <button class="nav-mobile-close" aria-label="Chiudi">✕</button>
+    <a href="../lavori.html" data-i18n="nav.lavori">Lavori</a>
+    <a href="../servizi.html" data-i18n="nav.servizi">Servizi</a>
+    <a href="../index.html#profilo" data-i18n="nav.profilo">Profilo</a>
+    <a href="../contatti.html" data-i18n="nav.contatti">Contatti</a>
+    <button data-i18n-toggle onclick="I18n.toggle()" class="nav-lang">EN</button>
+  </div>
+
+  <main>
+
+    <!-- ─── 1. Hero del progetto ────────────────────────────── -->
+    <section class="project-hero">
+      <div class="container">
+        <span class="label reveal" data-i18n="cat.content">Contenuti e formati visivi</span>
+        <h1 class="project-hero__headline reveal">Suahoy</h1>
+        <p class="project-hero__subtitle reveal" data-i18n="suahoy.hero.sub">
+          Redesign e layout menu per la stampa
+        </p>
+        <div class="project-hero__meta reveal">
+          <div class="project-hero__meta-item">
+            <span class="project-hero__meta-key" data-i18n="meta.client">Cliente</span>
+            <span class="project-hero__meta-value" data-i18n="suahoy.meta.client">Suahoy</span>
+          </div>
+          <div class="project-hero__meta-item">
+            <span class="project-hero__meta-key" data-i18n="meta.sector">Settore</span>
+            <span class="project-hero__meta-value" data-i18n="suahoy.meta.sector">Food &amp; Beverage</span>
+          </div>
+          <div class="project-hero__meta-item">
+            <span class="project-hero__meta-key" data-i18n="meta.location">Sede</span>
+            <span class="project-hero__meta-value" data-i18n="suahoy.meta.location">Ginevra</span>
+          </div>
+          <div class="project-hero__meta-item">
+            <span class="project-hero__meta-key" data-i18n="meta.year">Anno</span>
+            <span class="project-hero__meta-value">2026</span>
+          </div>
+          <div class="project-hero__meta-item">
+            <span class="project-hero__meta-key" data-i18n="meta.services">Servizi</span>
+            <span class="project-hero__meta-value" data-i18n="suahoy.meta.services">Layout editoriale · Illustrazione · Impaginazione stampa</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── 2. Immagine hero ─────────────────────────────────── -->
+    <div class="container">
+      <div class="cs-image cs-image--wide reveal"><img src="../assets/suahoy/suahoy-hero.jpg"
+  alt="Suahoy — menu"
+  class="project-img"
+  loading="eager"
+  width="1672" height="941"></div>
+    </div>
+
+    <!-- ─── 3. Il brief ─────────────────────────────────────── -->
+    <section class="section-pad">
+      <div class="container">
+
+        <span class="label label--ruled reveal" data-i18n="section.brief">01 — Il brief</span>
+
+        <div class="split">
+          <div class="reveal">
+            <h2 class="cs-section-headline" data-i18n="suahoy.s01.headline">
+              Un menu che parla la lingua del ristorante
+            </h2>
+          </div>
+          <div class="reveal reveal--delay-1">
+            <p class="cs-body project-body-text" data-i18n="suahoy.s01.text">
+              Suahoy è un ristorante thai con base a Ginevra — elegante, con un'identità visiva che richiama la tradizione thailandese. Avevano bisogno di un redesign del menu: una nuova organizzazione delle informazioni, l'adattamento dei nuovi piatti e l'aggiunta di illustrazioni dedicate alla sezione dei drink. Il lavoro non era reinventare l'identità — era farla funzionare meglio.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ─── 4. La direzione visiva ──────────────────────────── -->
+    <section class="section-pad section--ruled">
+      <div class="container">
+
+        <span class="label label--ruled reveal" data-i18n="section.visual">02 — La direzione visiva</span>
+
+        <div class="grid">
+          <div class="col-8 reveal">
+            <p class="cs-quote" data-i18n="suahoy.s02.quote">
+              "Rispettare un'identità esistente è più difficile che crearne una nuova. Significa entrare nel linguaggio di qualcun altro e parlarlo come se fosse il tuo."
+            </p>
+          </div>
+        </div>
+
+        <div class="cs-image-grid" style="margin-top: var(--sp-12);">
+          <div class="cs-image-item reveal">
+            <div class="cs-image cs-image--standard"><img src="../assets/suahoy/suahoy-grid-01.jpg"
+  alt="Suahoy — continuità"
+  class="project-img" loading="lazy"
+  width="1448" height="1086"></div>
+            <span class="cs-image-item__label" data-i18n="suahoy.s02.cap1">Continuità</span>
+          </div>
+          <div class="cs-image-item reveal reveal--delay-1">
+            <div class="cs-image cs-image--standard"><img src="../assets/suahoy/suahoy-grid-02.jpg"
+  alt="Suahoy — riorganizzazione"
+  class="project-img" loading="lazy"
+  width="1254" height="1254"></div>
+            <span class="cs-image-item__label" data-i18n="suahoy.s02.cap2">Riorganizzazione</span>
+          </div>
+          <div class="cs-image-item reveal reveal--delay-2">
+            <div class="cs-image cs-image--standard"><img src="../assets/suahoy/suahoy-grid-03.jpg"
+  alt="Suahoy — illustrazione"
+  class="project-img" loading="lazy"
+  width="1448" height="1086"></div>
+            <span class="cs-image-item__label" data-i18n="suahoy.s02.cap3">Illustrazione</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ─── 5. I formati ─────────────────────────────────────── -->
+    <section class="section-pad section--ruled">
+      <div class="container">
+
+        <span class="label label--ruled reveal" data-i18n="section.formats">03 — I formati</span>
+
+        <div class="quad">
+          <div class="cs-image-item reveal">
+            <div class="cs-image cs-image--square"><img src="../assets/suahoy/suahoy-format-01.jpg"
+  alt="Suahoy — formato 01"
+  class="project-img" loading="lazy"
+  width="1254" height="1254"></div>
+          </div>
+          <div class="cs-image-item reveal reveal--delay-1">
+            <div class="cs-image cs-image--square"><img src="../assets/suahoy/suahoy-format-02.jpg"
+  alt="Suahoy — formato 02"
+  class="project-img" loading="lazy"
+  width="1254" height="1254"></div>
+          </div>
+          <div class="cs-image-item reveal reveal--delay-2">
+            <div class="cs-image cs-image--square"><img src="../assets/suahoy/suahoy-format-03.jpg"
+  alt="Suahoy — formato 03"
+  class="project-img" loading="lazy"
+  width="1254" height="1254"></div>
+          </div>
+          <div class="cs-image-item reveal reveal--delay-3">
+            <div class="cs-image cs-image--square"><img src="../assets/suahoy/suahoy-format-04.jpg"
+  alt="Suahoy — formato 04"
+  class="project-img" loading="lazy"
+  width="1254" height="1254"></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ─── 6. Il dettaglio ──────────────────────────────────── -->
+    <section class="section-pad section--ruled">
+      <div class="container">
+
+        <div class="split--60-40">
+
+          <div class="reveal">
+            <span class="label" style="display: block; margin-bottom: var(--sp-8);" data-i18n="section.detail">04 — Il dettaglio</span>
+            <h2 class="cs-section-headline" style="margin-bottom: var(--sp-8);" data-i18n="suahoy.s04.headline">
+              Due lingue, un solo sistema
+            </h2>
+            <p class="cs-body project-body-text" data-i18n="suahoy.s04.text">
+              Il risultato sono due menu in formato A3 — uno in francese, uno in inglese — pronti per la stampa. Il cliente resta autonomo nella gestione: può stampare quando vuole, dove vuole, senza dipendere da nessuno. Le illustrazioni dei drink, realizzate mantenendo lo stile del ristorante, aggiungono un livello di cura senza rompere la coerenza del sistema.
+            </p>
+          </div>
+
+          <div class="reveal reveal--delay-1">
+            <div class="cs-image cs-image--portrait"><img src="../assets/suahoy/suahoy-campaign.jpg"
+  alt="Suahoy — campagna"
+  class="project-img" loading="lazy"
+  width="1024" height="1536"></div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ─── 8. Navigazione tra progetti ─────────────────────── -->
+    <nav class="project-nav" aria-label="Navigazione tra progetti">
+      <div class="container">
+        <div class="project-nav__inner">
+          <a href="../lavori.html" class="project-nav__item">
+            <span class="label" data-i18n="project.prev">Precedente</span>
+            <span class="project-nav__title" data-i18n="project.back">Torna ai lavori</span>
+          </a>
+          <a href="../lavori.html" class="project-nav__item">
+            <span class="label" data-i18n="project.next">Successivo</span>
+            <span class="project-nav__title" data-i18n="project.back">Torna ai lavori</span>
+          </a>
+        </div>
+      </div>
+    </nav>
+
+  </main>
+
+  <!-- ─── Footer ──────────────────────────────────────────── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <span class="footer__wordmark" data-i18n="footer.wordmark">Filippo Boi</span>
+        <div class="footer__links">
+          <a href="https://www.instagram.com/filippoboi25/" class="footer__link">Instagram</a>
+          <a href="https://www.linkedin.com/in/filippo-boi/" class="footer__link">LinkedIn</a>
+          <a href="mailto:filippoboi@yahoo.it" class="footer__email">filippoboi@yahoo.it</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/translations.js"></script>
+  <script src="../js/i18n.js"></script>
+</body>
+</html>

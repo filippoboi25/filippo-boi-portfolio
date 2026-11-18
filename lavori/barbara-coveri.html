@@ -2,6 +2,7 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Barbara Coveri — Filippo Boi</title>
   <meta name="description" content="Barbara Coveri — logo design e brand identity per una biologa nutrizionista.">
@@ -23,10 +24,11 @@
         <a href="../index.html" class="nav-logo">Filippo Boi</a>
         <nav aria-label="Navigazione principale">
           <ul class="nav-links">
-            <li><a href="../lavori.html" class="is-active">Lavori</a></li>
-            <li><a href="../index.html#profilo">Profilo</a></li>
-            <li><a href="../contatti.html">Contatti</a></li>
-            <li><a href="../en/work/barbara-coveri.html" class="nav-lang">EN</a></li>
+            <li><a href="../lavori.html" class="is-active" data-i18n="nav.lavori">Lavori</a></li>
+            <li><a href="../servizi.html" data-i18n="nav.servizi">Servizi</a></li>
+            <li><a href="../index.html#profilo" data-i18n="nav.profilo">Profilo</a></li>
+            <li><a href="../contatti.html" data-i18n="nav.contatti">Contatti</a></li>
+            <li><button data-i18n-toggle onclick="I18n.toggle()" class="nav-lang">EN</button></li>
           </ul>
         </nav>
       </div>
@@ -39,10 +41,12 @@
   </header>
 
   <div class="nav-mobile-overlay">
-    <a href="../lavori.html">Lavori</a>
-    <a href="../index.html#profilo">Profilo</a>
-    <a href="../contatti.html">Contatti</a>
-    <a href="../en/index.html" class="nav-lang-mobile">EN</a>
+    <button class="nav-mobile-close" aria-label="Chiudi">✕</button>
+    <a href="../lavori.html" data-i18n="nav.lavori">Lavori</a>
+    <a href="../servizi.html" data-i18n="nav.servizi">Servizi</a>
+    <a href="../index.html#profilo" data-i18n="nav.profilo">Profilo</a>
+    <a href="../contatti.html" data-i18n="nav.contatti">Contatti</a>
+    <button data-i18n-toggle onclick="I18n.toggle()" class="nav-lang">EN</button>
   </div>
 
   <main>
@@ -52,28 +56,28 @@
       <div class="container">
         <span class="label reveal">Identità visiva</span>
         <h1 class="project-hero__headline reveal">Barbara Coveri</h1>
-        <p class="project-hero__subtitle reveal">
+        <p class="project-hero__subtitle reveal" data-i18n="barbara.subtitle">
           Logo design e brand identity — Biologa nutrizionista
         </p>
         <div class="project-hero__meta reveal">
           <div class="project-hero__meta-item">
-            <span class="project-hero__meta-key">Cliente</span>
+            <span class="project-hero__meta-key" data-i18n="meta.client">Cliente</span>
             <span class="project-hero__meta-value">Barbara Coveri</span>
           </div>
           <div class="project-hero__meta-item">
-            <span class="project-hero__meta-key">Settore</span>
-            <span class="project-hero__meta-value">Medico privato</span>
+            <span class="project-hero__meta-key" data-i18n="meta.sector">Settore</span>
+            <span class="project-hero__meta-value" data-i18n="barbara.meta.sector.value">Medico privato</span>
           </div>
           <div class="project-hero__meta-item">
-            <span class="project-hero__meta-key">Sede</span>
+            <span class="project-hero__meta-key" data-i18n="meta.location">Sede</span>
             <span class="project-hero__meta-value">Cesena</span>
           </div>
           <div class="project-hero__meta-item">
-            <span class="project-hero__meta-key">Anno</span>
+            <span class="project-hero__meta-key" data-i18n="meta.year">Anno</span>
             <span class="project-hero__meta-value">2026</span>
           </div>
           <div class="project-hero__meta-item">
-            <span class="project-hero__meta-key">Servizi</span>
+            <span class="project-hero__meta-key" data-i18n="meta.services">Servizi</span>
             <span class="project-hero__meta-value">Logo design · Brand identity</span>
           </div>
         </div>
@@ -93,19 +97,19 @@
     <section class="section-pad">
       <div class="container">
 
-        <span class="label label--ruled reveal">01 — Contesto</span>
+        <span class="label label--ruled reveal" data-i18n="section.context">01 — Il contesto</span>
 
         <div class="split">
           <div class="reveal">
-            <h2 class="cs-section-headline">
+            <h2 class="cs-section-headline" data-i18n="barbara.s01.headline">
               Un studio che apre, un'identità che accompagna.
             </h2>
           </div>
           <div class="reveal reveal--delay-1">
-            <p class="cs-body project-body-text">
+            <p class="cs-body project-body-text" data-i18n="barbara.s01.text1">
               Barbara è una biologa nutrizionista di Cesena che stava aprendo il suo studio. Non aveva ancora un'identità visiva — aveva un approccio. Il suo modo di lavorare, fatto di ascolto, relazione e accompagnamento nel tempo, era già chiaro e definito.
             </p>
-            <p class="cs-body project-body-text">
+            <p class="cs-body project-body-text" data-i18n="barbara.s01.text2">
               Il compito era tradurlo in un segno che funzionasse ovunque: sull'insegna, sul sito, sui social.
             </p>
           </div>
@@ -118,11 +122,11 @@
     <section class="section-pad section--ruled">
       <div class="container">
 
-        <span class="label label--ruled reveal">02 — Direzione</span>
+        <span class="label label--ruled reveal" data-i18n="section.direction">02 — La direzione</span>
 
         <div class="grid">
           <div class="col-8 reveal">
-            <p class="cs-quote">
+            <p class="cs-quote" data-i18n="barbara.s02.quote">
               "La nutrizione come prendersi cura di sé. Non schemi imposti — un percorso equilibrato e sostenibile nel tempo."
             </p>
           </div>
@@ -155,18 +159,18 @@
     <section class="section-pad section--ruled">
       <div class="container">
 
-        <span class="label label--ruled reveal">03 — Il segno</span>
+        <span class="label label--ruled reveal" data-i18n="section.sign">03 — Il segno</span>
 
         <div class="split">
 
           <div class="reveal">
-            <p class="cs-body project-body-text">
+            <p class="cs-body project-body-text" data-i18n="barbara.s03.text1">
               Il segno è una mela — simbolo iconico della nutrizione — ma reinterpretata attraverso il movimento. La forma nasce dal nastro di una ginnasta ritmica: una curva continua che avvolge senza stringere.
             </p>
-            <p class="cs-body project-body-text">
+            <p class="cs-body project-body-text" data-i18n="barbara.s03.text2">
               Non un simbolo di controllo o rigore, ma di equilibrio in movimento. Un segno che poteva fare solo questo lavoro, per questa cliente.
             </p>
-            <p class="cs-body project-body-text">
+            <p class="cs-body project-body-text" data-i18n="barbara.s03.text3">
               La palette lavora sui toni del verde, con accenti beige, senape e lilla — naturale senza essere banalmente organico. La tipografia affianca Crimson Text, serif classico che porta spessore culturale e autorevolezza medica, a Lexend Exa, sans-serif neutro e tecnico che garantisce leggibilità e contemporaneità. Due voci che si completano senza sovrapporsi.
             </p>
           </div>
@@ -222,11 +226,11 @@
       <div class="container">
         <div class="project-nav__inner">
           <a href="../lavori.html" class="project-nav__item">
-            <span class="label">Precedente</span>
-            <span class="project-nav__title">Torna ai lavori</span>
+            <span class="label" data-i18n="project.prev">Precedente</span>
+            <span class="project-nav__title" data-i18n="project.back">Torna ai lavori</span>
           </a>
           <a href="vo-lumi.html" class="project-nav__item">
-            <span class="label">Successivo</span>
+            <span class="label" data-i18n="project.next">Successivo</span>
             <span class="project-nav__title">Vo.Lumi</span>
           </a>
         </div>
@@ -239,7 +243,7 @@
   <footer class="footer">
     <div class="container">
       <div class="footer__inner">
-        <span class="footer__wordmark">Filippo Boi</span>
+        <span class="footer__wordmark" data-i18n="footer.wordmark">Filippo Boi</span>
         <div class="footer__links">
           <a href="https://www.instagram.com/filippoboi25/" class="footer__link">Instagram</a>
           <a href="https://www.linkedin.com/in/filippo-boi/" class="footer__link">LinkedIn</a>
@@ -250,5 +254,7 @@
   </footer>
 
   <script src="../js/main.js"></script>
+  <script src="../js/translations.js"></script>
+  <script src="../js/i18n.js"></script>
 </body>
 </html>

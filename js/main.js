@@ -1,33 +1,61 @@
+// ─── Movimento ridotto ─────────────────────────────────────
+// Chiama onChange(reduced) subito e a ogni cambio di preferenza.
+function watchReducedMotion(onChange) {
+  const query = window.matchMedia('(prefers-reduced-motion: reduce)');
+  onChange(query.matches);
+  query.addEventListener('change', (e) => onChange(e.matches));
+}
+
 (function () {
   'use strict';
 
   // ─── Cursor ───────────────────────────────────────────────
+  // Con movimento ridotto il cursore personalizzato è spento:
+  // il CSS lo nasconde e ripristina quello nativo, qui si fermano
+  // listener e loop.
   const dot  = document.querySelector('.cursor-dot');
   const ring = document.querySelector('.cursor-ring');
   let mouseX = 0, mouseY = 0;
   let ringX  = 0, ringY  = 0;
+  let cursorRaf = null;
 
-  document.addEventListener('mousemove', (e) => {
+  function onMouseMove(e) {
     mouseX = e.clientX;
     mouseY = e.clientY;
     dot.style.left = mouseX + 'px';
     dot.style.top  = mouseY + 'px';
-  });
+  }
 
   // single handler — reflects current state on every mouseover
-  document.addEventListener('mouseover', (e) => {
+  function onMouseOver(e) {
     const over = !!e.target.closest('a, button, .card');
     dot.classList.toggle('is-hovering', over);
     ring.classList.toggle('is-hovering', over);
-  });
+  }
 
-  (function tickCursor() {
+  function tickCursor() {
     ringX += (mouseX - ringX) * 0.12;
     ringY += (mouseY - ringY) * 0.12;
     ring.style.left = ringX + 'px';
     ring.style.top  = ringY + 'px';
-    requestAnimationFrame(tickCursor);
-  }());
+    cursorRaf = requestAnimationFrame(tickCursor);
+  }
+
+  function startCursor() {
+    if (!dot || !ring || cursorRaf !== null) return;
+    document.addEventListener('mousemove', onMouseMove);
+    document.addEventListener('mouseover', onMouseOver);
+    cursorRaf = requestAnimationFrame(tickCursor);
+  }
+
+  function stopCursor() {
+    document.removeEventListener('mousemove', onMouseMove);
+    document.removeEventListener('mouseover', onMouseOver);
+    if (cursorRaf !== null) cancelAnimationFrame(cursorRaf);
+    cursorRaf = null;
+  }
+
+  watchReducedMotion((reduced) => (reduced ? stopCursor() : startCursor()));
 
   // ─── Nav scrolled ─────────────────────────────────────────
   const nav = document.getElementById('nav');
@@ -37,18 +65,41 @@
   }, { passive: true });
 
   // ─── Scroll reveal ────────────────────────────────────────
-  const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('is-visible');
-        revealObserver.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.1 });
+  // Con movimento ridotto: niente observer, tutto subito visibile.
+  const revealEls = document.querySelectorAll('.reveal');
+  let revealObserver = null;
 
-  document.querySelectorAll('.reveal').forEach((el) => revealObserver.observe(el));
+  function showAllReveals() {
+    revealEls.forEach((el) => el.classList.add('is-visible'));
+  }
+
+  function enableReveal() {
+    if (revealObserver) return;
+    revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    revealEls.forEach((el) => {
+      if (!el.classList.contains('is-visible')) revealObserver.observe(el);
+    });
+  }
+
+  function disableReveal() {
+    if (revealObserver) {
+      revealObserver.disconnect();
+      revealObserver = null;
+    }
+    showAllReveals();
+  }
+
+  watchReducedMotion((reduced) => (reduced ? disableReveal() : enableReveal()));
 
   // ─── Canvas dot grid ──────────────────────────────────────
+  // Con movimento ridotto: un solo frame statico, nessun loop.
   const canvas = document.getElementById('hero-canvas');
   if (!canvas) return;
 
@@ -58,7 +109,8 @@
   const BASE_ALPHA = 0.15;
 
   let dots = [];
-  let rafId;
+  let rafId = null;
+  let reducedMotion = false;
 
   function buildGrid() {
     canvas.width  = canvas.offsetWidth;
@@ -74,7 +126,7 @@
     }
   }
 
-  function draw(t) {
+  function paint(t) {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     for (const d of dots) {
       // alpha breathes between 0.09 and 0.15
@@ -84,19 +136,41 @@
       ctx.fillStyle = `rgba(232,228,220,${alpha.toFixed(3)})`;
       ctx.fill();
     }
+  }
+
+  function draw(t) {
+    paint(t);
     rafId = requestAnimationFrame(draw);
   }
 
+  function start() {
+    if (reducedMotion) {
+      paint(0);
+    } else {
+      rafId = requestAnimationFrame(draw);
+    }
+  }
+
+  function stop() {
+    if (rafId !== null) cancelAnimationFrame(rafId);
+    rafId = null;
+  }
+
   buildGrid();
-  rafId = requestAnimationFrame(draw);
+
+  watchReducedMotion((reduced) => {
+    reducedMotion = reduced;
+    stop();
+    start();
+  });
 
   let resizeTimer;
   window.addEventListener('resize', () => {
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(() => {
-      cancelAnimationFrame(rafId);
+      stop();
       buildGrid();
-      rafId = requestAnimationFrame(draw);
+      start();
     }, 150);
   });
 
@@ -111,6 +185,8 @@
   const COUNT = 280;
   const ORANGE = '#E35A1B';
   const PAPER = '#e8e4dc';
+  let rafId = null;
+  let reducedMotion = false;
 
   function resize() {
     W = canvas.width = canvas.offsetWidth * window.devicePixelRatio;
@@ -139,7 +215,8 @@
     }
   }
 
-  function draw() {
+  // animate = false → disegna le particelle ferme (frame statico)
+  function paint(animate) {
     const w = W / window.devicePixelRatio;
     const h = H / window.devicePixelRatio;
     ctx.clearRect(0, 0, w, h);
@@ -162,31 +239,33 @@
     }
 
     particles.forEach(p => {
-      // Repulsione dal mouse
-      const mx = mouse.x;
-      const my = mouse.y;
-      const dx = p.x - mx;
-      const dy = p.y - my;
-      const dist = Math.sqrt(dx * dx + dy * dy);
-      if (dist < 100) {
-        const force = (100 - dist) / 100;
-        p.vx += (dx / dist) * force * 0.3;
-        p.vy += (dy / dist) * force * 0.3;
+      if (animate) {
+        // Repulsione dal mouse
+        const mx = mouse.x;
+        const my = mouse.y;
+        const dx = p.x - mx;
+        const dy = p.y - my;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < 100) {
+          const force = (100 - dist) / 100;
+          p.vx += (dx / dist) * force * 0.3;
+          p.vy += (dy / dist) * force * 0.3;
+        }
+
+        // Attrito
+        p.vx *= 0.98;
+        p.vy *= 0.98;
+
+        p.x += p.vx;
+        p.y += p.vy;
+        p.pulse += p.pulseSpeed;
+
+        // Rimbalzo bordi
+        if (p.x < 0 || p.x > w) p.vx *= -1;
+        if (p.y < 0 || p.y > h) p.vy *= -1;
+        p.x = Math.max(0, Math.min(w, p.x));
+        p.y = Math.max(0, Math.min(h, p.y));
       }
-
-      // Attrito
-      p.vx *= 0.98;
-      p.vy *= 0.98;
-
-      p.x += p.vx;
-      p.y += p.vy;
-      p.pulse += p.pulseSpeed;
-
-      // Rimbalzo bordi
-      if (p.x < 0 || p.x > w) p.vx *= -1;
-      if (p.y < 0 || p.y > h) p.vy *= -1;
-      p.x = Math.max(0, Math.min(w, p.x));
-      p.y = Math.max(0, Math.min(h, p.y));
 
       const alpha = p.alpha * (0.7 + 0.3 * Math.sin(p.pulse));
       ctx.beginPath();
@@ -196,8 +275,24 @@
         : `rgba(232, 228, 220, ${alpha})`;
       ctx.fill();
     });
+  }
 
-    requestAnimationFrame(draw);
+  function draw() {
+    paint(true);
+    rafId = requestAnimationFrame(draw);
+  }
+
+  function start() {
+    if (reducedMotion) {
+      paint(false);
+    } else if (rafId === null) {
+      draw();
+    }
+  }
+
+  function stop() {
+    if (rafId !== null) cancelAnimationFrame(rafId);
+    rafId = null;
   }
 
   canvas.addEventListener('mousemove', e => {
@@ -214,11 +309,17 @@
   window.addEventListener('resize', () => {
     resize();
     init();
+    if (reducedMotion) paint(false);
   });
 
   resize();
   init();
-  draw();
+
+  watchReducedMotion((reduced) => {
+    reducedMotion = reduced;
+    stop();
+    start();
+  });
 })();
 
 // Hamburger menu
@@ -241,4 +342,13 @@
       document.body.style.overflow = '';
     });
   });
+
+  const closeBtn = document.querySelector('.nav-mobile-close');
+  if (closeBtn) {
+    closeBtn.addEventListener('click', () => {
+      hamburger.classList.remove('is-open');
+      overlay.classList.remove('is-open');
+      document.body.style.overflow = '';
+    });
+  }
 })();

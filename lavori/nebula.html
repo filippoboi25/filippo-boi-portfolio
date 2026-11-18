@@ -2,6 +2,7 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nebula — Filippo Boi</title>
   <meta name="description" content="Nebula — installazione site-specific e sistema visivo generativo. Bologna, 2025.">
@@ -23,10 +24,11 @@
         <a href="../index.html" class="nav-logo">Filippo Boi</a>
         <nav aria-label="Navigazione principale">
           <ul class="nav-links">
-            <li><a href="../lavori.html" class="is-active">Lavori</a></li>
-            <li><a href="../index.html#profilo">Profilo</a></li>
-            <li><a href="../contatti.html">Contatti</a></li>
-            <li><a href="../en/work/nebula.html" class="nav-lang">EN</a></li>
+            <li><a href="../lavori.html" class="is-active" data-i18n="nav.lavori">Lavori</a></li>
+            <li><a href="../servizi.html" data-i18n="nav.servizi">Servizi</a></li>
+            <li><a href="../index.html#profilo" data-i18n="nav.profilo">Profilo</a></li>
+            <li><a href="../contatti.html" data-i18n="nav.contatti">Contatti</a></li>
+            <li><button data-i18n-toggle onclick="I18n.toggle()" class="nav-lang">EN</button></li>
           </ul>
         </nav>
       </div>
@@ -39,10 +41,12 @@
   </header>
 
   <div class="nav-mobile-overlay">
-    <a href="../lavori.html">Lavori</a>
-    <a href="../index.html#profilo">Profilo</a>
-    <a href="../contatti.html">Contatti</a>
-    <a href="../en/index.html" class="nav-lang-mobile">EN</a>
+    <button class="nav-mobile-close" aria-label="Chiudi">✕</button>
+    <a href="../lavori.html" data-i18n="nav.lavori">Lavori</a>
+    <a href="../servizi.html" data-i18n="nav.servizi">Servizi</a>
+    <a href="../index.html#profilo" data-i18n="nav.profilo">Profilo</a>
+    <a href="../contatti.html" data-i18n="nav.contatti">Contatti</a>
+    <button data-i18n-toggle onclick="I18n.toggle()" class="nav-lang">EN</button>
   </div>
 
   <main>
@@ -52,20 +56,20 @@
       <div class="container">
         <span class="label reveal">Sistemi visivi interattivi</span>
         <h1 class="project-hero__headline reveal">Nebula</h1>
-        <p class="project-hero__subtitle reveal">
+        <p class="project-hero__subtitle reveal" data-i18n="nebula.subtitle">
           Installazione site-specific — Bologna, 2025
         </p>
         <div class="project-hero__meta reveal">
           <div class="project-hero__meta-item">
-            <span class="project-hero__meta-key">Ruolo</span>
-            <span class="project-hero__meta-value">Concept collettivo · Sviluppo sistemi visivi interattivi</span>
+            <span class="project-hero__meta-key" data-i18n="meta.role">Ruolo</span>
+            <span class="project-hero__meta-value" data-i18n="nebula.meta.role.value">Concept collettivo · Sviluppo sistemi visivi interattivi</span>
           </div>
           <div class="project-hero__meta-item">
-            <span class="project-hero__meta-key">Con</span>
+            <span class="project-hero__meta-key" data-i18n="meta.with">Con</span>
             <span class="project-hero__meta-value">Elisa Cau, Paulina Herrera, Michele Mandrelli, Davide Porta, Valerie Tameu</span>
           </div>
           <div class="project-hero__meta-item">
-            <span class="project-hero__meta-key">Anno</span>
+            <span class="project-hero__meta-key" data-i18n="meta.year">Anno</span>
             <span class="project-hero__meta-value">2022</span>
           </div>
         </div>
@@ -85,19 +89,19 @@
     <section class="section-pad">
       <div class="container">
 
-        <span class="label label--ruled reveal">01 — L'idea</span>
+        <span class="label label--ruled reveal" data-i18n="section.idea">01 — L'idea</span>
 
         <div class="split">
           <div class="reveal">
-            <h2 class="cs-section-headline">
+            <h2 class="cs-section-headline" data-i18n="nebula.s01.headline">
               Corpi, spazio e macchine che comunicano attraverso dati e movimento.
             </h2>
           </div>
           <div class="reveal reveal--delay-1">
-            <p class="cs-body project-body-text">
+            <p class="cs-body project-body-text" data-i18n="nebula.s01.text1">
               Nebula nasce da una residenza artistica e si sviluppa nel tempo fino alla messa in scena a distanza di circa un anno. È un sistema installativo in cui performer danzatrici interagiscono con l'ambiente tramite sensori indossabili, attivando un sistema visivo generativo che reagisce e si trasforma in tempo reale.
             </p>
-            <p class="cs-body project-body-text">
+            <p class="cs-body project-body-text" data-i18n="nebula.s01.text2">
               Un ecosistema sensibile, in cui gesto, codice e materia visiva coincidono — dove l'umano e la macchina non si contrappongono ma coesistono.
             </p>
           </div>
@@ -110,11 +114,11 @@
     <section class="section-pad section--ruled">
       <div class="container">
 
-        <span class="label label--ruled reveal">02 — Il sistema</span>
+        <span class="label label--ruled reveal" data-i18n="section.system2">02 — Il sistema</span>
 
         <div class="grid">
           <div class="col-8 reveal">
-            <p class="cs-quote">
+            <p class="cs-quote" data-i18n="nebula.s02.quote">
               "Umano e macchina che coesistono — non in opposizione, ma in dialogo. Il sensore come lingua comune tra il corpo che danza e lo spazio che risponde."
             </p>
           </div>
@@ -122,10 +126,10 @@
 
         <div class="split" style="margin-top: var(--sp-12);">
           <div class="reveal">
-            <p class="cs-body project-body-text">
+            <p class="cs-body project-body-text" data-i18n="nebula.s02.text1">
               In una cripta allestita per l'evento, due danzatrici aprono un dialogo basato sul concept dell'opera. I sensori indossabili trasmettono i dati del movimento a una scultura di Paulina Herrera, video mappata con un solido che reagisce e si trasforma seguendo il gesto della performer.
             </p>
-            <p class="cs-body project-body-text">
+            <p class="cs-body project-body-text" data-i18n="nebula.s02.text2">
               Lo scenario si sposta in un secondo ambiente dove l'interazione avviene con un braccio robotico — una medusa meccanica ideata da Davide Porta. La performance si chiude consegnando i sensori al pubblico: chiunque può diventare parte del sistema.
             </p>
           </div>
@@ -144,7 +148,7 @@
     <section class="section-pad section--ruled">
       <div class="container">
 
-        <span class="label label--ruled reveal">03 — Gallery</span>
+        <span class="label label--ruled reveal" data-i18n="section.gallery">03 — Gallery</span>
 
         <div class="quad">
           <div class="cs-image-item reveal">
@@ -180,7 +184,7 @@
     <section class="section-pad section--ruled">
       <div class="container">
 
-        <span class="label label--ruled reveal">04 — L'esperienza</span>
+        <span class="label label--ruled reveal" data-i18n="section.experience">04 — L'esperienza</span>
 
         <div class="cs-image cs-image--panoramic reveal"><img src="../assets/nebula/nebula-wide.jpg"
   alt="Nebula — esperienza"
@@ -189,18 +193,18 @@
 
         <div class="split" style="margin-top: var(--sp-12);">
           <div class="reveal">
-            <p class="cs-body project-body-text">
+            <p class="cs-body project-body-text" data-i18n="nebula.s04.text1">
               La cripta cambia natura quando il sistema è attivo. Il movimento delle danzatrici non si limita allo spazio fisico — si propaga nella scultura, nella luce, nel suono.
             </p>
-            <p class="cs-body project-body-text">
+            <p class="cs-body project-body-text" data-i18n="nebula.s04.text2">
               Il pubblico osserva un dialogo tra corpi organici e strutture artificiali che risponde in tempo reale a ogni variazione del gesto.
             </p>
           </div>
           <div class="reveal reveal--delay-1">
-            <p class="cs-body project-body-text">
+            <p class="cs-body project-body-text" data-i18n="nebula.s04.text3">
               Alla fine della performance i sensori vengono consegnati al pubblico. Il confine tra spettatore e performer si dissolve — chiunque può attivare il sistema, modificarne il comportamento, diventare parte dell'ecosistema.
             </p>
-            <p class="cs-body project-body-text">
+            <p class="cs-body project-body-text" data-i18n="nebula.s04.text4">
               Non una conclusione, ma un'apertura.
             </p>
           </div>
@@ -213,7 +217,7 @@
     <section class="section-pad section--ruled">
       <div class="container">
 
-        <span class="label label--ruled reveal">05 — Dettagli</span>
+        <span class="label label--ruled reveal" data-i18n="section.details">05 — Dettagli</span>
 
         <div class="cs-image-grid">
           <div class="cs-image cs-image--portrait reveal"><img src="../assets/nebula/nebula-detail-01.jpg"
@@ -238,11 +242,11 @@
       <div class="container">
         <div class="project-nav__inner">
           <a href="disallineamenti-percettivi.html" class="project-nav__item">
-            <span class="label">Precedente</span>
+            <span class="label" data-i18n="project.prev">Precedente</span>
             <span class="project-nav__title">Disallineamenti Percettivi</span>
           </a>
           <a href="poster-generator.html" class="project-nav__item">
-            <span class="label">Successivo</span>
+            <span class="label" data-i18n="project.next">Successivo</span>
             <span class="project-nav__title">Poster Generator</span>
           </a>
         </div>
@@ -255,7 +259,7 @@
   <footer class="footer">
     <div class="container">
       <div class="footer__inner">
-        <span class="footer__wordmark">Filippo Boi</span>
+        <span class="footer__wordmark" data-i18n="footer.wordmark">Filippo Boi</span>
         <div class="footer__links">
           <a href="https://www.instagram.com/filippoboi25/" class="footer__link">Instagram</a>
           <a href="https://www.linkedin.com/in/filippo-boi/" class="footer__link">LinkedIn</a>
@@ -266,5 +270,7 @@
   </footer>
 
   <script src="../js/main.js"></script>
+  <script src="../js/translations.js"></script>
+  <script src="../js/i18n.js"></script>
 </body>
 </html>

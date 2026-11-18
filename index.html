@@ -2,6 +2,7 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Filippo Boi</title>
   <meta name="description" content="Filippo Boi — designer e sviluppatore.">
@@ -23,10 +24,11 @@
         <a href="/" class="nav-logo">Filippo Boi</a>
         <nav aria-label="Navigazione principale">
           <ul class="nav-links">
-            <li><a href="lavori.html">Lavori</a></li>
-            <li><a href="#profilo">Profilo</a></li>
-            <li><a href="contatti.html">Contatti</a></li>
-            <li><a href="en/index.html" class="nav-lang">EN</a></li>
+            <li><a href="lavori.html" data-i18n="nav.lavori">Lavori</a></li>
+            <li><a href="servizi.html" data-i18n="nav.servizi">Servizi</a></li>
+            <li><a href="#profilo" data-i18n="nav.profilo">Profilo</a></li>
+            <li><a href="contatti.html" data-i18n="nav.contatti">Contatti</a></li>
+            <li><button data-i18n-toggle onclick="I18n.toggle()" class="nav-lang">EN</button></li>
           </ul>
         </nav>
       </div>
@@ -39,10 +41,12 @@
   </header>
 
   <div class="nav-mobile-overlay">
-    <a href="/lavori.html">Lavori</a>
-    <a href="/index.html#profilo">Profilo</a>
-    <a href="/contatti.html">Contatti</a>
-    <a href="/en/index.html" class="nav-lang-mobile">EN</a>
+    <button class="nav-mobile-close" aria-label="Chiudi">✕</button>
+    <a href="/lavori.html" data-i18n="nav.lavori">Lavori</a>
+    <a href="/servizi.html" data-i18n="nav.servizi">Servizi</a>
+    <a href="/index.html#profilo" data-i18n="nav.profilo">Profilo</a>
+    <a href="/contatti.html" data-i18n="nav.contatti">Contatti</a>
+    <button data-i18n-toggle onclick="I18n.toggle()" class="nav-lang">EN</button>
   </div>
 
   <main>
@@ -56,15 +60,15 @@
           <div class="hero__media">
             <canvas id="particle-canvas" class="hero__media-canvas"></canvas>
           </div>
-          <h1 class="hero__headline reveal">
+          <h1 class="hero__headline reveal" data-i18n="home.hero.headline">
             Ragiono per immagini, progetto strutture visive.
           </h1>
-          <p class="hero__tagline reveal reveal--delay-1">
+          <p class="hero__tagline reveal reveal--delay-1" data-i18n="home.hero.tagline">
             Filippo Boi — Media Designer
           </p>
           <div class="hero__meta reveal reveal--delay-2">
             <span class="accent-line"></span>
-            <span class="label">BOLOGNA | CAGLIARI</span>
+            <span class="label" data-i18n="home.hero.meta">BOLOGNA | CAGLIARI</span>
           </div>
         </div>
       </div>
@@ -75,46 +79,46 @@
       <div class="container">
 
         <div class="section-header reveal">
-          <h2 class="section-header__title">Progetti selezionati</h2>
-          <a href="lavori.html" class="section-header__link">Tutti i lavori</a>
+          <h2 class="section-header__title" data-i18n="home.projects.title">Progetti selezionati</h2>
+          <a href="lavori.html" class="section-header__link" data-i18n="home.projects.cta">Tutti i lavori</a>
         </div>
 
         <div class="cards-grid">
 
-          <a href="lavori/barbara-coveri.html" class="card card--tall reveal">
-            <div class="card__thumb"><img src="assets/barbara-coveri/barbara-coveri-hero.jpg"
-  alt="Barbara Coveri — identità visiva"
+          <a href="lavori/suahoy.html" class="card card--tall reveal">
+            <div class="card__thumb"><img src="assets/suahoy/suahoy-hero.jpg"
+  alt="Suahoy"
   class="project-img" loading="lazy"
-  width="1920" height="1080"></div>
-            <span class="card__category">Identità visiva</span>
-            <h3 class="card__title">Barbara Coveri</h3>
+  width="1672" height="941"></div>
+            <span class="card__category" data-i18n="cat.content">Contenuti e formati visivi</span>
+            <h3 class="card__title">Suahoy</h3>
           </a>
 
-          <a href="lavori/24-bottles.html" class="card reveal reveal--delay-1">
-            <div class="card__thumb"><img src="assets/24-bottles/24-bottles-hero.jpg"
-  alt="24 Bottles"
+          <a href="lavori/frequenza.html" class="card reveal reveal--delay-1">
+            <div class="card__thumb"><img src="assets/frequenza/frequenza-hero.jpg"
+  alt="FREQUENZA"
   class="project-img" loading="lazy"
   width="1920" height="1080"></div>
-            <span class="card__category">Contenuti e formati visivi</span>
-            <h3 class="card__title">24 Bottles</h3>
+            <span class="card__category" data-i18n="cat.interactive">Sistemi visivi interattivi</span>
+            <h3 class="card__title">Frequenza</h3>
           </a>
 
-          <a href="lavori/nebula.html" class="card reveal reveal--delay-2">
-            <div class="card__thumb"><img src="assets/nebula/nebula-hero.jpg"
-  alt="Nebula"
-  class="project-img" loading="lazy"
-  width="1920" height="1080"></div>
-            <span class="card__category">Sistemi visivi interattivi</span>
-            <h3 class="card__title">Nebula</h3>
-          </a>
-
-          <a href="lavori/disallineamenti-percettivi.html" class="card reveal reveal--delay-3">
+          <a href="lavori/disallineamenti-percettivi.html" class="card reveal reveal--delay-2">
             <div class="card__thumb"><img src="assets/disallineamenti-percettivi/disallineamenti-percettivi-hero.jpg"
-    alt="Disallineamenti Percettivi"
-    class="project-img" loading="lazy"
-    width="1920" height="1080"></div>
-            <span class="card__category">Sistemi visivi interattivi</span>
+  alt="Disallineamenti Percettivi"
+  class="project-img" loading="lazy"
+  width="1920" height="1080"></div>
+            <span class="card__category" data-i18n="cat.interactive">Sistemi visivi interattivi</span>
             <h3 class="card__title">Disallineamenti Percettivi</h3>
+          </a>
+
+          <a href="lavori/barbara-coveri.html" class="card reveal reveal--delay-3">
+            <div class="card__thumb"><img src="assets/barbara-coveri/barbara-coveri-hero.jpg"
+  alt="Barbara Coveri"
+  class="project-img" loading="lazy"
+  width="1920" height="1080"></div>
+            <span class="card__category" data-i18n="cat.identity">Identità visiva</span>
+            <h3 class="card__title">Barbara Coveri</h3>
           </a>
 
         </div>
@@ -126,39 +130,39 @@
       <div class="container">
 
         <div class="section-header reveal">
-          <h2 class="section-header__title">Approccio</h2>
+          <h2 class="section-header__title" data-i18n="home.approach.title">Approccio</h2>
         </div>
 
         <div class="quad">
 
           <div class="approach-item reveal">
-            <span class="approach-item__number">01</span>
-            <span class="approach-item__category">Sistemico</span>
-            <p class="approach-item__desc">
+            <span class="approach-item__number" aria-hidden="true">01</span>
+            <span class="approach-item__category" data-i18n="home.approach.01.cat">Sistemico</span>
+            <p class="approach-item__desc" data-i18n="home.approach.01.desc">
               Ogni progetto è un sistema prima che un singolo output. Costruisco linguaggi visivi coerenti, non soluzioni isolate.
             </p>
           </div>
 
           <div class="approach-item reveal reveal--delay-1">
-            <span class="approach-item__number">02</span>
-            <span class="approach-item__category">Relazionale</span>
-            <p class="approach-item__desc">
+            <span class="approach-item__number" aria-hidden="true">02</span>
+            <span class="approach-item__category" data-i18n="home.approach.02.cat">Relazionale</span>
+            <p class="approach-item__desc" data-i18n="home.approach.02.desc">
               Il design nasce dal contatto con le persone. Ascolto, osservo e traduco in forma ciò che emerge dalla relazione.
             </p>
           </div>
 
           <div class="approach-item reveal reveal--delay-2">
-            <span class="approach-item__number">03</span>
-            <span class="approach-item__category">Sperimentale</span>
-            <p class="approach-item__desc">
-              La ricerca precede e informa l'esecuzione. Il processo non è un mezzo, è parte del risultato.
+            <span class="approach-item__number" aria-hidden="true">03</span>
+            <span class="approach-item__category" data-i18n="home.approach.03.cat">Sperimentale</span>
+            <p class="approach-item__desc" data-i18n="home.approach.03.desc">
+              La ricerca precede e informa l'esecuzione. Il processo non è un mezzo — è parte del risultato.
             </p>
           </div>
 
           <div class="approach-item reveal reveal--delay-3">
-            <span class="approach-item__number">04</span>
-            <span class="approach-item__category">Narrativo</span>
-            <p class="approach-item__desc">
+            <span class="approach-item__number" aria-hidden="true">04</span>
+            <span class="approach-item__category" data-i18n="home.approach.04.cat">Narrativo</span>
+            <p class="approach-item__desc" data-i18n="home.approach.04.desc">
               Ogni progetto racconta qualcosa prima ancora di comunicare. Il senso viene prima della forma.
             </p>
           </div>
@@ -167,12 +171,19 @@
       </div>
     </section>
 
+    <div class="container" style="padding-bottom: var(--sp-16);">
+      <a href="servizi.html" class="link-arrow link-arrow--button reveal"
+        data-i18n="home.cta.services">
+        Scopri cosa posso fare per te
+      </a>
+    </div>
+
     <!-- ─── Profilo ──────────────────────────────────────────── -->
     <section class="section-pad" id="profilo">
       <div class="container">
 
         <div class="section-header reveal">
-          <h2 class="section-header__title">Profilo</h2>
+          <h2 class="section-header__title" data-i18n="home.profile.title">Profilo</h2>
         </div>
 
         <div class="split--40-60">
@@ -184,12 +195,24 @@
   width="800" height="1067">
 
           <div class="profile__text reveal reveal--delay-1">
-<p class="profile__bio">
-              Progetto sistemi visivi per dare forma, coerenza e direzione alla comunicazione. Il mio interesse per il visivo attraversa graphic design, pittura, installazioni e fotografia. Questa contaminazione influenza il mio approccio alla progettazione, sia concettuale che formale.</br><br> Laureato allo IED di Cagliari in Media Design ho lavorato come freelance e in agenzia di comunicazione. A Bologna ho co-fondato e co-gestito Studio Settebello, uno spazio di co-creazione nel quale abbiamo realizzato diverse iniziative spaziando tra diversi medium artistici.
+            <p class="profile__bio" data-i18n="home.profile.intro">
+              Progetto sistemi visivi per dare forma, coerenza e direzione alla comunicazione. Il mio lavoro nasce dall'ascolto e vive di contesti: ogni cliente, ogni territorio, ogni comunità chiede un linguaggio diverso, e il mio compito è trovarlo insieme a chi ho davanti. Attraverso graphic design, installazioni e pratiche artistiche con la stessa postura — quella di chi progetta con le persone, non solo per loro. Ogni progetto è un sistema visivo, prima che un singolo output.
             </p>
           </div>
 
         </div>
+      </div>
+    </section>
+
+    <section class="section-pad section--ruled">
+      <div class="container">
+        <a href="contatti.html" class="home-cta-contact reveal">
+          <span class="home-cta-contact__text"
+            data-i18n="home.cta.contact">
+            Hai un progetto in mente? Parliamo.
+          </span>
+          <span class="home-cta-contact__arrow">→</span>
+        </a>
       </div>
     </section>
 
@@ -199,7 +222,7 @@
   <footer class="footer">
     <div class="container">
       <div class="footer__inner">
-        <span class="footer__wordmark">Filippo Boi</span>
+        <span class="footer__wordmark" data-i18n="footer.wordmark">Filippo Boi</span>
         <div class="footer__links">
           <a href="https://www.instagram.com/filippoboi25/" class="footer__link">Instagram</a>
           <a href="https://www.linkedin.com/in/filippo-boi/" class="footer__link">LinkedIn</a>
@@ -210,5 +233,7 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script src="js/translations.js"></script>
+  <script src="js/i18n.js"></script>
 </body>
 </html>

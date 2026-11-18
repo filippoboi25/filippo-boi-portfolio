@@ -2,6 +2,7 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contatti — Filippo Boi</title>
   <meta name="description" content="Contatti — Filippo Boi, designer e sviluppatore.">
@@ -23,10 +24,11 @@
         <a href="index.html" class="nav-logo">Filippo Boi</a>
         <nav aria-label="Navigazione principale">
           <ul class="nav-links">
-            <li><a href="lavori.html">Lavori</a></li>
-            <li><a href="index.html#profilo">Profilo</a></li>
-            <li><a href="contatti.html" class="is-active">Contatti</a></li>
-            <li><a href="en/contact.html" class="nav-lang">EN</a></li>
+            <li><a href="lavori.html" data-i18n="nav.lavori">Lavori</a></li>
+            <li><a href="servizi.html" data-i18n="nav.servizi">Servizi</a></li>
+            <li><a href="index.html#profilo" data-i18n="nav.profilo">Profilo</a></li>
+            <li><a href="contatti.html" class="is-active" data-i18n="nav.contatti">Contatti</a></li>
+            <li><button data-i18n-toggle onclick="I18n.toggle()" class="nav-lang">EN</button></li>
           </ul>
         </nav>
       </div>
@@ -39,10 +41,12 @@
   </header>
 
   <div class="nav-mobile-overlay">
-    <a href="/lavori.html">Lavori</a>
-    <a href="/index.html#profilo">Profilo</a>
-    <a href="/contatti.html">Contatti</a>
-    <a href="/en/index.html" class="nav-lang-mobile">EN</a>
+    <button class="nav-mobile-close" aria-label="Chiudi">✕</button>
+    <a href="/lavori.html" data-i18n="nav.lavori">Lavori</a>
+    <a href="/servizi.html" data-i18n="nav.servizi">Servizi</a>
+    <a href="/index.html#profilo" data-i18n="nav.profilo">Profilo</a>
+    <a href="/contatti.html" data-i18n="nav.contatti">Contatti</a>
+    <button data-i18n-toggle onclick="I18n.toggle()" class="nav-lang">EN</button>
   </div>
 
   <main>
@@ -51,7 +55,7 @@
     <section class="hero" id="hero" style="min-height: 60svh;">
       <div class="container">
         <div class="hero__content">
-          <h1 class="hero__headline reveal">
+          <h1 class="hero__headline reveal" data-i18n="contact.headline">
             Parliamo.
           </h1>
         </div>
@@ -81,7 +85,7 @@
   <footer class="footer">
     <div class="container">
       <div class="footer__inner">
-        <span class="footer__wordmark">Filippo Boi</span>
+        <span class="footer__wordmark" data-i18n="footer.wordmark">Filippo Boi</span>
         <div class="footer__links">
           <a href="https://www.instagram.com/filippoboi25/" class="footer__link">Instagram</a>
           <a href="https://www.linkedin.com/in/filippo-boi/" class="footer__link">LinkedIn</a>
@@ -92,5 +96,7 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script src="js/translations.js"></script>
+  <script src="js/i18n.js"></script>
 </body>
 </html>

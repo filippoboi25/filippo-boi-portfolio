@@ -2,6 +2,7 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>I Santi — Filippo Boi</title>
   <meta name="description" content="I Santi — serie di ritratti in tecnica mista. Acquerello, spray, foglia oro. 2020–2026.">
@@ -23,9 +24,11 @@
         <a href="../index.html" class="nav-logo">Filippo Boi</a>
         <nav aria-label="Navigazione principale">
           <ul class="nav-links">
-            <li><a href="../lavori.html" class="is-active">Lavori</a></li>
-            <li><a href="../index.html#profilo">Profilo</a></li>
-            <li><a href="../contatti.html">Contatti</a></li>
+            <li><a href="../lavori.html" class="is-active" data-i18n="nav.lavori">Lavori</a></li>
+            <li><a href="../servizi.html" data-i18n="nav.servizi">Servizi</a></li>
+            <li><a href="../index.html#profilo" data-i18n="nav.profilo">Profilo</a></li>
+            <li><a href="../contatti.html" data-i18n="nav.contatti">Contatti</a></li>
+            <li><button data-i18n-toggle onclick="I18n.toggle()" class="nav-lang">EN</button></li>
           </ul>
         </nav>
       </div>
@@ -39,16 +42,16 @@
       <div class="container">
         <span class="label reveal">Arti visive · Pittura</span>
         <h1 class="project-hero__headline reveal">I Santi</h1>
-        <p class="project-hero__subtitle reveal">
+        <p class="project-hero__subtitle reveal" data-i18n="santi.hero.sub">
           Una serie in divenire — ritratti che cercano la santità che ognuno porta con sé.
         </p>
         <div class="project-hero__meta reveal" style="grid-template-columns: repeat(2, auto);">
           <div class="project-hero__meta-item">
-            <span class="project-hero__meta-key">Tecnica</span>
-            <span class="project-hero__meta-value">Acquerello · Spray · Foglia oro</span>
+            <span class="project-hero__meta-key" data-i18n="santi.meta.technique">Tecnica</span>
+            <span class="project-hero__meta-value" data-i18n="santi.meta.technique.value">Acquerello · Spray · Foglia oro</span>
           </div>
           <div class="project-hero__meta-item">
-            <span class="project-hero__meta-key">Anno</span>
+            <span class="project-hero__meta-key" data-i18n="meta.year">Anno</span>
             <span class="project-hero__meta-value">2020 — 2026</span>
           </div>
         </div>
@@ -68,11 +71,11 @@
     <section class="section-pad">
       <div class="container">
 
-        <span class="label label--ruled reveal">01 — La serie</span>
+        <span class="label label--ruled reveal" data-i18n="santi.section.series">01 — La serie</span>
 
         <div class="grid">
           <div class="col-8 reveal">
-            <p class="cs-quote">
+            <p class="cs-quote" data-i18n="santi.s01.quote">
               "Per dato di fatto, per nascita, siamo tutte e tutti persone sante. Non sempre è facile far emergere la nostra santità."
             </p>
           </div>
@@ -80,13 +83,13 @@
 
         <div class="grid" style="margin-top: var(--sp-10);">
           <div class="col-8 reveal">
-            <p class="cs-body project-body-text">
+            <p class="cs-body project-body-text" data-i18n="santi.s01.text1">
               I Santi nasce da una lunga ricerca portata avanti con gli autoritratti. La santità è una condizione che può raggiungere qualsiasi persona — ne abbiamo esempi di ogni tipo, perché nella loro vita hanno rispettato determinati comandamenti. Ma nel processo di canonizzazione tendiamo a eliminare la dimensione terrena del santo: la fragilità, l'errore, l'umanità.
             </p>
-            <p class="cs-body project-body-text">
+            <p class="cs-body project-body-text" data-i18n="santi.s01.text2">
               Questo lavoro capovolge quel processo. La santità non è un traguardo da raggiungere — è una condizione originaria. Non sempre è facile farla emergere. Questa propensione non può fuoriuscire da sola: può accadere solo grazie alla relazione, all'incontro, a uno sguardo che diventa tale solo nel momento in cui guarda un'altra persona. Volti rivolti ad altri volti. Occhi ri-volti verso le altre persone.
             </p>
-            <p class="cs-body project-body-text">
+            <p class="cs-body project-body-text" data-i18n="santi.s01.text3">
               Ho raffigurato persone che assumono questo significato? Probabilmente no. Ma è una ricerca ossessiva e continua per immortalare la santità che ognuno ha. Tecnica simile, sguardi diversi. Il risultato è tutto un divenire.
             </p>
           </div>
@@ -99,36 +102,36 @@
     <section class="section-pad section--ruled">
       <div class="container">
 
-        <span class="label label--ruled reveal">02 — Il processo</span>
+        <span class="label label--ruled reveal" data-i18n="santi.section.process">02 — Il processo</span>
 
         <div class="split">
           <div class="reveal">
-            <p class="cs-body project-body-text">
+            <p class="cs-body project-body-text" data-i18n="santi.s02.text1">
               Il lavoro parte dal disegno — il volto costruito secondo le proporzioni del foglio e della composizione, poi reso il più vicino possibile all'iconografia tradizionale.
             </p>
-            <p class="cs-body project-body-text">
+            <p class="cs-body project-body-text" data-i18n="santi.s02.text2">
               Viene poi la mascheratura e lo sfondo realizzato con gli spray. Si applica il fissante per la foglia oro, e una volta asciutto la foglia prende il suo posto. L'acquerello arriva per ultimo: dalle ombre alle velature, dalla pelle ai capelli. Per la carnagione si parte dal giallo — layer su layer fino al punto corretto, poi l'arancione, poi le diverse tonalità di viola per i capelli.
             </p>
-            <p class="cs-body project-body-text">
+            <p class="cs-body project-body-text" data-i18n="santi.s02.text3">
               Un processo stratificato in cui ogni fase determina la successiva, e alcune cose sfuggono al controllo.
             </p>
           </div>
           <div class="cs-image-grid cs-image-grid--2x2 reveal reveal--delay-1">
             <div class="cs-image-item">
               <div class="cs-image cs-image--square"></div>
-              <span class="cs-image-item__label">Disegno e composizione</span>
+              <span class="cs-image-item__label" data-i18n="santi.s02.step01">Disegno e composizione</span>
             </div>
             <div class="cs-image-item">
               <div class="cs-image cs-image--square"></div>
-              <span class="cs-image-item__label">Mascheratura e spray</span>
+              <span class="cs-image-item__label" data-i18n="santi.s02.step02">Mascheratura e spray</span>
             </div>
             <div class="cs-image-item">
               <div class="cs-image cs-image--square"></div>
-              <span class="cs-image-item__label">Foglia oro</span>
+              <span class="cs-image-item__label" data-i18n="santi.s02.step03">Foglia oro</span>
             </div>
             <div class="cs-image-item">
               <div class="cs-image cs-image--square"></div>
-              <span class="cs-image-item__label">Acquerello — velature finali</span>
+              <span class="cs-image-item__label" data-i18n="santi.s02.step04">Acquerello — velature finali</span>
             </div>
           </div>
         </div>
@@ -140,7 +143,7 @@
     <section class="section-pad section--ruled">
       <div class="container">
 
-        <span class="label label--ruled reveal">03 — Le opere</span>
+        <span class="label label--ruled reveal" data-i18n="santi.section.works">03 — Le opere</span>
 
         <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--sp-8);">
           <div class="cs-image cs-image--portrait reveal"></div>
@@ -158,7 +161,7 @@
     <section class="section-pad section--ruled">
       <div class="container">
 
-        <span class="label label--ruled reveal">04 — Dettagli</span>
+        <span class="label label--ruled reveal" data-i18n="santi.section.details">04 — Dettagli</span>
 
         <div class="split" style="margin-bottom: var(--sp-6);">
           <div class="cs-image cs-image--square reveal"></div>
@@ -167,7 +170,7 @@
 
         <div class="cs-image cs-image--panoramic reveal"></div>
 
-        <p class="cs-body project-body-text" style="margin-top: var(--sp-8);">
+        <p class="cs-body project-body-text" style="margin-top: var(--sp-8);" data-i18n="santi.s04.text">
           Gli occhi sono l'anima di ogni dipinto.
         </p>
 
@@ -179,12 +182,12 @@
       <div class="container">
         <div class="project-nav__inner">
           <a href="../lavori.html" class="project-nav__item">
-            <span class="label">Precedente</span>
-            <span class="project-nav__title">Torna ai lavori</span>
+            <span class="label" data-i18n="project.prev">Precedente</span>
+            <span class="project-nav__title" data-i18n="project.back">Torna ai lavori</span>
           </a>
           <a href="../lavori.html" class="project-nav__item">
-            <span class="label">Successivo</span>
-            <span class="project-nav__title">Torna ai lavori</span>
+            <span class="label" data-i18n="project.next">Successivo</span>
+            <span class="project-nav__title" data-i18n="project.back">Torna ai lavori</span>
           </a>
         </div>
       </div>
@@ -196,7 +199,7 @@
   <footer class="footer">
     <div class="container">
       <div class="footer__inner">
-        <span class="footer__wordmark">Filippo Boi</span>
+        <span class="footer__wordmark" data-i18n="footer.wordmark">Filippo Boi</span>
         <div class="footer__links">
           <a href="https://www.instagram.com/filippoboi25/" class="footer__link">Instagram</a>
           <a href="https://www.linkedin.com/in/filippo-boi/" class="footer__link">LinkedIn</a>
@@ -207,5 +210,7 @@
   </footer>
 
   <script src="../js/main.js"></script>
+  <script src="../js/translations.js"></script>
+  <script src="../js/i18n.js"></script>
 </body>
 </html>

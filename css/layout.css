@@ -40,6 +40,15 @@ button {
   color: inherit;
 }
 
+/* ─── Focus da tastiera ───────────────────────────────────── */
+/* Link, pulsanti, hamburger e voci del menu mobile. #E8E4DC = --paper */
+a:focus-visible,
+button:focus-visible,
+[tabindex]:not([tabindex="-1"]):focus-visible {
+  outline: 1px solid #E8E4DC;
+  outline-offset: 4px;
+}
+
 /* ─── Container ───────────────────────────────────────────── */
 .container {
   width: 100%;
@@ -186,6 +195,37 @@ section {
 .reveal--delay-2 { transition-delay: 160ms; }
 .reveal--delay-3 { transition-delay: 240ms; }
 .reveal--delay-4 { transition-delay: 320ms; }
+
+/* ─── Movimento ridotto ───────────────────────────────────── */
+/* Nessuna animazione/transizione, contenuti con rivelazione subito
+   visibili e senza transform, cursore personalizzato nascosto e
+   cursore nativo ripristinato (revert → valori del browser). */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .reveal,
+  .reveal.is-visible {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .cursor-dot,
+  .cursor-ring {
+    display: none !important;
+  }
+
+  body,
+  body * {
+    cursor: revert !important;
+  }
+}
 
 /* ─── Responsive ──────────────────────────────────────────── */
 @media (max-width: 1024px) {

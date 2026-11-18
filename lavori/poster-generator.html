@@ -2,6 +2,7 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Poster Generator — Filippo Boi</title>
   <meta name="description" content="Poster Generator — installazione interattiva per poster politici speculativi. DAS Bologna · LMNL Space Roma, 2024–2025.">
@@ -23,10 +24,11 @@
         <a href="../index.html" class="nav-logo">Filippo Boi</a>
         <nav aria-label="Navigazione principale">
           <ul class="nav-links">
-            <li><a href="../lavori.html" class="is-active">Lavori</a></li>
-            <li><a href="../index.html#profilo">Profilo</a></li>
-            <li><a href="../contatti.html">Contatti</a></li>
-            <li><a href="../en/work/poster-generator.html" class="nav-lang">EN</a></li>
+            <li><a href="../lavori.html" class="is-active" data-i18n="nav.lavori">Lavori</a></li>
+            <li><a href="../servizi.html" data-i18n="nav.servizi">Servizi</a></li>
+            <li><a href="../index.html#profilo" data-i18n="nav.profilo">Profilo</a></li>
+            <li><a href="../contatti.html" data-i18n="nav.contatti">Contatti</a></li>
+            <li><button data-i18n-toggle onclick="I18n.toggle()" class="nav-lang">EN</button></li>
           </ul>
         </nav>
       </div>
@@ -39,10 +41,12 @@
   </header>
 
   <div class="nav-mobile-overlay">
-    <a href="../lavori.html">Lavori</a>
-    <a href="../index.html#profilo">Profilo</a>
-    <a href="../contatti.html">Contatti</a>
-    <a href="../en/index.html" class="nav-lang-mobile">EN</a>
+    <button class="nav-mobile-close" aria-label="Chiudi">✕</button>
+    <a href="../lavori.html" data-i18n="nav.lavori">Lavori</a>
+    <a href="../servizi.html" data-i18n="nav.servizi">Servizi</a>
+    <a href="../index.html#profilo" data-i18n="nav.profilo">Profilo</a>
+    <a href="../contatti.html" data-i18n="nav.contatti">Contatti</a>
+    <button data-i18n-toggle onclick="I18n.toggle()" class="nav-lang">EN</button>
   </div>
 
   <main>
@@ -52,20 +56,20 @@
       <div class="container">
         <span class="label reveal">Sistemi visivi interattivi</span>
         <h1 class="project-hero__headline reveal">Poster Generator</h1>
-        <p class="project-hero__subtitle reveal">
+        <p class="project-hero__subtitle reveal" data-i18n="poster.subtitle">
           Installazione interattiva per poster politici speculativi
         </p>
         <div class="project-hero__meta reveal">
           <div class="project-hero__meta-item">
-            <span class="project-hero__meta-key">Ruolo</span>
-            <span class="project-hero__meta-value">Concept · Sviluppo installazione interattiva</span>
+            <span class="project-hero__meta-key" data-i18n="meta.role">Ruolo</span>
+            <span class="project-hero__meta-value" data-i18n="poster.meta.role.value">Concept · Sviluppo installazione interattiva</span>
           </div>
           <div class="project-hero__meta-item">
-            <span class="project-hero__meta-key">Luoghi</span>
+            <span class="project-hero__meta-key" data-i18n="poster.meta.locations">Luoghi</span>
             <span class="project-hero__meta-value">DAS Bologna · LMNL Space Roma</span>
           </div>
           <div class="project-hero__meta-item">
-            <span class="project-hero__meta-key">Anno</span>
+            <span class="project-hero__meta-key" data-i18n="meta.year">Anno</span>
             <span class="project-hero__meta-value">2022 · 2025</span>
           </div>
         </div>
@@ -85,19 +89,19 @@
     <section class="section-pad">
       <div class="container">
 
-        <span class="label label--ruled reveal">01 — L'idea</span>
+        <span class="label label--ruled reveal" data-i18n="section.idea">01 — L'idea</span>
 
         <div class="split">
           <div class="reveal">
-            <h2 class="cs-section-headline">
+            <h2 class="cs-section-headline" data-i18n="poster.s01.headline">
               Quante delle tue scelte le ha fatte il tuo algoritmo?
             </h2>
           </div>
           <div class="reveal reveal--delay-1">
-            <p class="cs-body project-body-text">
+            <p class="cs-body project-body-text" data-i18n="poster.s01.text1">
               Il progetto nasce come esame universitario e diventa qualcosa di più grande. Il punto di partenza è il bombardamento mediatico: in trenta secondi di reel su Instagram possiamo attraversare contenuti potenzialmente infiniti e incompatibili tra loro. Quante delle nostre posizioni politiche, culturali, etiche sono davvero nostre — e quante sono il prodotto di una contaminazione pseudo-passiva che non abbiamo scelto di subire?
             </p>
-            <p class="cs-body project-body-text">
+            <p class="cs-body project-body-text" data-i18n="poster.s01.text2">
               Il realismo capitalista lo ha capito benissimo: non consumi solo merce, consumi il sociale, il culturale, il diritto. E ti autoconvinci che quella sia la tua posizione.
             </p>
           </div>
@@ -110,11 +114,11 @@
     <section class="section-pad section--ruled">
       <div class="container">
 
-        <span class="label label--ruled reveal">02 — Il sistema</span>
+        <span class="label label--ruled reveal" data-i18n="section.system2">02 — Il sistema</span>
 
         <div class="grid">
           <div class="col-8 reveal">
-            <p class="cs-quote">
+            <p class="cs-quote" data-i18n="poster.s02.quote">
               "Il grande potere della macchina governativa potrebbe essere svolto da una macchina randomica che lancia slogan — l'indifferenza con cui trattano la vita delle persone è più o meno la stessa con cui lanciano i dadi a Risiko."
             </p>
           </div>
@@ -122,10 +126,10 @@
 
         <div class="split" style="margin-top: var(--sp-12);">
           <div class="reveal">
-            <p class="cs-body project-body-text">
+            <p class="cs-body project-body-text" data-i18n="poster.s02.text1">
               Un generatore di poster con database precostituiti su sei tematiche sociali. La tematica viene scelta dal lancio di un dado — il tono di voce, moderato, neutrale o estremo, dall'intensità del lancio. I poster prodotti mescolano paradosso e surrealismo per ridicolizzare tutte le posizioni del dibattito politico contemporaneo, dove tutto è slogan e niente è reale. Una dinamica situazionista: il détournement come strumento critico.
             </p>
-            <p class="cs-body project-body-text">
+            <p class="cs-body project-body-text" data-i18n="poster.s02.text2">
               Il sistema si è evoluto nel tempo — dal dado fisico a uno schermo touchscreen dove tematica e tono possono essere scelti e intersecati manualmente. Ogni versione è una nuova iterazione dello stesso dispositivo critico.
             </p>
           </div>
@@ -144,7 +148,7 @@
     <section class="section-pad section--ruled">
       <div class="container">
 
-        <span class="label label--ruled reveal">03 — Gallery</span>
+        <span class="label label--ruled reveal" data-i18n="section.gallery">03 — Gallery</span>
 
         <div class="quad">
           <div class="cs-image-item reveal">
@@ -180,7 +184,7 @@
     <section class="section-pad section--ruled">
       <div class="container">
 
-        <span class="label label--ruled reveal">04 — Le esposizioni</span>
+        <span class="label label--ruled reveal" data-i18n="poster.s04.label">04 — Le esposizioni</span>
 
         <div class="cs-image cs-image--panoramic reveal"><img src="../assets/poster-generator/poster-generator-wide.jpg"
   alt="Poster Generator — esperienza"
@@ -189,15 +193,15 @@
 
         <div class="split" style="margin-top: var(--sp-12);">
           <div class="reveal">
-            <p class="cs-body project-body-text">
+            <p class="cs-body project-body-text" data-i18n="poster.s04.text1">
               Il pubblico interagisce con il sistema direttamente — lancia il dado o tocca lo schermo, sceglie la tematica, il tono, l'intensità. Il poster viene generato in tempo reale davanti ai loro occhi.
             </p>
-            <p class="cs-body project-body-text">
+            <p class="cs-body project-body-text" data-i18n="poster.s04.text2">
               Il gesto è semplice, quasi banale. Il risultato è sempre leggermente assurdo, sempre leggermente riconoscibile.
             </p>
           </div>
           <div class="reveal reveal--delay-1">
-            <p class="cs-body project-body-text">
+            <p class="cs-body project-body-text" data-i18n="poster.s04.text3">
               È quello il punto: il poster generato dalla macchina non è così diverso da quello che circolava ieri sui social. La macchina randomica e il dibattito politico reale producono la stessa intensità, lo stesso formato, la stessa vaghezza. Esposto al DAS di Bologna dopo la residenza vinta durante Collagene, e a Roma da LMNL Space a seguito del workshop INSTALL — in collettiva con le altre artiste e artisti.
             </p>
           </div>
@@ -210,7 +214,7 @@
     <section class="section-pad section--ruled">
       <div class="container">
 
-        <span class="label label--ruled reveal">05 — Output</span>
+        <span class="label label--ruled reveal" data-i18n="section.output">05 — Output</span>
 
         <div class="cs-image-grid">
           <div class="cs-image cs-image--portrait reveal"><img src="../assets/poster-generator/poster-generator-detail-01.jpg"
@@ -235,11 +239,11 @@
       <div class="container">
         <div class="project-nav__inner">
           <a href="nebula.html" class="project-nav__item">
-            <span class="label">Precedente</span>
+            <span class="label" data-i18n="project.prev">Precedente</span>
             <span class="project-nav__title">Nebula</span>
           </a>
           <a href="party-shrd.html" class="project-nav__item">
-            <span class="label">Successivo</span>
+            <span class="label" data-i18n="project.next">Successivo</span>
             <span class="project-nav__title">Party SHRD</span>
           </a>
         </div>
@@ -252,7 +256,7 @@
   <footer class="footer">
     <div class="container">
       <div class="footer__inner">
-        <span class="footer__wordmark">Filippo Boi</span>
+        <span class="footer__wordmark" data-i18n="footer.wordmark">Filippo Boi</span>
         <div class="footer__links">
           <a href="https://www.instagram.com/filippoboi25/" class="footer__link">Instagram</a>
           <a href="https://www.linkedin.com/in/filippo-boi/" class="footer__link">LinkedIn</a>
@@ -263,5 +267,7 @@
   </footer>
 
   <script src="../js/main.js"></script>
+  <script src="../js/translations.js"></script>
+  <script src="../js/i18n.js"></script>
 </body>
 </html>
