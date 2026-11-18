@@ -1,0 +1,10 @@
+# File che Wrangler non deve caricare come asset pubblici.
+# Sintassi .gitignore; i percorsi con "/" iniziale partono dalla radice del sito.
+/lab/
+/.claude/
+/optimize-images.py
+/wrangler.jsonc
+/.assetsignore
+/.gitignore
+node_modules/
+/.git/
