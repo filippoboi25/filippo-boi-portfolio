@@ -2,8 +2,12 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8">
-  <!-- Prima del primo paint: gli stati nascosti delle animazioni valgono solo con JS attivo -->
-  <script>document.documentElement.classList.add('js');</script>
+  <!-- Prima del primo paint: html.js abilita gli stati iniziali delle animazioni,
+       vt-in segnala un cambio pagina con View Transition, e se motion.js non parte
+       entro 3 s motion-off mostra tutto il contenuto. -->
+  <script>(function(h){h.classList.add('js');try{if(sessionStorage.getItem('fb-vt')){h.classList.add('vt-in');sessionStorage.removeItem('fb-vt')}}catch(e){}setTimeout(function(){if(!h.classList.contains('motion-ready'))h.classList.add('motion-off')},3000)})(document.documentElement);</script>
+  <link rel="preload" href="assets/fonts/cormorant-garamond-latin-300-italic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/ibm-plex-mono-latin-300-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contatti — Filippo Boi</title>
@@ -55,7 +59,7 @@
     <section class="hero" id="hero" style="min-height: 60svh;">
       <div class="container">
         <div class="hero__content">
-          <h1 class="hero__headline reveal" data-i18n="contact.headline">
+          <h1 class="hero__headline" data-i18n="contact.headline" data-motion="title">
             Parliamo.
           </h1>
         </div>
@@ -66,7 +70,7 @@
     <section class="section-pad" id="contatti">
       <div class="container">
 
-        <div class="reveal">
+        <div data-motion="group">
           <a href="mailto:filippoboi@yahoo.it" class="contact__email">
             filippoboi@yahoo.it
           </a>
@@ -98,5 +102,9 @@
   <script src="js/main.js"></script>
   <script src="js/translations.js"></script>
   <script src="js/i18n.js"></script>
+  <script src="js/vendor/gsap.min.js" defer></script>
+  <script src="js/vendor/ScrollTrigger.min.js" defer></script>
+  <script src="js/vendor/lenis.min.js" defer></script>
+  <script src="js/motion.js" defer></script>
 </body>
 </html>

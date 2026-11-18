@@ -2,8 +2,12 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8">
-  <!-- Prima del primo paint: gli stati nascosti delle animazioni valgono solo con JS attivo -->
-  <script>document.documentElement.classList.add('js');</script>
+  <!-- Prima del primo paint: html.js abilita gli stati iniziali delle animazioni,
+       vt-in segnala un cambio pagina con View Transition, e se motion.js non parte
+       entro 3 s motion-off mostra tutto il contenuto. -->
+  <script>(function(h){h.classList.add('js');try{if(sessionStorage.getItem('fb-vt')){h.classList.add('vt-in');sessionStorage.removeItem('fb-vt')}}catch(e){}setTimeout(function(){if(!h.classList.contains('motion-ready'))h.classList.add('motion-off')},3000)})(document.documentElement);</script>
+  <link rel="preload" href="../assets/fonts/cormorant-garamond-latin-300-italic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../assets/fonts/ibm-plex-mono-latin-300-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nebula — Filippo Boi</title>
@@ -54,12 +58,12 @@
     <!-- ─── 1. Hero del progetto ────────────────────────────── -->
     <section class="project-hero">
       <div class="container">
-        <span class="label reveal">Sistemi visivi interattivi</span>
-        <h1 class="project-hero__headline reveal">Nebula</h1>
-        <p class="project-hero__subtitle reveal" data-i18n="nebula.subtitle">
+        <span class="label" data-motion="fade">Sistemi visivi interattivi</span>
+        <h1 class="project-hero__headline" data-motion="title">Nebula</h1>
+        <p class="project-hero__subtitle" data-i18n="nebula.subtitle" data-motion="fade">
           Installazione site-specific — Bologna, 2025
         </p>
-        <div class="project-hero__meta reveal">
+        <div class="project-hero__meta" data-motion="fade">
           <div class="project-hero__meta-item">
             <span class="project-hero__meta-key" data-i18n="meta.role">Ruolo</span>
             <span class="project-hero__meta-value" data-i18n="nebula.meta.role.value">Concept collettivo · Sviluppo sistemi visivi interattivi</span>
@@ -78,7 +82,7 @@
 
     <!-- ─── 2. Immagine hero ─────────────────────────────────── -->
     <div class="container">
-      <div class="cs-image cs-image--wide reveal"><img src="../assets/nebula/nebula-hero.jpg"
+      <div class="cs-image cs-image--wide" data-motion="image"><img src="../assets/nebula/nebula-hero.jpg"
   alt="Nebula — installazione"
   class="project-img"
   loading="eager"
@@ -89,15 +93,15 @@
     <section class="section-pad">
       <div class="container">
 
-        <span class="label label--ruled reveal" data-i18n="section.idea">01 — L'idea</span>
+        <span class="label label--ruled" data-i18n="section.idea" data-motion="fade">01 — L'idea</span>
 
         <div class="split">
-          <div class="reveal">
+          <div data-motion="group">
             <h2 class="cs-section-headline" data-i18n="nebula.s01.headline">
               Corpi, spazio e macchine che comunicano attraverso dati e movimento.
             </h2>
           </div>
-          <div class="reveal reveal--delay-1">
+          <div data-motion="group">
             <p class="cs-body project-body-text" data-i18n="nebula.s01.text1">
               Nebula nasce da una residenza artistica e si sviluppa nel tempo fino alla messa in scena a distanza di circa un anno. È un sistema installativo in cui performer danzatrici interagiscono con l'ambiente tramite sensori indossabili, attivando un sistema visivo generativo che reagisce e si trasforma in tempo reale.
             </p>
@@ -114,10 +118,10 @@
     <section class="section-pad section--ruled">
       <div class="container">
 
-        <span class="label label--ruled reveal" data-i18n="section.system2">02 — Il sistema</span>
+        <span class="label label--ruled" data-i18n="section.system2" data-motion="fade">02 — Il sistema</span>
 
         <div class="grid">
-          <div class="col-8 reveal">
+          <div class="col-8" data-motion="group">
             <p class="cs-quote" data-i18n="nebula.s02.quote">
               "Umano e macchina che coesistono — non in opposizione, ma in dialogo. Il sensore come lingua comune tra il corpo che danza e lo spazio che risponde."
             </p>
@@ -125,7 +129,7 @@
         </div>
 
         <div class="split" style="margin-top: var(--sp-12);">
-          <div class="reveal">
+          <div data-motion="group">
             <p class="cs-body project-body-text" data-i18n="nebula.s02.text1">
               In una cripta allestita per l'evento, due danzatrici aprono un dialogo basato sul concept dell'opera. I sensori indossabili trasmettono i dati del movimento a una scultura di Paulina Herrera, video mappata con un solido che reagisce e si trasforma seguendo il gesto della performer.
             </p>
@@ -133,7 +137,7 @@
               Lo scenario si sposta in un secondo ambiente dove l'interazione avviene con un braccio robotico — una medusa meccanica ideata da Davide Porta. La performance si chiude consegnando i sensori al pubblico: chiunque può diventare parte del sistema.
             </p>
           </div>
-          <div class="reveal reveal--delay-1">
+          <div data-motion="group">
             <div class="cs-image cs-image--square"><img src="../assets/nebula/nebula-system.jpg"
   alt="Nebula — sistema"
   class="project-img" loading="lazy"
@@ -148,28 +152,28 @@
     <section class="section-pad section--ruled">
       <div class="container">
 
-        <span class="label label--ruled reveal" data-i18n="section.gallery">03 — Gallery</span>
+        <span class="label label--ruled" data-i18n="section.gallery" data-motion="fade">03 — Gallery</span>
 
         <div class="quad">
-          <div class="cs-image-item reveal">
+          <div class="cs-image-item" data-motion="image">
             <div class="cs-image cs-image--square"><img src="../assets/nebula/nebula-process-01.jpg"
   alt="Nebula — processo 01"
   class="project-img" loading="lazy"
   width="800" height="800"></div>
           </div>
-          <div class="cs-image-item reveal reveal--delay-1">
+          <div class="cs-image-item" data-motion="image">
             <div class="cs-image cs-image--square"><img src="../assets/nebula/nebula-process-02.jpg"
   alt="Nebula — processo 02"
   class="project-img" loading="lazy"
   width="800" height="800"></div>
           </div>
-          <div class="cs-image-item reveal reveal--delay-2">
+          <div class="cs-image-item" data-motion="image">
             <div class="cs-image cs-image--square"><img src="../assets/nebula/nebula-process-03.jpg"
   alt="Nebula — processo 03"
   class="project-img" loading="lazy"
   width="800" height="800"></div>
           </div>
-          <div class="cs-image-item reveal reveal--delay-3">
+          <div class="cs-image-item" data-motion="image">
             <div class="cs-image cs-image--square"><img src="../assets/nebula/nebula-process-04.jpg"
   alt="Nebula — processo 04"
   class="project-img" loading="lazy"
@@ -184,15 +188,15 @@
     <section class="section-pad section--ruled">
       <div class="container">
 
-        <span class="label label--ruled reveal" data-i18n="section.experience">04 — L'esperienza</span>
+        <span class="label label--ruled" data-i18n="section.experience" data-motion="fade">04 — L'esperienza</span>
 
-        <div class="cs-image cs-image--panoramic reveal"><img src="../assets/nebula/nebula-wide.jpg"
+        <div class="cs-image cs-image--panoramic" data-motion="image"><img src="../assets/nebula/nebula-wide.jpg"
   alt="Nebula — esperienza"
   class="project-img" loading="lazy"
   width="1920" height="549"></div>
 
         <div class="split" style="margin-top: var(--sp-12);">
-          <div class="reveal">
+          <div data-motion="group">
             <p class="cs-body project-body-text" data-i18n="nebula.s04.text1">
               La cripta cambia natura quando il sistema è attivo. Il movimento delle danzatrici non si limita allo spazio fisico — si propaga nella scultura, nella luce, nel suono.
             </p>
@@ -200,7 +204,7 @@
               Il pubblico osserva un dialogo tra corpi organici e strutture artificiali che risponde in tempo reale a ogni variazione del gesto.
             </p>
           </div>
-          <div class="reveal reveal--delay-1">
+          <div data-motion="group">
             <p class="cs-body project-body-text" data-i18n="nebula.s04.text3">
               Alla fine della performance i sensori vengono consegnati al pubblico. Il confine tra spettatore e performer si dissolve — chiunque può attivare il sistema, modificarne il comportamento, diventare parte dell'ecosistema.
             </p>
@@ -217,18 +221,18 @@
     <section class="section-pad section--ruled">
       <div class="container">
 
-        <span class="label label--ruled reveal" data-i18n="section.details">05 — Dettagli</span>
+        <span class="label label--ruled" data-i18n="section.details" data-motion="fade">05 — Dettagli</span>
 
         <div class="cs-image-grid">
-          <div class="cs-image cs-image--portrait reveal"><img src="../assets/nebula/nebula-detail-01.jpg"
+          <div class="cs-image cs-image--portrait" data-motion="image"><img src="../assets/nebula/nebula-detail-01.jpg"
   alt="Nebula — dettaglio 01"
   class="project-img" loading="lazy"
   width="800" height="1067"></div>
-          <div class="cs-image cs-image--portrait reveal reveal--delay-1"><img src="../assets/nebula/nebula-detail-02.jpg"
+          <div class="cs-image cs-image--portrait" data-motion="image"><img src="../assets/nebula/nebula-detail-02.jpg"
   alt="Nebula — dettaglio 02"
   class="project-img" loading="lazy"
   width="800" height="1067"></div>
-          <div class="cs-image cs-image--portrait reveal reveal--delay-2"><img src="../assets/nebula/nebula-detail-03.jpg"
+          <div class="cs-image cs-image--portrait" data-motion="image"><img src="../assets/nebula/nebula-detail-03.jpg"
   alt="Nebula — dettaglio 03"
   class="project-img" loading="lazy"
   width="800" height="1067"></div>
@@ -272,5 +276,9 @@
   <script src="../js/main.js"></script>
   <script src="../js/translations.js"></script>
   <script src="../js/i18n.js"></script>
+  <script src="../js/vendor/gsap.min.js" defer></script>
+  <script src="../js/vendor/ScrollTrigger.min.js" defer></script>
+  <script src="../js/vendor/lenis.min.js" defer></script>
+  <script src="../js/motion.js" defer></script>
 </body>
 </html>

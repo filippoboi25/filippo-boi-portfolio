@@ -2,8 +2,12 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8">
-  <!-- Prima del primo paint: gli stati nascosti delle animazioni valgono solo con JS attivo -->
-  <script>document.documentElement.classList.add('js');</script>
+  <!-- Prima del primo paint: html.js abilita gli stati iniziali delle animazioni,
+       vt-in segnala un cambio pagina con View Transition, e se motion.js non parte
+       entro 3 s motion-off mostra tutto il contenuto. -->
+  <script>(function(h){h.classList.add('js');try{if(sessionStorage.getItem('fb-vt')){h.classList.add('vt-in');sessionStorage.removeItem('fb-vt')}}catch(e){}setTimeout(function(){if(!h.classList.contains('motion-ready'))h.classList.add('motion-off')},3000)})(document.documentElement);</script>
+  <link rel="preload" href="assets/fonts/cormorant-garamond-latin-300-italic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/ibm-plex-mono-latin-300-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lavori — Filippo Boi</title>
@@ -54,7 +58,7 @@
     <!-- ─── 1. Header pagina ─────────────────────────────────── -->
     <section class="page-header">
       <div class="container">
-        <h1 class="page-header__title reveal" data-i18n="work.title">Lavori</h1>
+        <h1 class="page-header__title" data-i18n="work.title" data-motion="title">Lavori</h1>
       </div>
     </section>
 
@@ -73,84 +77,84 @@
         <!-- Griglia -->
         <div class="work-grid" id="archive-grid">
 
-          <a href="lavori/suahoy.html" class="work-card" data-category="Contenuti e formati visivi" data-date="2026-11" style="--focus-x: 35%; --focus-y: 50%;">
+          <a href="lavori/suahoy.html" class="work-card" data-motion="card" data-category="Contenuti e formati visivi" data-date="2026-11" style="--focus-x: 35%; --focus-y: 50%;">
             <div class="work-card__media"><img src="assets/suahoy/suahoy-hero.jpg" alt="Suahoy" width="1672" height="941" decoding="async"></div>
             <span class="work-card__category" data-i18n="cat.content">Contenuti e formati visivi</span>
             <h2 class="work-card__title">Suahoy</h2>
             <span class="work-card__year">2026</span>
           </a>
 
-          <a href="lavori/frequenza.html" class="work-card" data-category="Sistemi visivi interattivi" data-date="2026-06" style="--focus-x: 50%; --focus-y: 50%;">
+          <a href="lavori/frequenza.html" class="work-card" data-motion="card" data-category="Sistemi visivi interattivi" data-date="2026-06" style="--focus-x: 50%; --focus-y: 50%;">
             <div class="work-card__media"><img src="assets/frequenza/frequenza-hero.jpg" alt="FREQUENZA" width="1920" height="1080" decoding="async"></div>
             <span class="work-card__category" data-i18n="cat.interactive">Sistemi visivi interattivi</span>
             <h2 class="work-card__title">Frequenza</h2>
             <span class="work-card__year">2026</span>
           </a>
 
-          <a href="lavori/barbara-coveri.html" class="work-card" data-category="Identità visiva" data-date="2026-04" style="--focus-x: 55%; --focus-y: 50%;">
+          <a href="lavori/barbara-coveri.html" class="work-card" data-motion="card" data-category="Identità visiva" data-date="2026-04" style="--focus-x: 55%; --focus-y: 50%;">
             <div class="work-card__media"><img src="assets/barbara-coveri/barbara-coveri-hero.jpg" alt="Barbara Coveri" width="1920" height="1080" decoding="async"></div>
             <span class="work-card__category" data-i18n="cat.identity">Identità visiva</span>
             <h2 class="work-card__title">Barbara Coveri</h2>
             <span class="work-card__year">2026</span>
           </a>
 
-          <a href="lavori/disallineamenti-percettivi.html" class="work-card" data-category="Sistemi visivi interattivi" data-date="2025-11" style="--focus-x: 30%; --focus-y: 50%;">
+          <a href="lavori/disallineamenti-percettivi.html" class="work-card" data-motion="card" data-category="Sistemi visivi interattivi" data-date="2025-11" style="--focus-x: 30%; --focus-y: 50%;">
             <div class="work-card__media"><img src="assets/disallineamenti-percettivi/disallineamenti-percettivi-hero.jpg" alt="Disallineamenti Percettivi" width="1920" height="1080" decoding="async"></div>
             <span class="work-card__category" data-i18n="cat.interactive">Sistemi visivi interattivi</span>
             <h2 class="work-card__title">Disallineamenti Percettivi</h2>
             <span class="work-card__year">2025</span>
           </a>
 
-          <a href="lavori/poster-generator.html" class="work-card" data-category="Sistemi visivi interattivi" data-date="2025-09" style="--focus-x: 50%; --focus-y: 50%;">
+          <a href="lavori/poster-generator.html" class="work-card" data-motion="card" data-category="Sistemi visivi interattivi" data-date="2025-09" style="--focus-x: 50%; --focus-y: 50%;">
             <div class="work-card__media"><img src="assets/poster-generator/poster-generator-hero.jpg" alt="Poster Generator" width="1920" height="1080" loading="lazy" decoding="async"></div>
             <span class="work-card__category" data-i18n="cat.interactive">Sistemi visivi interattivi</span>
             <h2 class="work-card__title">Poster Generator</h2>
             <span class="work-card__year">2022 · 2025</span>
           </a>
 
-          <a href="lavori/vo-lumi.html" class="work-card" data-category="Identità visiva" data-date="2025-01" style="--focus-x: 12%; --focus-y: 50%;">
+          <a href="lavori/vo-lumi.html" class="work-card" data-motion="card" data-category="Identità visiva" data-date="2025-01" style="--focus-x: 12%; --focus-y: 50%;">
             <div class="work-card__media"><img src="assets/vo-lumi/Vo.Lumi-hero.jpg" alt="Vo.Lumi" width="1920" height="1080" loading="lazy" decoding="async"></div>
             <span class="work-card__category" data-i18n="cat.identity">Identità visiva</span>
             <h2 class="work-card__title">Vo.Lumi</h2>
             <span class="work-card__year">2025</span>
           </a>
 
-          <a href="lavori/party-shrd.html" class="work-card" data-category="Sistemi visivi interattivi" data-date="2024" style="--focus-x: 56%; --focus-y: 50%;">
+          <a href="lavori/party-shrd.html" class="work-card" data-motion="card" data-category="Sistemi visivi interattivi" data-date="2024" style="--focus-x: 56%; --focus-y: 50%;">
             <div class="work-card__media"><img src="assets/party-shrd/party-shrd-hero.jpg" alt="Party SHRD" width="1920" height="1080" loading="lazy" decoding="async"></div>
             <span class="work-card__category" data-i18n="cat.interactive">Sistemi visivi interattivi</span>
             <h2 class="work-card__title">Party SHRD</h2>
             <span class="work-card__year">2024</span>
           </a>
 
-          <a href="lavori/24-bottles.html" class="work-card" data-category="Contenuti e formati visivi" data-date="2023" style="--focus-x: 50%; --focus-y: 50%;">
+          <a href="lavori/24-bottles.html" class="work-card" data-motion="card" data-category="Contenuti e formati visivi" data-date="2023" style="--focus-x: 50%; --focus-y: 50%;">
             <div class="work-card__media"><img src="assets/24-bottles/24-bottles-hero.jpg" alt="24 Bottles" width="1920" height="1080" loading="lazy" decoding="async"></div>
             <span class="work-card__category" data-i18n="cat.content">Contenuti e formati visivi</span>
             <h2 class="work-card__title">24 Bottles</h2>
             <span class="work-card__year">2023</span>
           </a>
 
-          <a href="lavori/matthew-carbotta.html" class="work-card" data-category="Identità visiva" data-date="2023" style="--focus-x: 52%; --focus-y: 50%;">
+          <a href="lavori/matthew-carbotta.html" class="work-card" data-motion="card" data-category="Identità visiva" data-date="2023" style="--focus-x: 52%; --focus-y: 50%;">
             <div class="work-card__media"><img src="assets/matthew-carbotta/matthew-carbotta-hero.jpg" alt="Matthew Carbotta" width="1920" height="1080" loading="lazy" decoding="async"></div>
             <span class="work-card__category" data-i18n="cat.identity">Identità visiva</span>
             <h2 class="work-card__title">Matthew Carbotta</h2>
             <span class="work-card__year">2023</span>
           </a>
 
-          <a href="lavori/riverrun.html" class="work-card" data-category="Contenuti e formati visivi" data-date="2022" style="--focus-x: 32%; --focus-y: 50%;">
+          <a href="lavori/riverrun.html" class="work-card" data-motion="card" data-category="Contenuti e formati visivi" data-date="2022" style="--focus-x: 32%; --focus-y: 50%;">
             <div class="work-card__media"><img src="assets/riverrun/riverrun-hero.jpg" alt="Riverrun" width="1920" height="1080" loading="lazy" decoding="async"></div>
             <span class="work-card__category" data-i18n="cat.content">Contenuti e formati visivi</span>
             <h2 class="work-card__title">Riverrun Hub</h2>
             <span class="work-card__year">2022</span>
           </a>
 
-          <a href="lavori/nebula.html" class="work-card" data-category="Sistemi visivi interattivi" data-date="2022" style="--focus-x: 30%; --focus-y: 50%;">
+          <a href="lavori/nebula.html" class="work-card" data-motion="card" data-category="Sistemi visivi interattivi" data-date="2022" style="--focus-x: 30%; --focus-y: 50%;">
             <div class="work-card__media"><img src="assets/nebula/nebula-hero.jpg" alt="Nebula" width="1920" height="1080" loading="lazy" decoding="async"></div>
             <span class="work-card__category" data-i18n="cat.interactive">Sistemi visivi interattivi</span>
             <h2 class="work-card__title">Nebula</h2>
             <span class="work-card__year">2022</span>
           </a>
 
-          <a href="lavori/ginza-brand.html" class="work-card" data-category="Identità visiva" data-date="2022" style="--focus-x: 55%; --focus-y: 50%;">
+          <a href="lavori/ginza-brand.html" class="work-card" data-motion="card" data-category="Identità visiva" data-date="2022" style="--focus-x: 55%; --focus-y: 50%;">
             <div class="work-card__media"><img src="assets/ginza-brand/ginza-hero.jpg" alt="Ginza" width="1920" height="1080" loading="lazy" decoding="async"></div>
             <span class="work-card__category" data-i18n="cat.identity">Identità visiva</span>
             <h2 class="work-card__title">Ginza</h2>
@@ -180,6 +184,10 @@
   <script src="js/main.js"></script>
   <script src="js/translations.js"></script>
   <script src="js/i18n.js"></script>
+  <script src="js/vendor/gsap.min.js" defer></script>
+  <script src="js/vendor/ScrollTrigger.min.js" defer></script>
+  <script src="js/vendor/lenis.min.js" defer></script>
+  <script src="js/motion.js" defer></script>
   <script>
     (function () {
       const btns  = document.querySelectorAll('.filter-btn');
@@ -206,6 +214,8 @@
               }, 200);
             }
           });
+          // Le card nascoste e mostrate cambiano le posizioni: ricalcolo delle animazioni a scroll
+          setTimeout(() => { if (window.ScrollTrigger) window.ScrollTrigger.refresh(); }, 220);
         });
       });
     }());

@@ -2,8 +2,12 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8">
-  <!-- Prima del primo paint: gli stati nascosti delle animazioni valgono solo con JS attivo -->
-  <script>document.documentElement.classList.add('js');</script>
+  <!-- Prima del primo paint: html.js abilita gli stati iniziali delle animazioni,
+       vt-in segnala un cambio pagina con View Transition, e se motion.js non parte
+       entro 3 s motion-off mostra tutto il contenuto. -->
+  <script>(function(h){h.classList.add('js');try{if(sessionStorage.getItem('fb-vt')){h.classList.add('vt-in');sessionStorage.removeItem('fb-vt')}}catch(e){}setTimeout(function(){if(!h.classList.contains('motion-ready'))h.classList.add('motion-off')},3000)})(document.documentElement);</script>
+  <link rel="preload" href="../assets/fonts/cormorant-garamond-latin-300-italic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../assets/fonts/ibm-plex-mono-latin-300-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Party SHRD — Filippo Boi</title>
@@ -54,12 +58,12 @@
     <!-- ─── 1. Hero del progetto ────────────────────────────── -->
     <section class="project-hero">
       <div class="container">
-        <span class="label reveal">Sistemi visivi interattivi</span>
-        <h1 class="project-hero__headline reveal">Party SHRD</h1>
-        <p class="project-hero__subtitle reveal" data-i18n="party.subtitle">
+        <span class="label" data-motion="fade">Sistemi visivi interattivi</span>
+        <h1 class="project-hero__headline" data-motion="title">Party SHRD</h1>
+        <p class="project-hero__subtitle" data-i18n="party.subtitle" data-motion="fade">
           Visual design e live visual per festival
         </p>
-        <div class="project-hero__meta reveal">
+        <div class="project-hero__meta" data-motion="fade">
           <div class="project-hero__meta-item">
             <span class="project-hero__meta-key" data-i18n="meta.role">Ruolo</span>
             <span class="project-hero__meta-value">Visual system design · Live visuals</span>
@@ -82,7 +86,7 @@
 
     <!-- ─── 2. Immagine hero ─────────────────────────────────── -->
     <div class="container">
-      <div class="cs-image cs-image--wide reveal"><img src="../assets/party-shrd/party-shrd-hero.jpg"
+      <div class="cs-image cs-image--wide" data-motion="image"><img src="../assets/party-shrd/party-shrd-hero.jpg"
   alt="Party SHRD — live visuals"
   class="project-img"
   loading="eager"
@@ -93,15 +97,15 @@
     <section class="section-pad">
       <div class="container">
 
-        <span class="label label--ruled reveal" data-i18n="section.idea">01 — L'idea</span>
+        <span class="label label--ruled" data-i18n="section.idea" data-motion="fade">01 — L'idea</span>
 
         <div class="split">
-          <div class="reveal">
+          <div data-motion="group">
             <h2 class="cs-section-headline" data-i18n="party.s01.headline">
               Movimento, suono e immagine che si influenzano.
             </h2>
           </div>
-          <div class="reveal reveal--delay-1">
+          <div data-motion="group">
             <p class="cs-body project-body-text" data-i18n="party.s01.text1">
               Party SHRD nasce per un festival multi-stage dell'etichetta Atlantide Dischi. Il compito non era accompagnare la musica con delle immagini — era costruire un sistema visivo reattivo capace di rispondere al ritmo e all'atmosfera del live in tempo reale.
             </p>
@@ -118,10 +122,10 @@
     <section class="section-pad section--ruled">
       <div class="container">
 
-        <span class="label label--ruled reveal" data-i18n="section.system2">02 — Il sistema</span>
+        <span class="label label--ruled" data-i18n="section.system2" data-motion="fade">02 — Il sistema</span>
 
         <div class="grid">
-          <div class="col-8 reveal">
+          <div class="col-8" data-motion="group">
             <p class="cs-quote" data-i18n="party.s02.quote">
               "Una patch TouchDesigner controllata via OSC dal telefono — il palco gestito da remoto, in tempo reale, con un dito."
             </p>
@@ -129,7 +133,7 @@
         </div>
 
         <div class="split" style="margin-top: var(--sp-12);">
-          <div class="reveal">
+          <div data-motion="group">
             <p class="cs-body project-body-text" data-i18n="party.s02.text1">
               Tre box proiettavano immagini principali differenziate per ogni artista, in uno scenario spaziale surreale. Pattern generativi e solidi geometrici dinamici si alternavano costruendo un linguaggio visivo che cambiava pelle tredici volte senza perdere coerenza.
             </p>
@@ -137,7 +141,7 @@
               La complessità reale era altra: gestire due palchi simultaneamente, mandando in standby un palco con un effetto screen saver per dirigere l'attenzione del pubblico verso l'altro. Un sistema di regia visiva oltre che di generazione.
             </p>
           </div>
-          <div class="reveal reveal--delay-1">
+          <div data-motion="group">
             <div class="cs-image cs-image--square"><img src="../assets/party-shrd/party-shrd-system.jpg"
   alt="Party SHRD — sistema"
   class="project-img" loading="lazy"
@@ -152,28 +156,28 @@
     <section class="section-pad section--ruled">
       <div class="container">
 
-        <span class="label label--ruled reveal" data-i18n="section.gallery">03 — Gallery</span>
+        <span class="label label--ruled" data-i18n="section.gallery" data-motion="fade">03 — Gallery</span>
 
         <div class="quad">
-          <div class="cs-image-item reveal">
+          <div class="cs-image-item" data-motion="image">
             <div class="cs-image cs-image--square"><img src="../assets/party-shrd/party-shrd-process-01.jpg"
   alt="Party SHRD — processo 01"
   class="project-img" loading="lazy"
   width="800" height="800"></div>
           </div>
-          <div class="cs-image-item reveal reveal--delay-1">
+          <div class="cs-image-item" data-motion="image">
             <div class="cs-image cs-image--square"><img src="../assets/party-shrd/party-shrd-process-02.jpg"
   alt="Party SHRD — processo 02"
   class="project-img" loading="lazy"
   width="800" height="800"></div>
           </div>
-          <div class="cs-image-item reveal reveal--delay-2">
+          <div class="cs-image-item" data-motion="image">
             <div class="cs-image cs-image--square"><img src="../assets/party-shrd/party-shrd-process-03.jpg"
   alt="Party SHRD — processo 03"
   class="project-img" loading="lazy"
   width="800" height="800"></div>
           </div>
-          <div class="cs-image-item reveal reveal--delay-3">
+          <div class="cs-image-item" data-motion="image">
             <div class="cs-image cs-image--square"><img src="../assets/party-shrd/party-shrd-process-04.jpg"
   alt="Party SHRD — processo 04"
   class="project-img" loading="lazy"
@@ -188,15 +192,15 @@
     <section class="section-pad section--ruled">
       <div class="container">
 
-        <span class="label label--ruled reveal" data-i18n="section.experience">04 — L'esperienza</span>
+        <span class="label label--ruled" data-i18n="section.experience" data-motion="fade">04 — L'esperienza</span>
 
-        <div class="cs-image cs-image--panoramic reveal"><img src="../assets/party-shrd/party-shrd-wide.jpg"
+        <div class="cs-image cs-image--panoramic" data-motion="image"><img src="../assets/party-shrd/party-shrd-wide.jpg"
   alt="Party SHRD — esperienza"
   class="project-img" loading="lazy"
   width="1920" height="549"></div>
 
         <div class="split" style="margin-top: var(--sp-12);">
-          <div class="reveal">
+          <div data-motion="group">
             <p class="cs-body project-body-text" data-i18n="party.s04.text1">
               Quando il sistema è attivo il palco non ha uno sfondo — ha una pelle. I visual reagiscono al ritmo, si trasformano con l'atmosfera, cambiano registro da un artista all'altro.
             </p>
@@ -204,7 +208,7 @@
               Il pubblico non separa la musica dall'immagine: le vive come un'unica superficie sensoriale.
             </p>
           </div>
-          <div class="reveal reveal--delay-1">
+          <div data-motion="group">
             <p class="cs-body project-body-text" data-i18n="party.s04.text3">
               La gestione da remoto via OSC rendeva il controllo fluido e immediato — ogni variazione era una scelta in tempo reale, non una sequenza programmata. Il palco in standby con lo screen saver generativo non si spegneva mai completamente: restava vivo, in attesa, parte dello stesso sistema.
             </p>
@@ -218,18 +222,18 @@
     <section class="section-pad section--ruled">
       <div class="container">
 
-        <span class="label label--ruled reveal" data-i18n="section.details">05 — Dettagli</span>
+        <span class="label label--ruled" data-i18n="section.details" data-motion="fade">05 — Dettagli</span>
 
         <div class="cs-image-grid">
-          <div class="cs-image cs-image--portrait reveal"><img src="../assets/party-shrd/party-shrd-detail-01.jpg"
+          <div class="cs-image cs-image--portrait" data-motion="image"><img src="../assets/party-shrd/party-shrd-detail-01.jpg"
   alt="Party SHRD — dettaglio 01"
   class="project-img" loading="lazy"
   width="800" height="1067"></div>
-          <div class="cs-image cs-image--portrait reveal reveal--delay-1"><img src="../assets/party-shrd/party-shrd-detail-02.jpg"
+          <div class="cs-image cs-image--portrait" data-motion="image"><img src="../assets/party-shrd/party-shrd-detail-02.jpg"
   alt="Party SHRD — dettaglio 02"
   class="project-img" loading="lazy"
   width="800" height="1067"></div>
-          <div class="cs-image cs-image--portrait reveal reveal--delay-2"><img src="../assets/party-shrd/party-shrd-detail-03.jpg"
+          <div class="cs-image cs-image--portrait" data-motion="image"><img src="../assets/party-shrd/party-shrd-detail-03.jpg"
   alt="Party SHRD — dettaglio 03"
   class="project-img" loading="lazy"
   width="800" height="1067"></div>
@@ -273,5 +277,9 @@
   <script src="../js/main.js"></script>
   <script src="../js/translations.js"></script>
   <script src="../js/i18n.js"></script>
+  <script src="../js/vendor/gsap.min.js" defer></script>
+  <script src="../js/vendor/ScrollTrigger.min.js" defer></script>
+  <script src="../js/vendor/lenis.min.js" defer></script>
+  <script src="../js/motion.js" defer></script>
 </body>
 </html>

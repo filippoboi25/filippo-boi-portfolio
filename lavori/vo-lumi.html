@@ -2,8 +2,12 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8">
-  <!-- Prima del primo paint: gli stati nascosti delle animazioni valgono solo con JS attivo -->
-  <script>document.documentElement.classList.add('js');</script>
+  <!-- Prima del primo paint: html.js abilita gli stati iniziali delle animazioni,
+       vt-in segnala un cambio pagina con View Transition, e se motion.js non parte
+       entro 3 s motion-off mostra tutto il contenuto. -->
+  <script>(function(h){h.classList.add('js');try{if(sessionStorage.getItem('fb-vt')){h.classList.add('vt-in');sessionStorage.removeItem('fb-vt')}}catch(e){}setTimeout(function(){if(!h.classList.contains('motion-ready'))h.classList.add('motion-off')},3000)})(document.documentElement);</script>
+  <link rel="preload" href="../assets/fonts/cormorant-garamond-latin-300-italic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../assets/fonts/ibm-plex-mono-latin-300-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vo.Lumi — Filippo Boi</title>
@@ -54,12 +58,12 @@
     <!-- ─── 1. Hero del progetto ────────────────────────────── -->
     <section class="project-hero">
       <div class="container">
-        <span class="label reveal">Identità visiva</span>
-        <h1 class="project-hero__headline reveal">Vo.Lumi</h1>
-        <p class="project-hero__subtitle reveal" data-i18n="volumi.subtitle">
+        <span class="label" data-motion="fade">Identità visiva</span>
+        <h1 class="project-hero__headline" data-motion="title">Vo.Lumi</h1>
+        <p class="project-hero__subtitle" data-i18n="volumi.subtitle" data-motion="fade">
           Logo design e brand identity
         </p>
-        <div class="project-hero__meta reveal">
+        <div class="project-hero__meta" data-motion="fade">
           <div class="project-hero__meta-item">
             <span class="project-hero__meta-key" data-i18n="meta.client">Cliente</span>
             <span class="project-hero__meta-value">Vo.Lumi</span>
@@ -86,7 +90,7 @@
 
     <!-- ─── 2. Immagine hero ─────────────────────────────────── -->
     <div class="container">
-      <div class="cs-image cs-image--wide reveal"><img src="../assets/vo-lumi/Vo.Lumi-hero.jpg"
+      <div class="cs-image cs-image--wide" data-motion="image"><img src="../assets/vo-lumi/Vo.Lumi-hero.jpg"
   alt="Vo.Lumi — identità visiva"
   class="project-img"
   loading="eager"
@@ -97,15 +101,15 @@
     <section class="section-pad">
       <div class="container">
 
-        <span class="label label--ruled reveal" data-i18n="section.context">01 — Il contesto</span>
+        <span class="label label--ruled" data-i18n="section.context" data-motion="fade">01 — Il contesto</span>
 
         <div class="split">
-          <div class="reveal">
+          <div data-motion="group">
             <h2 class="cs-section-headline" data-i18n="volumi.s01.headline">
               Un'identità nata prima del resto.
             </h2>
           </div>
-          <div class="reveal reveal--delay-1">
+          <div data-motion="group">
             <p class="cs-body project-body-text" data-i18n="volumi.s01.text1">
               Vo.Lumi è una piccola azienda fondata da due ragazze di Cesena che producono contenuti social usando esclusivamente lo smartphone. La limitazione dello strumento è la loro cifra — velocità e semplicità senza rinunciare alla professionalità.
             </p>
@@ -122,10 +126,10 @@
     <section class="section-pad section--ruled">
       <div class="container">
 
-        <span class="label label--ruled reveal" data-i18n="section.direction">02 — La direzione</span>
+        <span class="label label--ruled" data-i18n="section.direction" data-motion="fade">02 — La direzione</span>
 
         <div class="grid">
-          <div class="col-8 reveal">
+          <div class="col-8" data-motion="group">
             <p class="cs-quote" data-i18n="volumi.s02.quote">
               "Volumi: l'unità di misura dei solidi. E il solido, con la luce giusta, genera un'ombra. La stessa luce che serve per fotografare. La stessa fotografia fatta con uno smartphone — che è, a suo modo, un parallelepipedo."
             </p>
@@ -139,15 +143,15 @@
     <section class="section-pad">
       <div class="container">
         <div class="cs-image-grid">
-          <div class="cs-image cs-image--standard reveal"><img src="../assets/vo-lumi/Vo.Lumi-grid-01.jpg"
+          <div class="cs-image cs-image--standard" data-motion="image"><img src="../assets/vo-lumi/Vo.Lumi-grid-01.jpg"
   alt="Vo.Lumi — logo"
   class="project-img" loading="lazy"
   width="1200" height="900"></div>
-          <div class="cs-image cs-image--standard reveal reveal--delay-1"><img src="../assets/vo-lumi/Vo.Lumi-grid-02.jpg"
+          <div class="cs-image cs-image--standard" data-motion="image"><img src="../assets/vo-lumi/Vo.Lumi-grid-02.jpg"
   alt="Vo.Lumi — applicazione"
   class="project-img" loading="lazy"
   width="1200" height="900"></div>
-          <div class="cs-image cs-image--standard reveal reveal--delay-2"><img src="../assets/vo-lumi/Vo.Lumi-grid-03.jpg"
+          <div class="cs-image cs-image--standard" data-motion="image"><img src="../assets/vo-lumi/Vo.Lumi-grid-03.jpg"
   alt="Vo.Lumi — dettaglio"
   class="project-img" loading="lazy"
   width="1200" height="900"></div>
@@ -159,11 +163,11 @@
     <section class="section-pad section--ruled">
       <div class="container">
 
-        <span class="label label--ruled reveal" data-i18n="section.sign">03 — Il segno</span>
+        <span class="label label--ruled" data-i18n="section.sign" data-motion="fade">03 — Il segno</span>
 
         <div class="split">
 
-          <div class="reveal">
+          <div data-motion="group">
             <p class="cs-body project-body-text" data-i18n="volumi.s03.text1">
               Il segno nasce dall'estrusione di un rettangolo in vista quasi isometrica — la forma dello smartphone vista in prospettiva. Dal suo wireframe vengono estratti due segni uguali, specchiati e ribaltati, che si incastrano tra pieni e vuoti ricreando quel solido di un determinato Vo.Lume.
             </p>
@@ -175,7 +179,7 @@
             </p>
           </div>
 
-          <div class="cs-image-grid cs-image-grid--2x2 reveal reveal--delay-1">
+          <div class="cs-image-grid cs-image-grid--2x2" data-motion="image">
             <div class="cs-image-item">
               <div class="cs-image cs-image--square"><img src="../assets/vo-lumi/Vo.Lumi-system-01.jpg"
   alt="Vo.Lumi — sistema 01"
@@ -214,7 +218,7 @@
     <!-- ─── 7. Immagine finale ───────────────────────────────── -->
     <div class="section-pad">
       <div class="container">
-        <div class="cs-image cs-image--wide reveal"><img src="../assets/vo-lumi/Vo.Lumi-final.jpg"
+        <div class="cs-image cs-image--wide" data-motion="image"><img src="../assets/vo-lumi/Vo.Lumi-final.jpg"
   alt="Vo.Lumi — output finale"
   class="project-img" loading="lazy"
   width="1920" height="1080"></div>
@@ -256,5 +260,9 @@
   <script src="../js/main.js"></script>
   <script src="../js/translations.js"></script>
   <script src="../js/i18n.js"></script>
+  <script src="../js/vendor/gsap.min.js" defer></script>
+  <script src="../js/vendor/ScrollTrigger.min.js" defer></script>
+  <script src="../js/vendor/lenis.min.js" defer></script>
+  <script src="../js/motion.js" defer></script>
 </body>
 </html>

@@ -2,8 +2,12 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8">
-  <!-- Prima del primo paint: gli stati nascosti delle animazioni valgono solo con JS attivo -->
-  <script>document.documentElement.classList.add('js');</script>
+  <!-- Prima del primo paint: html.js abilita gli stati iniziali delle animazioni,
+       vt-in segnala un cambio pagina con View Transition, e se motion.js non parte
+       entro 3 s motion-off mostra tutto il contenuto. -->
+  <script>(function(h){h.classList.add('js');try{if(sessionStorage.getItem('fb-vt')){h.classList.add('vt-in');sessionStorage.removeItem('fb-vt')}}catch(e){}setTimeout(function(){if(!h.classList.contains('motion-ready'))h.classList.add('motion-off')},3000)})(document.documentElement);</script>
+  <link rel="preload" href="assets/fonts/cormorant-garamond-latin-300-italic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/ibm-plex-mono-latin-300-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Filippo Boi</title>
@@ -60,13 +64,13 @@
           <div class="hero__media">
             <canvas id="particle-canvas" class="hero__media-canvas"></canvas>
           </div>
-          <h1 class="hero__headline reveal" data-i18n="home.hero.headline">
+          <h1 class="hero__headline" data-i18n="home.hero.headline" data-motion="title">
             Ragiono per immagini, progetto strutture visive.
           </h1>
-          <p class="hero__tagline reveal reveal--delay-1" data-i18n="home.hero.tagline">
+          <p class="hero__tagline" data-i18n="home.hero.tagline" data-motion="fade">
             Filippo Boi — Media Designer
           </p>
-          <div class="hero__meta reveal reveal--delay-2">
+          <div class="hero__meta" data-motion="fade">
             <span class="accent-line"></span>
             <span class="label" data-i18n="home.hero.meta">BOLOGNA | CAGLIARI</span>
           </div>
@@ -78,32 +82,32 @@
     <section class="section-pad" id="progetti">
       <div class="container">
 
-        <div class="section-header reveal">
+        <div class="section-header" data-motion="group">
           <h2 class="section-header__title" data-i18n="home.projects.title">Progetti selezionati</h2>
           <a href="lavori.html" class="section-header__link" data-i18n="home.projects.cta">Tutti i lavori</a>
         </div>
 
         <div class="work-grid work-grid--preview">
 
-          <a href="lavori/suahoy.html" class="work-card reveal" data-category="Contenuti e formati visivi" data-date="2026-11" style="--focus-x: 35%; --focus-y: 50%;">
+          <a href="lavori/suahoy.html" class="work-card" data-category="Contenuti e formati visivi" data-date="2026-11" style="--focus-x: 35%; --focus-y: 50%;" data-motion="card">
             <div class="work-card__media"><img src="assets/suahoy/suahoy-hero.jpg" alt="Suahoy" width="1672" height="941" loading="lazy" decoding="async"></div>
             <span class="work-card__category" data-i18n="cat.content">Contenuti e formati visivi</span>
             <h3 class="work-card__title">Suahoy</h3>
           </a>
 
-          <a href="lavori/frequenza.html" class="work-card reveal reveal--delay-1" data-category="Sistemi visivi interattivi" data-date="2026-06" style="--focus-x: 50%; --focus-y: 50%;">
+          <a href="lavori/frequenza.html" class="work-card" data-category="Sistemi visivi interattivi" data-date="2026-06" style="--focus-x: 50%; --focus-y: 50%;" data-motion="card">
             <div class="work-card__media"><img src="assets/frequenza/frequenza-hero.jpg" alt="FREQUENZA" width="1920" height="1080" loading="lazy" decoding="async"></div>
             <span class="work-card__category" data-i18n="cat.interactive">Sistemi visivi interattivi</span>
             <h3 class="work-card__title">Frequenza</h3>
           </a>
 
-          <a href="lavori/barbara-coveri.html" class="work-card reveal reveal--delay-2" data-category="Identità visiva" data-date="2026-04" style="--focus-x: 55%; --focus-y: 50%;">
+          <a href="lavori/barbara-coveri.html" class="work-card" data-category="Identità visiva" data-date="2026-04" style="--focus-x: 55%; --focus-y: 50%;" data-motion="card">
             <div class="work-card__media"><img src="assets/barbara-coveri/barbara-coveri-hero.jpg" alt="Barbara Coveri" width="1920" height="1080" loading="lazy" decoding="async"></div>
             <span class="work-card__category" data-i18n="cat.identity">Identità visiva</span>
             <h3 class="work-card__title">Barbara Coveri</h3>
           </a>
 
-          <a href="lavori/disallineamenti-percettivi.html" class="work-card reveal reveal--delay-3" data-category="Sistemi visivi interattivi" data-date="2025-11" style="--focus-x: 30%; --focus-y: 50%;">
+          <a href="lavori/disallineamenti-percettivi.html" class="work-card" data-category="Sistemi visivi interattivi" data-date="2025-11" style="--focus-x: 30%; --focus-y: 50%;" data-motion="card">
             <div class="work-card__media"><img src="assets/disallineamenti-percettivi/disallineamenti-percettivi-hero.jpg" alt="Disallineamenti Percettivi" width="1920" height="1080" loading="lazy" decoding="async"></div>
             <span class="work-card__category" data-i18n="cat.interactive">Sistemi visivi interattivi</span>
             <h3 class="work-card__title">Disallineamenti Percettivi</h3>
@@ -117,34 +121,34 @@
     <section class="section-pad--lg manifesto" id="approccio" aria-labelledby="approccio-title">
       <div class="container">
 
-        <div class="section-header reveal">
+        <div class="section-header" data-motion="group">
           <h2 class="section-header__title" id="approccio-title" data-i18n="home.approach.title">Approccio</h2>
         </div>
 
         <ol class="manifesto__list">
 
-          <li class="manifesto__item">
+          <li class="manifesto__item" data-motion="manifesto">
             <span class="manifesto__rule" aria-hidden="true"></span>
             <span class="manifesto__num" aria-hidden="true">01</span>
             <h3 class="manifesto__word"><span class="manifesto__mask"><span class="manifesto__line" data-i18n="home.approach.01.cat">Sistemico</span></span></h3>
             <p class="manifesto__text" data-i18n="home.approach.01.desc">Ogni progetto è un sistema prima che un singolo output. Costruisco linguaggi visivi coerenti, non soluzioni isolate.</p>
           </li>
 
-          <li class="manifesto__item">
+          <li class="manifesto__item" data-motion="manifesto">
             <span class="manifesto__rule" aria-hidden="true"></span>
             <span class="manifesto__num" aria-hidden="true">02</span>
             <h3 class="manifesto__word"><span class="manifesto__mask"><span class="manifesto__line" data-i18n="home.approach.02.cat">Relazionale</span></span></h3>
             <p class="manifesto__text" data-i18n="home.approach.02.desc">Il design nasce dal contatto con le persone. Ascolto, osservo e traduco in forma ciò che emerge dalla relazione.</p>
           </li>
 
-          <li class="manifesto__item">
+          <li class="manifesto__item" data-motion="manifesto">
             <span class="manifesto__rule" aria-hidden="true"></span>
             <span class="manifesto__num" aria-hidden="true">03</span>
             <h3 class="manifesto__word"><span class="manifesto__mask"><span class="manifesto__line" data-i18n="home.approach.03.cat">Sperimentale</span></span></h3>
             <p class="manifesto__text" data-i18n="home.approach.03.desc">La ricerca precede e informa l'esecuzione. Il processo non è un mezzo — è parte del risultato.</p>
           </li>
 
-          <li class="manifesto__item">
+          <li class="manifesto__item" data-motion="manifesto">
             <span class="manifesto__rule" aria-hidden="true"></span>
             <span class="manifesto__num" aria-hidden="true">04</span>
             <h3 class="manifesto__word"><span class="manifesto__mask"><span class="manifesto__line" data-i18n="home.approach.04.cat">Narrativo</span></span></h3>
@@ -159,7 +163,7 @@
     <section class="section-pad" id="profilo">
       <div class="container">
 
-        <div class="section-header reveal">
+        <div class="section-header" data-motion="group">
           <h2 class="section-header__title" data-i18n="home.profile.title">Profilo</h2>
         </div>
 
@@ -167,11 +171,11 @@
 
           <img src="assets/profile/filippo-boi-profile.jpg"
   alt="Filippo Boi"
-  class="project-img profile__image reveal"
+  class="project-img profile__image"
   loading="lazy"
-  width="800" height="1067">
+  width="800" height="1067" data-motion="image">
 
-          <div class="profile__text reveal reveal--delay-1">
+          <div class="profile__text" data-motion="group">
             <p class="profile__bio" data-i18n="home.profile.intro">
               Progetto sistemi visivi per dare forma, coerenza e direzione alla comunicazione. Il mio lavoro nasce dall'ascolto e vive di contesti: ogni cliente, ogni territorio, ogni comunità chiede un linguaggio diverso, e il mio compito è trovarlo insieme a chi ho davanti. Attraverso graphic design, installazioni e pratiche artistiche con la stessa postura — quella di chi progetta con le persone, non solo per loro. Ogni progetto è un sistema visivo, prima che un singolo output.
             </p>
@@ -183,7 +187,7 @@
 
     <section class="section-pad section--ruled">
       <div class="container">
-        <a href="contatti.html" class="home-cta-contact reveal">
+        <a href="contatti.html" class="home-cta-contact" data-motion="fade">
           <span class="home-cta-contact__text"
             data-i18n="home.cta.contact">
             Hai un progetto in mente? Parliamo.
@@ -212,5 +216,9 @@
   <script src="js/main.js"></script>
   <script src="js/translations.js"></script>
   <script src="js/i18n.js"></script>
+  <script src="js/vendor/gsap.min.js" defer></script>
+  <script src="js/vendor/ScrollTrigger.min.js" defer></script>
+  <script src="js/vendor/lenis.min.js" defer></script>
+  <script src="js/motion.js" defer></script>
 </body>
 </html>

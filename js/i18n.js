@@ -35,6 +35,9 @@ const I18n = {
 
     document.documentElement.lang = lang;
     this.updateToggle();
+
+    // Avvisa chi dipende dal testo (es. titoli divisi in parole da motion.js)
+    document.dispatchEvent(new CustomEvent('i18n:change', { detail: { lang } }));
   },
 
   toggle() {

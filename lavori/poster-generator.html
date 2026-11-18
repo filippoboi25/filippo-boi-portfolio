@@ -2,8 +2,12 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8">
-  <!-- Prima del primo paint: gli stati nascosti delle animazioni valgono solo con JS attivo -->
-  <script>document.documentElement.classList.add('js');</script>
+  <!-- Prima del primo paint: html.js abilita gli stati iniziali delle animazioni,
+       vt-in segnala un cambio pagina con View Transition, e se motion.js non parte
+       entro 3 s motion-off mostra tutto il contenuto. -->
+  <script>(function(h){h.classList.add('js');try{if(sessionStorage.getItem('fb-vt')){h.classList.add('vt-in');sessionStorage.removeItem('fb-vt')}}catch(e){}setTimeout(function(){if(!h.classList.contains('motion-ready'))h.classList.add('motion-off')},3000)})(document.documentElement);</script>
+  <link rel="preload" href="../assets/fonts/cormorant-garamond-latin-300-italic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../assets/fonts/ibm-plex-mono-latin-300-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Poster Generator — Filippo Boi</title>
@@ -54,12 +58,12 @@
     <!-- ─── 1. Hero del progetto ────────────────────────────── -->
     <section class="project-hero">
       <div class="container">
-        <span class="label reveal">Sistemi visivi interattivi</span>
-        <h1 class="project-hero__headline reveal">Poster Generator</h1>
-        <p class="project-hero__subtitle reveal" data-i18n="poster.subtitle">
+        <span class="label" data-motion="fade">Sistemi visivi interattivi</span>
+        <h1 class="project-hero__headline" data-motion="title">Poster Generator</h1>
+        <p class="project-hero__subtitle" data-i18n="poster.subtitle" data-motion="fade">
           Installazione interattiva per poster politici speculativi
         </p>
-        <div class="project-hero__meta reveal">
+        <div class="project-hero__meta" data-motion="fade">
           <div class="project-hero__meta-item">
             <span class="project-hero__meta-key" data-i18n="meta.role">Ruolo</span>
             <span class="project-hero__meta-value" data-i18n="poster.meta.role.value">Concept · Sviluppo installazione interattiva</span>
@@ -78,7 +82,7 @@
 
     <!-- ─── 2. Immagine hero ─────────────────────────────────── -->
     <div class="container">
-      <div class="cs-image cs-image--wide reveal"><img src="../assets/poster-generator/poster-generator-hero.jpg"
+      <div class="cs-image cs-image--wide" data-motion="image"><img src="../assets/poster-generator/poster-generator-hero.jpg"
   alt="Poster Generator — installazione interattiva"
   class="project-img"
   loading="eager"
@@ -89,15 +93,15 @@
     <section class="section-pad">
       <div class="container">
 
-        <span class="label label--ruled reveal" data-i18n="section.idea">01 — L'idea</span>
+        <span class="label label--ruled" data-i18n="section.idea" data-motion="fade">01 — L'idea</span>
 
         <div class="split">
-          <div class="reveal">
+          <div data-motion="group">
             <h2 class="cs-section-headline" data-i18n="poster.s01.headline">
               Quante delle tue scelte le ha fatte il tuo algoritmo?
             </h2>
           </div>
-          <div class="reveal reveal--delay-1">
+          <div data-motion="group">
             <p class="cs-body project-body-text" data-i18n="poster.s01.text1">
               Il progetto nasce come esame universitario e diventa qualcosa di più grande. Il punto di partenza è il bombardamento mediatico: in trenta secondi di reel su Instagram possiamo attraversare contenuti potenzialmente infiniti e incompatibili tra loro. Quante delle nostre posizioni politiche, culturali, etiche sono davvero nostre — e quante sono il prodotto di una contaminazione pseudo-passiva che non abbiamo scelto di subire?
             </p>
@@ -114,10 +118,10 @@
     <section class="section-pad section--ruled">
       <div class="container">
 
-        <span class="label label--ruled reveal" data-i18n="section.system2">02 — Il sistema</span>
+        <span class="label label--ruled" data-i18n="section.system2" data-motion="fade">02 — Il sistema</span>
 
         <div class="grid">
-          <div class="col-8 reveal">
+          <div class="col-8" data-motion="group">
             <p class="cs-quote" data-i18n="poster.s02.quote">
               "Il grande potere della macchina governativa potrebbe essere svolto da una macchina randomica che lancia slogan — l'indifferenza con cui trattano la vita delle persone è più o meno la stessa con cui lanciano i dadi a Risiko."
             </p>
@@ -125,7 +129,7 @@
         </div>
 
         <div class="split" style="margin-top: var(--sp-12);">
-          <div class="reveal">
+          <div data-motion="group">
             <p class="cs-body project-body-text" data-i18n="poster.s02.text1">
               Un generatore di poster con database precostituiti su sei tematiche sociali. La tematica viene scelta dal lancio di un dado — il tono di voce, moderato, neutrale o estremo, dall'intensità del lancio. I poster prodotti mescolano paradosso e surrealismo per ridicolizzare tutte le posizioni del dibattito politico contemporaneo, dove tutto è slogan e niente è reale. Una dinamica situazionista: il détournement come strumento critico.
             </p>
@@ -133,7 +137,7 @@
               Il sistema si è evoluto nel tempo — dal dado fisico a uno schermo touchscreen dove tematica e tono possono essere scelti e intersecati manualmente. Ogni versione è una nuova iterazione dello stesso dispositivo critico.
             </p>
           </div>
-          <div class="reveal reveal--delay-1">
+          <div data-motion="group">
             <div class="cs-image cs-image--square"><img src="../assets/poster-generator/poster-generator-system.jpg"
   alt="Poster Generator — sistema"
   class="project-img" loading="lazy"
@@ -148,28 +152,28 @@
     <section class="section-pad section--ruled">
       <div class="container">
 
-        <span class="label label--ruled reveal" data-i18n="section.gallery">03 — Gallery</span>
+        <span class="label label--ruled" data-i18n="section.gallery" data-motion="fade">03 — Gallery</span>
 
         <div class="quad">
-          <div class="cs-image-item reveal">
+          <div class="cs-image-item" data-motion="image">
             <div class="cs-image cs-image--square"><img src="../assets/poster-generator/poster-generator-process-01.jpg"
   alt="Poster Generator — processo 01"
   class="project-img" loading="lazy"
   width="800" height="800"></div>
           </div>
-          <div class="cs-image-item reveal reveal--delay-1">
+          <div class="cs-image-item" data-motion="image">
             <div class="cs-image cs-image--square"><img src="../assets/poster-generator/poster-generator-process-02.jpg"
   alt="Poster Generator — processo 02"
   class="project-img" loading="lazy"
   width="800" height="800"></div>
           </div>
-          <div class="cs-image-item reveal reveal--delay-2">
+          <div class="cs-image-item" data-motion="image">
             <div class="cs-image cs-image--square"><img src="../assets/poster-generator/poster-generator-process-03.jpg"
   alt="Poster Generator — processo 03"
   class="project-img" loading="lazy"
   width="800" height="800"></div>
           </div>
-          <div class="cs-image-item reveal reveal--delay-3">
+          <div class="cs-image-item" data-motion="image">
             <div class="cs-image cs-image--square"><img src="../assets/poster-generator/poster-generator-process-04.jpg"
   alt="Poster Generator — processo 04"
   class="project-img" loading="lazy"
@@ -184,15 +188,15 @@
     <section class="section-pad section--ruled">
       <div class="container">
 
-        <span class="label label--ruled reveal" data-i18n="poster.s04.label">04 — Le esposizioni</span>
+        <span class="label label--ruled" data-i18n="poster.s04.label" data-motion="fade">04 — Le esposizioni</span>
 
-        <div class="cs-image cs-image--panoramic reveal"><img src="../assets/poster-generator/poster-generator-wide.jpg"
+        <div class="cs-image cs-image--panoramic" data-motion="image"><img src="../assets/poster-generator/poster-generator-wide.jpg"
   alt="Poster Generator — esperienza"
   class="project-img" loading="lazy"
   width="1920" height="549"></div>
 
         <div class="split" style="margin-top: var(--sp-12);">
-          <div class="reveal">
+          <div data-motion="group">
             <p class="cs-body project-body-text" data-i18n="poster.s04.text1">
               Il pubblico interagisce con il sistema direttamente — lancia il dado o tocca lo schermo, sceglie la tematica, il tono, l'intensità. Il poster viene generato in tempo reale davanti ai loro occhi.
             </p>
@@ -200,7 +204,7 @@
               Il gesto è semplice, quasi banale. Il risultato è sempre leggermente assurdo, sempre leggermente riconoscibile.
             </p>
           </div>
-          <div class="reveal reveal--delay-1">
+          <div data-motion="group">
             <p class="cs-body project-body-text" data-i18n="poster.s04.text3">
               È quello il punto: il poster generato dalla macchina non è così diverso da quello che circolava ieri sui social. La macchina randomica e il dibattito politico reale producono la stessa intensità, lo stesso formato, la stessa vaghezza. Esposto al DAS di Bologna dopo la residenza vinta durante Collagene, e a Roma da LMNL Space a seguito del workshop INSTALL — in collettiva con le altre artiste e artisti.
             </p>
@@ -214,18 +218,18 @@
     <section class="section-pad section--ruled">
       <div class="container">
 
-        <span class="label label--ruled reveal" data-i18n="section.output">05 — Output</span>
+        <span class="label label--ruled" data-i18n="section.output" data-motion="fade">05 — Output</span>
 
         <div class="cs-image-grid">
-          <div class="cs-image cs-image--portrait reveal"><img src="../assets/poster-generator/poster-generator-detail-01.jpg"
+          <div class="cs-image cs-image--portrait" data-motion="image"><img src="../assets/poster-generator/poster-generator-detail-01.jpg"
   alt="Poster Generator — dettaglio 01"
   class="project-img" loading="lazy"
   width="800" height="1067"></div>
-          <div class="cs-image cs-image--portrait reveal reveal--delay-1"><img src="../assets/poster-generator/poster-generator-detail-02.jpg"
+          <div class="cs-image cs-image--portrait" data-motion="image"><img src="../assets/poster-generator/poster-generator-detail-02.jpg"
   alt="Poster Generator — dettaglio 02"
   class="project-img" loading="lazy"
   width="800" height="1067"></div>
-          <div class="cs-image cs-image--portrait reveal reveal--delay-2"><img src="../assets/poster-generator/poster-generator-detail-03.jpg"
+          <div class="cs-image cs-image--portrait" data-motion="image"><img src="../assets/poster-generator/poster-generator-detail-03.jpg"
   alt="Poster Generator — dettaglio 03"
   class="project-img" loading="lazy"
   width="800" height="1067"></div>
@@ -269,5 +273,9 @@
   <script src="../js/main.js"></script>
   <script src="../js/translations.js"></script>
   <script src="../js/i18n.js"></script>
+  <script src="../js/vendor/gsap.min.js" defer></script>
+  <script src="../js/vendor/ScrollTrigger.min.js" defer></script>
+  <script src="../js/vendor/lenis.min.js" defer></script>
+  <script src="../js/motion.js" defer></script>
 </body>
 </html>

@@ -2,8 +2,12 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8">
-  <!-- Prima del primo paint: gli stati nascosti delle animazioni valgono solo con JS attivo -->
-  <script>document.documentElement.classList.add('js');</script>
+  <!-- Prima del primo paint: html.js abilita gli stati iniziali delle animazioni,
+       vt-in segnala un cambio pagina con View Transition, e se motion.js non parte
+       entro 3 s motion-off mostra tutto il contenuto. -->
+  <script>(function(h){h.classList.add('js');try{if(sessionStorage.getItem('fb-vt')){h.classList.add('vt-in');sessionStorage.removeItem('fb-vt')}}catch(e){}setTimeout(function(){if(!h.classList.contains('motion-ready'))h.classList.add('motion-off')},3000)})(document.documentElement);</script>
+  <link rel="preload" href="../assets/fonts/cormorant-garamond-latin-300-italic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../assets/fonts/ibm-plex-mono-latin-300-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ginza — Filippo Boi</title>
@@ -54,12 +58,12 @@
     <!-- ─── 1. Hero del progetto ────────────────────────────── -->
     <section class="project-hero">
       <div class="container">
-        <span class="label reveal">Identità visiva</span>
-        <h1 class="project-hero__headline reveal">Ginza</h1>
-        <p class="project-hero__subtitle reveal" data-i18n="ginza.subtitle">
+        <span class="label" data-motion="fade">Identità visiva</span>
+        <h1 class="project-hero__headline" data-motion="title">Ginza</h1>
+        <p class="project-hero__subtitle" data-i18n="ginza.subtitle" data-motion="fade">
           Logo design e brand identity — Ristorante giapponese
         </p>
-        <div class="project-hero__meta reveal">
+        <div class="project-hero__meta" data-motion="fade">
           <div class="project-hero__meta-item">
             <span class="project-hero__meta-key" data-i18n="meta.client">Cliente</span>
             <span class="project-hero__meta-value">Nuxi s.r.l. per Ginza</span>
@@ -86,7 +90,7 @@
 
     <!-- ─── 2. Immagine hero ─────────────────────────────────── -->
     <div class="container">
-      <div class="cs-image cs-image--wide reveal"><img src="../assets/ginza-brand/ginza-hero.jpg"
+      <div class="cs-image cs-image--wide" data-motion="image"><img src="../assets/ginza-brand/ginza-hero.jpg"
   alt="Ginza — identità visiva"
   class="project-img"
   loading="eager"
@@ -97,15 +101,15 @@
     <section class="section-pad">
       <div class="container">
 
-        <span class="label label--ruled reveal" data-i18n="section.context">01 — Il contesto</span>
+        <span class="label label--ruled" data-i18n="section.context" data-motion="fade">01 — Il contesto</span>
 
         <div class="split">
-          <div class="reveal">
+          <div data-motion="group">
             <h2 class="cs-section-headline" data-i18n="ginza.s01.headline">
               Una nuova apertura, un'identità da zero.
             </h2>
           </div>
-          <div class="reveal reveal--delay-1">
+          <div data-motion="group">
             <p class="cs-body project-body-text" data-i18n="ginza.s01.text1">
               Il progetto nasce per conto di Nuxi s.r.l., società di consulenza che mi ha affidato la progettazione dell'identità visiva di Ginza, nuova apertura di un ristorante giapponese a Cagliari.
             </p>
@@ -122,10 +126,10 @@
     <section class="section-pad section--ruled">
       <div class="container">
 
-        <span class="label label--ruled reveal" data-i18n="section.direction">02 — La direzione</span>
+        <span class="label label--ruled" data-i18n="section.direction" data-motion="fade">02 — La direzione</span>
 
         <div class="grid">
-          <div class="col-8 reveal">
+          <div class="col-8" data-motion="group">
             <p class="cs-quote" data-i18n="ginza.s02.quote">
               "La pagoda non come ornamento — come struttura. Le lettere del nome diventano le colonne che reggono la copertura. Il logo è già un'architettura."
             </p>
@@ -139,15 +143,15 @@
     <section class="section-pad">
       <div class="container">
         <div class="cs-image-grid">
-          <div class="cs-image cs-image--standard reveal"><img src="../assets/ginza-brand/ginza-grid-01.jpg"
+          <div class="cs-image cs-image--standard" data-motion="image"><img src="../assets/ginza-brand/ginza-grid-01.jpg"
   alt="Ginza — logo"
   class="project-img" loading="lazy"
   width="1200" height="900"></div>
-          <div class="cs-image cs-image--standard reveal reveal--delay-1"><img src="../assets/ginza-brand/ginza-grid-02.jpg"
+          <div class="cs-image cs-image--standard" data-motion="image"><img src="../assets/ginza-brand/ginza-grid-02.jpg"
   alt="Ginza — applicazione"
   class="project-img" loading="lazy"
   width="1200" height="900"></div>
-          <div class="cs-image cs-image--standard reveal reveal--delay-2"><img src="../assets/ginza-brand/ginza-grid-03.jpg"
+          <div class="cs-image cs-image--standard" data-motion="image"><img src="../assets/ginza-brand/ginza-grid-03.jpg"
   alt="Ginza — dettaglio"
   class="project-img" loading="lazy"
   width="1200" height="900"></div>
@@ -159,11 +163,11 @@
     <section class="section-pad section--ruled">
       <div class="container">
 
-        <span class="label label--ruled reveal" data-i18n="section.sign">03 — Il segno</span>
+        <span class="label label--ruled" data-i18n="section.sign" data-motion="fade">03 — Il segno</span>
 
         <div class="split">
 
-          <div class="reveal">
+          <div data-motion="group">
             <p class="cs-body project-body-text" data-i18n="ginza.s03.text1">
               Il segno nasce dall'estrapolazione della forma della pagoda — icona della cultura giapponese. Il logotipo in Kenjo diventa le colonne portanti: le lettere di Ginza reggono letteralmente la copertura della pagoda, ricreando la struttura architettonica del piano originale.
             </p>
@@ -178,7 +182,7 @@
             </p>
           </div>
 
-          <div class="cs-image-grid cs-image-grid--2x2 reveal reveal--delay-1">
+          <div class="cs-image-grid cs-image-grid--2x2" data-motion="image">
             <div class="cs-image-item">
               <div class="cs-image cs-image--square"><img src="../assets/ginza-brand/ginza-system-01.jpg"
   alt="Ginza — sistema 01"
@@ -217,7 +221,7 @@
     <!-- ─── 7. Immagine finale ───────────────────────────────── -->
     <div class="section-pad">
       <div class="container">
-        <div class="cs-image cs-image--wide reveal"><img src="../assets/ginza-brand/ginza-final.jpg"
+        <div class="cs-image cs-image--wide" data-motion="image"><img src="../assets/ginza-brand/ginza-final.jpg"
   alt="Ginza — output finale"
   class="project-img" loading="lazy"
   width="1920" height="1080"></div>
@@ -259,5 +263,9 @@
   <script src="../js/main.js"></script>
   <script src="../js/translations.js"></script>
   <script src="../js/i18n.js"></script>
+  <script src="../js/vendor/gsap.min.js" defer></script>
+  <script src="../js/vendor/ScrollTrigger.min.js" defer></script>
+  <script src="../js/vendor/lenis.min.js" defer></script>
+  <script src="../js/motion.js" defer></script>
 </body>
 </html>
